@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/new_home/new_home",
+    "pages/free_ride/free_ride",
+    "pages/release/release",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

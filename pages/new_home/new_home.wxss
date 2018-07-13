@@ -1,0 +1,146 @@
+.header {
+  background: #509ad2;
+  padding: 36rpx 0 10rpx 0;
+}
+
+.header > view:last-child {
+  display: flex;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 20rpx;
+  margin-left: 34rpx;
+}
+
+.header .search {
+  width: 90%;
+  margin: 0 auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #333;
+  background: #fff;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header .search text {
+  color: #509ad2;
+  font-size: 14px;
+}
+
+.header .search input {
+  font-size: 12px;
+  width: 70%;
+}
+
+.nav .ul_1level {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 26rpx 0;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #e6e8ea;
+}
+
+.nav .ul_1level .ac {
+  color: #509ad2;
+}
+
+.nav .ul_2level {
+  font-size: 12px;
+  color: #a3a3a3;
+  padding: 18rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.nav .ul_2level .ul_2level_item {
+  width: 20%;
+  text-align: center;
+}
+
+.nav .ul_2level .ul_2level_item i {
+  font-size: 22px;
+  color: #fff;
+}
+
+.nav .ul_2level .ul_2level_item view:first-child {
+  width: 60%;
+  height: 86rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bg1 {
+  background: linear-gradient(to bottom, #e6187c, #fa6e91);
+}
+
+.bg2 {
+  background: linear-gradient(to bottom, #ff060a, #ff6f6d);
+}
+
+.bg3 {
+  background: linear-gradient(to bottom, #fe9b10, #ffd03e);
+}
+
+.bg4 {
+  background: linear-gradient(to bottom, #8f00f8, #e017ff);
+}
+
+.bg5 {
+  background: RGBA(221, 21, 252, 1);
+}
+
+.bg6 {
+  background: linear-gradient(to bottom, #36afe8, #92d4f8);
+}
+
+.banner swiper {
+  height: 200rpx;
+}
+
+.banner image {
+  width: 100%;
+  height: 200rpx;
+}
+
+.info_ul {
+  font-size: 14px;
+  color: #333;
+  margin: 18rpx 0;
+  height: 845rpx;
+}
+
+.info_ul .a3a3a3 {
+  color: #a3a3a3;
+}
+
+.info_ul .info_ul_item {
+  padding: 24rpx;
+  display: flex;
+  border-bottom: 1px solid #e6e8ea;
+}
+
+.info_ul .info_ul_item view:first-child {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 40rpx;
+}
+
+.info_ul .info_ul_item view:first-child image {
+  width: 100%;
+  height: 100%;
+}
+
+.info_ul .info_ul_item view:last-child {
+  width: 80%;
+}

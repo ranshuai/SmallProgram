@@ -1,0 +1,44 @@
+<!--头部  -->
+<view class="header">
+  <view class="search">
+    <i class="ion-ios-icon-gxk-46"></i>
+    <input bindinput="bindKeyInput" placeholder='请输入店铺名称' value="{{inputValue}}" />
+    <text catchtap="search">搜索</text>
+  </view>
+</view>
+<!--店铺列表  -->
+<scroll-view class="info_ul" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLowe">
+  <view class="info_ul_item">
+    <view>
+      <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/store/76281/84fefc26-1b10-419c-b674-8d6c919e216f.jpg"></image>
+    </view>
+    <view>
+      <view class="stor_type">
+        <text class="store_type1">服务</text>
+        <text class='a3a3a3'>三三清洁</text>
+        <span class="a3a3a3 fr" data-reply-phone="18210702905" catchtap="phoneCall">
+          <i class="ion-ios-icon-gxk-161"></i>
+          拨打电话
+        </span>
+      </view>
+      <view>
+        <span>
+          清洗空调，天气已经变热，你家的空调该清洗了吗？
+        </span>
+      </view>
+      <view>
+        <span class="a3a3a3">
+          全文
+        </span>
+      </view>
+      <view class="store_img_warp">
+        <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
+        <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
+        <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
+        <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
+      </view>
+
+    </view>
+  </view>
+  
+</scroll-view>
