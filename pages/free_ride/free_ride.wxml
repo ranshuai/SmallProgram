@@ -4,10 +4,10 @@
     全部 
   </view>
   <view data-info="{{1}}" class="{{oneLevelNav == 1 ? 'ac':''}}" catchtap="oneLevelNavClick">
-    车找人
+    人找车
   </view>
   <view data-info="{{2}}" class="{{oneLevelNav == 2 ? 'ac':''}}" catchtap="oneLevelNavClick">
-    人找车
+    车找人
   </view>
   <view data-info="{{3}}" class="{{oneLevelNav == 3 ? 'ac':''}}" catchtap="oneLevelNavClick">
     天天拼
@@ -15,30 +15,30 @@
 </view>
 
 <view class="free_ride_ul" wx:if="{{oneLevelNav == 0}}">
-  <view class="free_ride_item">
+  <view class="free_ride_item" wx:for="{{releaseList}}">
     <view>
-      <text class="free_ride_item_flag_bg1">起</text>
-      <text>大庄镇</text>
-      <span class="a3a3a3 fr" data-reply-phone="18210702905" catchtap="phoneCall">
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">起</text>
+      <text>{{item.startStation}}</text>
+      <span class="a3a3a3 fr" data-reply-phone="{{item.releasePersonMobile}}" catchtap="phoneCall">
         <i class="ion-ios-icon-gxk-161"></i>
         拨打电话
       </span>
     </view>
     <view>
-      <text class="free_ride_item_flag_bg1">终</text>
-      <text>保定</text>
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">终</text>
+      <text>{{item.endStation}}</text>
     </view>
     <view>
-      <text class="free_ride_item_flag_bg1">车找人</text>
-      <text>07月17日 </text>
-      <text>大约06点出发</text>
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">{{item.releaseType == '1'?'人找车':'' || item.releaseType == '2'?'车找人':''|| item.releaseType == '3'?'天天拼':''}}</text>
+      <text>{{item.goOff}} </text>
+      <!-- <text>大约06点出发</text> -->
     </view>
     <view>
       <text>备注 </text>
-      <text>06点-08点都可以 </text>
+      <text>{{item.releaseDescribe}} </text>
     </view>
   </view>
-  <view class="free_ride_item">
+  <!-- <view class="free_ride_item">
     <view>
       <text class="free_ride_item_flag_bg2">起</text>
       <text>保定</text>
@@ -83,83 +83,83 @@
       <text>备注 </text>
       <text>06点-08点都可以 </text>
     </view>
-  </view>
+  </view> -->
 </view>
 
 <view class="free_ride_ul"  wx:if="{{oneLevelNav == 1}}">
-  <view class="free_ride_item">
+  <view class="free_ride_item" wx:for="{{releaseList}}">
     <view>
-      <text class="free_ride_item_flag_bg1">起</text>
-      <text>大庄镇</text>
-      <span class="a3a3a3 fr" data-reply-phone="18210702905" catchtap="phoneCall">
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">起</text>
+      <text>{{item.startStation}}</text>
+      <span class="a3a3a3 fr" data-reply-phone="{{item.releasePersonMobile}}" catchtap="phoneCall">
         <i class="ion-ios-icon-gxk-161"></i>
         拨打电话
       </span>
     </view>
     <view>
-      <text class="free_ride_item_flag_bg1">终</text>
-      <text>保定</text>
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">终</text>
+      <text>{{item.endStation}}</text>
     </view>
     <view>
-      <text class="free_ride_item_flag_bg1">车找人</text>
-      <text>07月17日 </text>
-      <text>大约06点出发</text>
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">{{item.releaseType == '1'?'人找车':'' || item.releaseType == '2'?'车找人':''|| item.releaseType == '3'?'天天拼':''}}</text>
+      <text>{{item.goOff}} </text>
+      <!-- <text>大约06点出发</text> -->
     </view>
     <view>
       <text>备注 </text>
-      <text>06点-08点都可以 </text>
+      <text>{{item.releaseDescribe}} </text>
     </view>
   </view>
 </view>
 
 <view class="free_ride_ul"  wx:if="{{oneLevelNav == 2}}">
-  <view class="free_ride_item">
+  <view class="free_ride_item" wx:for="{{releaseList}}">
     <view>
-      <text class="free_ride_item_flag_bg2">起</text>
-      <text>保定</text>
-      <span class="a3a3a3 fr" data-reply-phone="18210702905" catchtap="phoneCall">
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">起</text>
+      <text>{{item.startStation}}</text>
+      <span class="a3a3a3 fr" data-reply-phone="{{item.releasePersonMobile}}" catchtap="phoneCall">
         <i class="ion-ios-icon-gxk-161"></i>
         拨打电话
       </span>
     </view>
     <view>
-      <text class="free_ride_item_flag_bg2">终</text>
-      <text>大庄镇</text>
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">终</text>
+      <text>{{item.endStation}}</text>
     </view>
     <view>
-      <text class="free_ride_item_flag_bg2">人找车</text>
-      <text>07月17日 </text>
-      <text>大约19点出发</text>
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">{{item.releaseType == '1'?'人找车':'' || item.releaseType == '2'?'车找人':''|| item.releaseType == '3'?'天天拼':''}}</text>
+      <text>{{item.goOff}} </text>
+      <!-- <text>大约06点出发</text> -->
     </view>
     <view>
       <text>备注 </text>
-      <text>19点-20点都可以 </text>
+      <text>{{item.releaseDescribe}} </text>
     </view>
   </view>
 </view>
 
 <view class="free_ride_ul"  wx:if="{{oneLevelNav == 3}}">
-  <view class="free_ride_item">
+  <view class="free_ride_item" wx:for="{{releaseList}}">
     <view>
-      <text class="free_ride_item_flag_bg3">起</text>
-      <text>大庄镇</text>
-      <span class="a3a3a3 fr" data-reply-phone="18210702905" catchtap="phoneCall">
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">起</text>
+      <text>{{item.startStation}}</text>
+      <span class="a3a3a3 fr" data-reply-phone="{{item.releasePersonMobile}}" catchtap="phoneCall">
         <i class="ion-ios-icon-gxk-161"></i>
         拨打电话
       </span>
     </view>
     <view>
-      <text class="free_ride_item_flag_bg3">终</text>
-      <text>保定</text>
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">终</text>
+      <text>{{item.endStation}}</text>
     </view>
     <view>
-      <text class="free_ride_item_flag_bg3">天天拼</text>
-      <text>每天 </text>
-      <text>大约06点出发</text>
+      <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">{{item.releaseType == '1'?'人找车':'' || item.releaseType == '2'?'车找人':''|| item.releaseType == '3'?'天天拼':''}}</text>
+      <text>{{item.goOff}} </text>
+      <!-- <text>大约06点出发</text> -->
     </view>
     <view>
       <text>备注 </text>
-      <text>06点-08点都可以 </text>
+      <text>{{item.releaseDescribe}} </text>
     </view>
   </view>
 </view>
