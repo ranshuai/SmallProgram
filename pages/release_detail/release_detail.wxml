@@ -1,0 +1,43 @@
+<form bindsubmit="submitForm">
+  <view class="release_detail_ul">
+    <view class="release_detail_ul_item">
+      <span class="l">出发地</span>
+      <input  value="{{ form.start }}" name='start' placeholder='输入出发地' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">目的地</span>
+      <input value="{{ form.end }}"  name='end' placeholder='输入目的地' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">乘车时间</span>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}:{{multiArray[2][multiIndex[2]]}}
+        </view>
+      </picker>
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">乘车人数 </span>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+
+
+    <view class="release_detail_ul_item">
+      <span class="l">联系人</span>
+      <input  value="{{ form.contacts }}" name="contacts" placeholder='输入联系人姓名' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">手机号</span>
+      <input  value="{{ form.mobile }}" name="mobile"  placeholder='输入手机号' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">其他需求</span>
+      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="需要补充的说明" />
+    </view>
+  </view>
+  <button class="_submit" disabled="{{false}}" formType="submit"> 发布 </button>
+</form>

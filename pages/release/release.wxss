@@ -1,0 +1,79 @@
+page{
+  font-size: 14px;
+  color: #a3a3a3;
+}
+
+.declare {
+  padding: 24rpx;
+}
+
+.declare > view {
+  padding: 24rpx;
+  font-size: 14px;
+  background: #06f3ee;
+  color: #a3a3a3;
+}
+
+.select{
+  text-align: center;
+  padding: 24rpx;
+  border-bottom: 1px solid #e6e8ea;
+}
+
+.release_type_ul{
+
+}
+
+.release_type_ul .ul_2level {
+  font-size: 12px;
+  color: #a3a3a3;
+  padding: 18rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.release_type_ul .ul_2level .ul_2level_item {
+  width: 20%;
+  text-align: center;
+}
+
+.release_type_ul .ul_2level .ul_2level_item i {
+  font-size: 22px;
+  color: #fff;
+}
+
+.release_type_ul .ul_2level .ul_2level_item view:first-child {
+  width: 60%;
+  height: 86rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bg1 {
+  background: linear-gradient(to bottom, #e6187c, #fa6e91);
+}
+
+.bg2 {
+  background: linear-gradient(to bottom, #ff060a, #ff6f6d);
+}
+
+.bg3 {
+  background: linear-gradient(to bottom, #fe9b10, #ffd03e);
+}
+
+.bg4 {
+  background: linear-gradient(to bottom, #8f00f8, #e017ff);
+}
+
+.bg5 {
+  background: RGBA(221, 21, 252, 1);
+}
+
+.bg6 {
+  background: linear-gradient(to bottom, #36afe8, #92d4f8);
+}

@@ -1,0 +1,53 @@
+<!--  -->
+
+<view class="user_login_warp" wx:if="{{!userInfo.nickName}}">
+  <view class="title">
+    登 录
+  </view>
+  <view>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">自动授权登录{{userInfo.nickName}}</button>
+  </view>
+</view>
+
+<view class="header" wx:if="{{userInfo}}">
+  <view class="header_bg" style="background: url({{userInfo.avatarUrl}}) no-repeat center;background-size:100%"></view>
+  <view class="header_cont border_box">
+    <view class="text_center">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="header_cont_name">
+      {{userInfo.nickName}}
+    </view>
+    <view class="header_cont_txt">
+      <text>10 <br/> 关注</text>
+      <text>100 <br/> 粉丝</text>
+    </view>
+  </view>
+</view>
+<view class="new_user_ul_warp" wx:if="{{userInfo}}">
+  <view class='new_user_ul'>
+    <view class="new_user_ul_item">
+     <i class="ion-ios-icon-gxk-34"></i>
+      我发布的帖子
+    </view>
+    <view class="new_user_ul_item">
+     <i class="ion-ios-icon-gxk-57"></i>
+      我的收藏
+    </view>
+  </view>
+  <view class='new_user_ul'>
+    <view class="new_user_ul_item">
+    <i class="ion-ios-icon-gxk-30"></i>
+      联系客服
+    </view>
+    <view class="new_user_ul_item">
+     <i class="ion-ios-icon-gxk-42"></i>
+      帮助中心
+    </view>
+    <view class="new_user_ul_item">
+    <i class="ion-ios-icon-gxk-87-outline"></i>
+     <text>关于我们</text>
+      <i class="ion-ios-icon-gxk-51"></i>
+    </view>
+  </view>
+</view>

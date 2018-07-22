@@ -1,1 +1,44 @@
-111
+<view class="declare">
+  <view>
+    <span>
+      免责声明：平台发布的所有信息全部免费；平台只负责发布、展示，与平台无关，平台不负任何责任。
+    </span>
+  </view>
+</view>
+
+<view class="select">
+请选择您要发布的栏目
+</view>
+
+<view class="release_type_ul">
+<view class="ul_2level">
+    <!-- <view class="ul_2level_item">
+      <view class="bg1">
+        <i class="ion-ios-icon-gxk-182"></i>
+      </view>
+      <view>
+        奇葩事
+      </view>
+    </view> -->
+    <view data-ReleaseType='freeRide' class="ul_2level_item" catchtap='selectedReleaseType'>
+      <view class="bg2">
+        <i class="ion-ios-icon-gxk-164"></i>
+      </view>
+      <view>
+        顺风车
+      </view>
+    </view>
+     <!-- <view class="ul_2level_item">
+      <view class="bg3">
+        <i class="ion-ios-icon-gxk-158"></i>
+      </view>
+      <view>
+        活动
+      </view>
+    </view>  -->
+  </view>
+</view>
+
+<view class="">
+
+</view>

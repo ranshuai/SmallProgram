@@ -1,0 +1,114 @@
+page {
+  height: 100%;
+  background: #509ad2;
+}
+
+.user_login_warp {
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.user_login_warp .title{
+  line-height: 160rpx;
+  color: #509ad2;
+  font-size: 22px;
+}
+.user_login_warp button{
+  width: 70%;
+  font: 14px;
+  color: #fff;
+  background: #509ad2;
+  margin-top: 100rpx;
+}
+
+.header {
+  height: 456rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.header_bg {
+  height: 100%;
+  background: url(http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/user/79810/a5a37bfc-1168-4b0a-9ade-9dcda34bcee2.gif) no-repeat;
+  background-size: 100%;
+  filter: blur(7.5px);
+}
+
+.header_cont {
+  font-size: 12px;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 88rpx;
+}
+
+.header image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.header_cont_txt {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header_cont_name {
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.new_user_ul_warp{
+  padding: 0 24rpx;
+  height: 60%;
+  background: #e6e8ea;
+  overflow: hidden;
+}
+.new_user_ul{
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 0 24rpx;
+  margin-top: 40rpx;
+  
+}
+.new_user_ul .new_user_ul_item{
+  color:#333;
+  font-size: 14px;
+  padding: 24rpx 0;
+  border-bottom: 1px solid  #e6e8ea;
+}
+.new_user_ul .new_user_ul_item > i{
+  margin-right: 6rpx;
+}
+.new_user_ul .new_user_ul_item:last-child{
+  border:0;
+}
+
+.ion-ios-icon-gxk-34{
+  color:#509ad2
+}
+.ion-ios-icon-gxk-57{
+  color:rgb(241, 89, 8) 
+}
+.ion-ios-icon-gxk-30{
+  color:#32db64
+}
+.ion-ios-icon-gxk-42{
+  color:#05255f
+}
+.ion-ios-icon-gxk-87-outline{
+  color:#0facec;
+}

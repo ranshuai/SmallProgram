@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/new_home/new_home",
-    "pages/free_ride/free_ride",
     "pages/release/release",
+    "pages/release_detail/release_detail",
+    "pages/new_user/new_user",
+    "pages/free_ride/free_ride",
     "pages/search/search"
   ],
   "window": {
@@ -10,5 +12,30 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/new_home/new_home",
+        "text": "主页",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home_s.png",
+        "selectedColor": "red"
+      },
+      {
+        "pagePath": "pages/release/release",
+        "text": "发布",
+        "iconPath": "img/message.png",
+        "selectedIconPath": "img/message_s.png",
+        "selectedColor": "red"
+      },
+      {
+        "pagePath": "pages/new_user/new_user",
+        "text": "个人",
+        "iconPath": "img/user.png",
+        "selectedIconPath": "img/user_s.png",
+        "selectedColor": "red"
+      }
+    ]
   }
 }
