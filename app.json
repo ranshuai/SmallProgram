@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/release_local_service/release_local_service",
+    
     "pages/new_home/new_home",
     "pages/release/release",
     "pages/release_detail/release_detail",

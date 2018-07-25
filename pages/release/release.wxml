@@ -7,11 +7,11 @@
 </view>
 
 <view class="select">
-请选择您要发布的栏目
+  请选择您要发布的栏目
 </view>
 
 <view class="release_type_ul">
-<view class="ul_2level">
+  <view class="ul_2level">
     <!-- <view class="ul_2level_item">
       <view class="bg1">
         <i class="ion-ios-icon-gxk-182"></i>
@@ -20,6 +20,7 @@
         奇葩事
       </view>
     </view> -->
+    <!--发布顺风车  -->
     <view data-ReleaseType='freeRide' class="ul_2level_item" catchtap='selectedReleaseType'>
       <view class="bg2">
         <i class="ion-ios-icon-gxk-164"></i>
@@ -28,7 +29,17 @@
         顺风车
       </view>
     </view>
-     <!-- <view class="ul_2level_item">
+    <!--本地服务  -->
+    <view data-ReleaseType='localService' class="ul_2level_item" catchtap='selectedReleaseType'>
+      <view class="bg2">
+        <i class="ion-ios-icon-gxk-9"></i>
+      </view>
+      <view>
+        本地服务
+      </view>
+    </view>
+
+    <!-- <view class="ul_2level_item">
       <view class="bg3">
         <i class="ion-ios-icon-gxk-158"></i>
       </view>

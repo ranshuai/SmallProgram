@@ -1,0 +1,56 @@
+.release_detail_ul_item {
+  display: flex;
+  color: #a3a3a3;
+  font-size: 14px;
+  padding: 24rpx;
+  border-bottom: 1px solid #a3a3a3;
+  line-height: 28px;
+}
+.release_detail_ul_item picker{
+  width: 80%;
+}
+.release_detail_ul_item .picture{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.release_detail_ul_item .picture view{
+  line-height: 120rpx;
+}
+.release_detail_ul_item .picture >view:first-child {
+  width: 120rpx;
+  height:120rpx;
+  border: 1px solid #a3a3a3;
+  text-align: center;
+  margin-right: 20rpx;
+}
+.release_detail_ul_item .picture >view:first-child .ion-ios-icon-gxk-19{
+  font-size: 20px;
+}
+.release_detail_ul_item:last-child{
+  border: 0;
+}
+.release_detail_ul_item:nth-child(2){
+  display: inherit;
+}
+.release_detail_ul_item textarea{
+  width: 100%;
+  height: 200rpx !important;
+  background: #d9d9d9;
+  padding:20rpx;
+  box-sizing: border-box;
+  line-height: 14px;
+}
+.release_detail_ul_item .l {
+  color: #333;
+  margin-right: 20rpx ;
+}
+.release_detail_ul_item > input{
+  width: 80%
+}
+
+._submit{
+  background: #509ad2;
+  color: #fff;
+  
+}

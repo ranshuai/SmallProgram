@@ -1,0 +1,31 @@
+<form bindsubmit="submitForm">
+  <view class="release_detail_ul">
+    <view class="release_detail_ul_item">
+      <span class="l">标题</span>
+      <input value="{{ form.start }}" name='start' placeholder='请输入标题' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">描述</span>
+      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="需要补充的说明" />
+      <view class="picture">
+        <view>
+          <span class="ion-ios-icon-gxk-19"></span>
+        </view>
+        <view>
+          <span>
+            添加照片， 最多9张
+          </span>
+        </view>
+      </view>
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">联系人</span>
+      <input value="{{ form.start }}" name='start' placeholder='请输入联系人' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">电话</span>
+      <input value="{{ form.start }}" name='start' placeholder='请输入电话' />
+    </view>
+  </view>
+  <button class="_submit" disabled="{{false}}" formType="submit"> 发布 </button>
+</form>
