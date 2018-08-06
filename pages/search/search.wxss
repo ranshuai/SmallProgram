@@ -46,6 +46,19 @@
 .info_ul .info_ul_item .stor_type {
   padding-bottom: 8rpx;
 }
+.info_ul .info_ul_item .store_con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.info_ul .info_ul_item .store_con button{
+  margin: 0;
+  font-size: 12px;
+  background: #fff;
+  border: 1px solid  #f2786b;
+  color: #f2786b;
+}
 
 .info_ul .info_ul_item > view:first-child {
   width: 86rpx;

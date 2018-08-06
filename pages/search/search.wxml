@@ -40,5 +40,32 @@
 
     </view>
   </view>
-  
+
+  <view class="info_ul_item">
+    <view>
+      <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/store/76281/84fefc26-1b10-419c-b674-8d6c919e216f.jpg"></image>
+    </view>
+    <view>
+      <view class="stor_type">
+        <text class="store_type1">超市</text>
+        <text class='a3a3a3'>冉冉微生活超市</text>
+        <span class="a3a3a3 fr" data-reply-phone="18210702905" catchtap="phoneCall">
+          <i class="ion-ios-icon-gxk-161"></i>
+          拨打电话
+        </span>
+      </view>
+      <view class='store_con'>
+        <span>
+          销量 100 商品共 30
+        </span>
+        <button catchtap="goToStore" data-info="{{2}}">
+          进店
+        </button>
+      </view>
+
+
+
+    </view>
+  </view>
+
 </scroll-view>

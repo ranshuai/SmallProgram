@@ -1,0 +1,47 @@
+<view class="store_detail">
+  <!--店铺背景 S -->
+  <view class="store_bg">
+    <image src="/img/hotshopbg.jpg"></image>
+  </view>
+  <!--店铺背景 E -->
+  <!--店铺头像 S  -->
+  <view class="store_info">
+    <image src='/img/shop-head-pic.png'></image>
+    <span>冉冉微生活超市</span>
+    <span>这个家伙很懒，什么都没有留下！</span>
+  </view>
+  <!--店铺头像 E  -->
+  <!--收藏 S -->
+  <view class="store_collector">
+    <button>收藏者 10 </button>
+    <button>已收藏</button>
+  </view>
+  <!--收藏 E -->
+  <!--店铺商品列表 S -->
+  <view class="store_ul">
+    <view class="store_ul_nav">
+      <view class="ac">
+        商品
+      </view>
+      <view>
+        促销商品
+      </view>
+    </view>
+    <view class="store_item_warp">
+      <view class="store_item">
+        <image src="/img/hotshopbg.jpg"></image>
+        <span>男士卫衣加绒</span>
+        <span>销量 1000</span>
+        <span>¥ 10000.00</span>
+      </view>
+      <view class="store_item">
+        <image src="/img/hotshopbg.jpg"></image>
+      </view>
+       <view class="store_item">
+        <image src="/img/hotshopbg.jpg"></image>
+      </view>
+    </view>
+  </view>
+  <!--店铺商品列表 E -->
+
+</view>

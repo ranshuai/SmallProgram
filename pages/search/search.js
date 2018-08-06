@@ -114,7 +114,17 @@ Page({
       urls: ['/img/server_1.jpeg'],
     })
 
+  },
+  //进店
+  goToStore(ev){
+    console.log(ev);
+    wx.navigateTo({
+      url: "/pages/store_detail/store_detail",
+      // data: ev.currentTarget.dataset.info
+    })
+
   }
+
 
 
 

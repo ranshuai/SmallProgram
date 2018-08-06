@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import "./lib/css/apollo/style.wxss";
+
 .container {
   height: 100%;
   display: flex;
@@ -10,20 +11,8 @@
   box-sizing: border-box;
 }
 
-.red {
-  color: #ff5050;
-}
-
 .block {
   display: block;
-}
-
-.line_h_30 {
-  line-height: 30px;
-}
-
-.gray_bg {
-  background: #f5f5f5;
 }
 
 .border_box {
@@ -56,10 +45,6 @@
   margin: 0 auto;
 }
 
-.text_center {
-  text-align: center;
-}
-
 .margin_b_10 {
   margin-bottom: 10rpx;
 }
@@ -72,14 +57,41 @@
   background-position: center;
 }
 
-.m_left_20{
+.m_left_20 {
   margin-left: 20rpx;
 }
-.store_type1{
+
+.store_type1 {
   background: #e017ff;
   font-size: 12px;
   color: #fff;
-  padding:4rpx;
-  border-radius:6rpx; 
+  padding: 4rpx;
+  border-radius: 6rpx;
   margin-right: 8rpx;
+}
+
+/*字体 字号 */
+
+font_14 {
+  font-size: 14px;
+}
+
+/*字体 颜色 */
+
+.red {
+  color: #ff5050;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.line_h_30 {
+  line-height: 30px;
+}
+
+/*背景  */
+
+.gray_bg {
+  background: #f5f5f5;
 }

@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/store_detail/store_detail",
+    "pages/search/search",
     "pages/new_home/new_home",
     "pages/release_local_service/release_local_service",
     "pages/release/release",
     "pages/release_detail/release_detail",
     "pages/new_user/new_user",
-    "pages/free_ride/free_ride",
-    "pages/search/search"
+    "pages/free_ride/free_ride"
   ],
   "window": {
     "backgroundTextStyle": "light",
