@@ -9,7 +9,8 @@
     "pages/release/release",
     "pages/release_detail/release_detail",
     "pages/new_user/new_user",
-    "pages/free_ride/free_ride"
+    "pages/free_ride/free_ride",
+    "pages/cart/cart"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,7 +34,7 @@
         "selectedIconPath": "img/add_s.png"
       },
       {
-        "pagePath": "pages/release/release",
+        "pagePath": "pages/cart/cart",
         "text": "购物车",
         "iconPath": "img/cart.png",
         "selectedIconPath": "img/cart_s.png"
