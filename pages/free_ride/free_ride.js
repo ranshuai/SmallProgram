@@ -19,13 +19,11 @@ Page({
         releaseType: '0'
       },
       success: function (data) {
-        console.log(data);
         data = data.data;
         if(data.success){
           _this.setData({
             releaseList: data.result.list
           })
-          console.log(_this.data.releaseList);
         }else{
           wx.showToast({
             title: data.msg,
@@ -116,7 +114,6 @@ Page({
         releaseType: this.data.oneLevelNav
       },
       success: function (data) {
-        console.log(data);
         var data = data.data
         if(data.success){
           _this.setData({

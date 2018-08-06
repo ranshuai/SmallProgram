@@ -14,8 +14,19 @@
   display: flex;
   flex-direction: row;
 }
-.release_detail_ul_item .picture view{
-  line-height: 120rpx;
+.release_detail_ul_item .picture > view{
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  margin-right: 20rpx;
+}
+.release_detail_ul_item .picture >view image {
+  width: 124rpx;
+  height: 124rpx;
+}
+.release_detail_ul_item .picture > view >span:last-child{
+  line-height: 16px;
+  padding-top: 10rpx;
 }
 .release_detail_ul_item .picture >view:first-child {
   width: 120rpx;
@@ -24,6 +35,8 @@
   text-align: center;
   margin-right: 20rpx;
 }
+
+
 .release_detail_ul_item .picture >view:first-child .ion-ios-icon-gxk-19{
   font-size: 20px;
 }
@@ -46,7 +59,9 @@
   margin-right: 20rpx ;
 }
 .release_detail_ul_item > input{
-  width: 80%
+  width: 80%;
+  margin-top: 8rpx;
+  
 }
 
 ._submit{

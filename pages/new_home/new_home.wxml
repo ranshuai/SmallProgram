@@ -91,20 +91,17 @@
     </swiper-item>
 
   </swiper>
-
-
-
 </view>
 <!--信息列表  -->
 <scroll-view class="info_ul" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLowe">
-  <view class="info_ul_item">
+  <view class="info_ul_item" wx:for="{{releaseList}}"  wx:key="item">
     <view>
       <image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTK4PMObfI0CcqnJN1leicaJMCYarxs7V9x69s26cDsoqCytWbWuxiboJy9uOPibSkGiacL0kPmkB3mvCA/0"></image>
     </view>
     <view>
-      <text class='a3a3a3'>夜空中最亮的星</text>
+      <text class='a3a3a3'>{{item.releaseLocalTitle}}</text>
       <text>
-      享受生活不需要寻找特殊的日子，因为每一天都是特殊的，享受生活就是享受今天。
+      {{item.releaseDescribe}}
       </text>
     </view>
   </view>

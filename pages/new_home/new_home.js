@@ -3,7 +3,8 @@
 Page({
   data: {
     oneLevelNav: 0,
-    inputValue: ''
+    inputValue: '',
+    releaseList:[],
   },
   //点击一级导航
   oneLevelNavClick: function (ev) {
@@ -61,5 +62,25 @@ Page({
     wx.navigateTo({
       url: '/pages/free_ride/free_ride',
     })
+  },
+  onLoad: function (options) {
+    var _this = this;
+    wx.request({
+      url: 'https://riseupall.cn/server/getreleaselocal',
+      success: function (data) {
+        data = data.data;
+        if (data.success) {
+          _this.setData({
+            releaseList: data.result.list
+          })
+        } else {
+          wx.showToast({
+            title: data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
+
   }
 })

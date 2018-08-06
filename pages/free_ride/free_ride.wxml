@@ -15,7 +15,7 @@
 </view>
 
 <view class="free_ride_ul" wx:if="{{oneLevelNav == 0}}">
-  <view class="free_ride_item" wx:for="{{releaseList}}">
+  <view class="free_ride_item" wx:for="{{releaseList}}"  wx:key="item">
     <view>
       <text class="{{item.releaseType == '1'?'free_ride_item_flag_bg1':'' || item.releaseType == '2'?'free_ride_item_flag_bg2':'' || item.releaseType == '3'?'free_ride_item_flag_bg3':''}}">起</text>
       <text>{{item.startStation}}</text>

@@ -24,9 +24,11 @@
 .release_detail_ul_item .l {
   color: #333;
   margin-right: 20rpx ;
+  
 }
 .release_detail_ul_item > input{
-  width: 80%
+  width: 80%;
+  padding-top: 8rpx;
 }
 
 ._submit{
