@@ -7,7 +7,7 @@
   <!--店铺头像 S  -->
   <view class="store_info">
     <image src='/img/shop-head-pic.png'></image>
-    <span>冉冉微生活超市</span>
+    <span class="font_14 color_333">冉冉微生活超市</span>
     <span>这个家伙很懒，什么都没有留下！</span>
   </view>
   <!--店铺头像 E  -->
@@ -28,11 +28,12 @@
       </view>
     </view>
     <view class="store_item_warp">
-      <view class="store_item">
+      <view class="store_item pr">
         <image src="/img/hotshopbg.jpg"></image>
-        <span>男士卫衣加绒</span>
+        <span class="font_14 color_333">男士卫衣加绒</span>
         <span>销量 1000</span>
-        <span>¥ 10000.00</span>
+        <span class="red">¥10000.00</span>
+        <span class="pa cart_btn" catchtap="addCart"> +</span>
       </view>
       <view class="store_item">
         <image src="/img/hotshopbg.jpg"></image>

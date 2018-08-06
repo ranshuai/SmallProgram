@@ -1,0 +1,49 @@
+<!--订单提交成功的提示信息 S  -->
+
+<view class="order_message f2786b font_14 white border_b_1">
+  <span>订单提交成功！</span>
+  <span>请您在2018-08-06 17:04:17前完成支付，否则订单将自动取消~</span>
+</view>
+<!--订单提交成功的提示信息 E  -->
+<!--订单号 S  -->
+<view class="font_14 white p_40_24 border_b_1">
+  订单号：201823947329847
+</view>
+<!--订单号 E  -->
+<view class="font_14 white p_40_24">
+  支付金额：¥ 300.00
+</view>
+<!--选择支付方式 S  -->
+<view class="payment_type p_40_24 font_12">
+  请选择支付方式
+</view>
+<!--选择支付方式 E  -->
+<view class="font_14 p_40_24 white payment_type_item border_b_1">
+  <view>
+    <image src="/img/money.png"></image>
+    <span class="m_left_20">
+      货到付款
+    </span>
+  </view>
+  <image src="/img/pay-check.png"></image>
+</view>
+<view class="font_14 p_40_24 white payment_type_item border_b_1">
+  <view>
+    <image src="/img/wx.png"></image>
+    <span class="m_left_20">
+      微信支付
+    </span>
+  </view>
+  <image src="/img/pay-check.png"></image>
+</view>
+<!-- 确认付款 S -->
+<view class="confirm_btn_warp">
+  <view class="font_16 p_l_24">
+    应付金额：
+    <span class="f2786b">¥200.00</span>
+  </view>
+  <button class="font_16" catchtap='goToPay'>
+    去付款
+  </button>
+</view>
+<!-- 确认付款 E -->

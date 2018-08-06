@@ -90,5 +90,6 @@
   flex-direction: column;
   color:#a3a3a3;
   font-size: 12px;
+  line-height: 20px;
 }
 

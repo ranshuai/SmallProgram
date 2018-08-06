@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/new_home/new_home",
+    "pages/order_pay/order_pay",
+    "pages/order_confirm/order_confirm",
     "pages/store_detail/store_detail",
     "pages/search/search",
-    "pages/new_home/new_home",
     "pages/release_local_service/release_local_service",
     "pages/release/release",
     "pages/release_detail/release_detail",
@@ -16,27 +18,31 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "selectedColor": "red",
     "list": [
       {
         "pagePath": "pages/new_home/new_home",
         "text": "主页",
         "iconPath": "img/home.png",
-        "selectedIconPath": "img/home_s.png",
-        "selectedColor": "red"
+        "selectedIconPath": "img/home_s.png"
       },
       {
         "pagePath": "pages/release/release",
         "text": "发布",
-        "iconPath": "img/message.png",
-        "selectedIconPath": "img/message_s.png",
-        "selectedColor": "red"
+        "iconPath": "img/add.png",
+        "selectedIconPath": "img/add_s.png"
+      },
+      {
+        "pagePath": "pages/release/release",
+        "text": "购物车",
+        "iconPath": "img/cart.png",
+        "selectedIconPath": "img/cart_s.png"
       },
       {
         "pagePath": "pages/new_user/new_user",
         "text": "个人",
         "iconPath": "img/user.png",
-        "selectedIconPath": "img/user_s.png",
-        "selectedColor": "red"
+        "selectedIconPath": "img/user_s.png"
       }
     ]
   }

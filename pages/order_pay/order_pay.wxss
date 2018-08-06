@@ -1,0 +1,47 @@
+page {
+  background: #e6e8ea;
+  height: 100%;
+}
+
+.order_message {
+  padding: 40rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.payment_type {
+  color: #646464;
+}
+
+.payment_type_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment_type_item >view:nth-child(1) {
+  display: flex;
+}
+
+.payment_type_item image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.confirm_btn_warp {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+}
+
+.confirm_btn_warp button {
+  background: #f2786b;
+  color: #fff;
+  line-height: 100rpx;
+  border-radius: 0;
+}
