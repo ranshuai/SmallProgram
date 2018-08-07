@@ -1,0 +1,68 @@
+page {
+  background: #e6e8ea;
+  height: 100%;
+}
+.cart_goods_ul{
+  background: #fff;
+}
+.cart_goods_item {
+}
+
+.cart_goods_item image {
+  width: 124rpx;
+  height: 124rpx;
+  border-radius: 5px;
+}
+
+.cart_goods_c {
+  display: flex;
+  align-items: center;
+}
+
+.cart_goods_c_r {
+  display: flex;
+   width: 93%;
+}
+
+.cart_goods_c_r .cart_goods_c_r_c{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+/*自定义复选框样式  */
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  height: 30rpx;
+  width: 30rpx;
+  margin-top: -4rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  background-color: #f2786b;
+  border: 1rpx solid #e02e24;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+}
+
+.confirm_btn_warp {
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+}
+
+.confirm_btn_warp button {
+  background: #f2786b;
+  color: #fff;
+  line-height: 100rpx;
+  border-radius: 0;
+}
+

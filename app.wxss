@@ -64,6 +64,10 @@ button {
 }
 
 /*位置  */
+.j_c_s_b{
+  display: flex;
+  justify-content: space-between;
+}
 
 .m_left_20 {
   margin-left: 20rpx;
@@ -75,6 +79,12 @@ button {
 
 .p_40_24{
   padding: 40rpx 24rpx;
+}
+.p_0_24{
+  padding: 0 24rpx;
+}
+.p_t_b_40{
+  padding: 40rpx 0;
 }
 
 .store_type1 {

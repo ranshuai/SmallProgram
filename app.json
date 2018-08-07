@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/cart/cart",
     "pages/new_home/new_home",
     "pages/order_pay/order_pay",
     "pages/order_confirm/order_confirm",
@@ -9,8 +10,7 @@
     "pages/release/release",
     "pages/release_detail/release_detail",
     "pages/new_user/new_user",
-    "pages/free_ride/free_ride",
-    "pages/cart/cart"
+    "pages/free_ride/free_ride"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,1 +1,148 @@
-车
+<!--购物车S  -->
+<scroll-view>
+  <checkbox-group bindchange="checkboxChange">
+    <view class="cart_goods_ul">
+      <view class="cart_goods_item p_0_24">
+        <view class="cart_goods_store_name p_t_b_40 font_14 color_333  border_b_1">
+          <checkbox/> 男士潮流服饰
+        </view>
+        <view class="cart_goods_c p_t_b_40 border_b_1">
+          <checkbox/>
+          <view class="cart_goods_c_r">
+            <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/default/76563/1130f127-3519-4268-a70d-845e6782b67a.png?x-oss-process=image/resize,m_fixed,h_124,w_124"></image>
+            <view class="m_left_20 cart_goods_c_r_c">
+              <span class="font_14 color_333 j_c_s_b">
+                橙子
+                <span>x3</span>
+              </span>
+              <span class="font_12 color_a3a3a3">
+                商品规格：25颗／箱
+              </span>
+              <span class="font_12 color_a3a3a3 j_c_s_b">
+                ¥3.00
+                <span>编辑</span>
+              </span>
+            </view>
+          </view>
+        </view>
+        <view class="cart_goods_c p_t_b_40 border_b_1">
+          <checkbox/>
+          <view class="cart_goods_c_r">
+            <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/default/76563/1130f127-3519-4268-a70d-845e6782b67a.png?x-oss-process=image/resize,m_fixed,h_124,w_124"></image>
+            <view class="m_left_20 cart_goods_c_r_c">
+              <span class="font_14 color_333 j_c_s_b">
+                橙子
+                <span>x3</span>
+              </span>
+              <span class="font_12 color_a3a3a3">
+                商品规格：25颗／箱
+              </span>
+              <span class="font_12 color_a3a3a3 j_c_s_b">
+                ¥3.00
+                <span>编辑</span>
+              </span>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="cart_goods_item p_0_24">
+        <view class="cart_goods_store_name p_t_b_40 font_14 color_333  border_b_1">
+          <checkbox/> 男士潮流服饰
+        </view>
+        <view class="cart_goods_c p_t_b_40 border_b_1">
+          <checkbox/>
+          <view class="cart_goods_c_r">
+            <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/default/76563/1130f127-3519-4268-a70d-845e6782b67a.png?x-oss-process=image/resize,m_fixed,h_124,w_124"></image>
+            <view class="m_left_20 cart_goods_c_r_c">
+              <span class="font_14 color_333 j_c_s_b">
+                橙子
+                <span>x3</span>
+              </span>
+              <span class="font_12 color_a3a3a3">
+                商品规格：25颗／箱
+              </span>
+              <span class="font_12 color_a3a3a3 j_c_s_b">
+                ¥3.00
+                <span>编辑</span>
+              </span>
+            </view>
+          </view>
+        </view>
+        <view class="cart_goods_c p_t_b_40 border_b_1">
+          <checkbox/>
+          <view class="cart_goods_c_r">
+            <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/default/76563/1130f127-3519-4268-a70d-845e6782b67a.png?x-oss-process=image/resize,m_fixed,h_124,w_124"></image>
+            <view class="m_left_20 cart_goods_c_r_c">
+              <span class="font_14 color_333 j_c_s_b">
+                橙子
+                <span>x3</span>
+              </span>
+              <span class="font_12 color_a3a3a3">
+                商品规格：25颗／箱
+              </span>
+              <span class="font_12 color_a3a3a3 j_c_s_b">
+                ¥3.00
+                <span>编辑</span>
+              </span>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="cart_goods_item p_0_24">
+        <view class="cart_goods_store_name p_t_b_40 font_14 color_333  border_b_1">
+          <checkbox/> 男士潮流服饰
+        </view>
+        <view class="cart_goods_c p_t_b_40 border_b_1">
+          <checkbox/>
+          <view class="cart_goods_c_r">
+            <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/default/76563/1130f127-3519-4268-a70d-845e6782b67a.png?x-oss-process=image/resize,m_fixed,h_124,w_124"></image>
+            <view class="m_left_20 cart_goods_c_r_c">
+              <span class="font_14 color_333 j_c_s_b">
+                橙子
+                <span>x3</span>
+              </span>
+              <span class="font_12 color_a3a3a3">
+                商品规格：25颗／箱
+              </span>
+              <span class="font_12 color_a3a3a3 j_c_s_b">
+                ¥3.00
+                <span>编辑</span>
+              </span>
+            </view>
+          </view>
+        </view>
+        <view class="cart_goods_c p_t_b_40 border_b_1">
+          <checkbox/>
+          <view class="cart_goods_c_r">
+            <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/default/76563/1130f127-3519-4268-a70d-845e6782b67a.png?x-oss-process=image/resize,m_fixed,h_124,w_124"></image>
+            <view class="m_left_20 cart_goods_c_r_c">
+              <span class="font_14 color_333 j_c_s_b">
+                橙子
+                <span>x3</span>
+              </span>
+              <span class="font_12 color_a3a3a3">
+                商品规格：25颗／箱
+              </span>
+              <span class="font_12 color_a3a3a3 j_c_s_b">
+                ¥3.00
+                <span>编辑</span>
+              </span>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 确认付款 S -->
+    <view class="confirm_btn_warp">
+      <view class="font_16 p_l_24">
+        <checkbox/> 全选
+      </view>
+      <button class="font_16" catchtap='addCart'>
+        立即下单
+      </button>
+    </view>
+    <!-- 确认付款 E -->
+  </checkbox-group>
+</scroll-view>
+  
+<!--购物车E  -->
