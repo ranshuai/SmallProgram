@@ -5,7 +5,7 @@
     登 录
   </view>
   <view>
-    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">自动授权登录{{userInfo.nickName}}</button>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">自动授权登录</button>
   </view>
 </view>
 
