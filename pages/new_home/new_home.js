@@ -4,7 +4,7 @@ Page({
   data: {
     oneLevelNav: 0,
     inputValue: '',
-    releaseList:[],
+    releaseList: [],
   },
   //点击一级导航
   oneLevelNavClick: function (ev) {
@@ -20,16 +20,16 @@ Page({
     if (!this.data.inputValue) {
       wx.showToast({
         title: '请输入需要查询的店铺名称',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
     wx.navigateTo({
-      url: '/pages/search/search?key='+this.data.inputValue,
+      url: '/pages/search/search?key=' + this.data.inputValue,
     })
   },
   //二级导航店铺
-  goToStoreType(e){
+  goToStoreType(e) {
     console.log(e)
     wx.navigateTo({
       url: '/pages/search/search?type=' + e.currentTarget.dataset.storetype,
@@ -43,11 +43,28 @@ Page({
   },
   //下拉刷新
   onPullDownRefresh: function () {
+    var _this = this;
     wx.showNavigationBarLoading();
-    setTimeout(function () {
-      wx.stopPullDownRefresh();
-      wx.hideNavigationBarLoading();
-    }, 1000);
+    wx.request({
+      url: 'https://riseupall.cn/server/getreleaselocal',
+      success: function (data) {
+        data = data.data;
+        if (data.success) {
+          _this.setData({
+            releaseList: data.result.list
+          })
+        } else {
+          wx.showToast({
+            title: data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      complete: function () {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
+      }
+    })
   },
   //加载更多
   onScrollLowe: function (ev) {
@@ -56,9 +73,13 @@ Page({
       wx.stopPullDownRefresh();
       wx.hideNavigationBarLoading();
     }, 1000);
+
+
+
+
   },
   //顺风车
-  goToFreeRide:function(e){
+  goToFreeRide: function (e) {
     wx.navigateTo({
       url: '/pages/free_ride/free_ride',
     })
@@ -80,6 +101,28 @@ Page({
           })
         }
       }
+    })
+
+  },
+  // 拨打电话
+  phoneCall: function (e) {
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.replyPhone,
+      success: function () {
+      },
+      complete: function () {
+        wx.hideLoading();
+      }
+    });
+  },
+  //预览图片
+  previewImg: function (ev) {
+    console.log(ev.currentTarget.dataset.index);
+    wx.previewImage({
+      urls: this.data.releaseList[ev.currentTarget.dataset.index].releaseImages,
     })
 
   }

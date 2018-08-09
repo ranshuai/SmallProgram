@@ -6,8 +6,10 @@
     <text catchtap="goToStores">搜索</text>
   </view>
   <view>
-    <view>本站浏览:<text>100</text> </view>
-    <view class="m_left_20">入住店铺:<text>3</text> </view>
+    <view>本站浏览:
+      <text>100</text> </view>
+    <view class="m_left_20">入住店铺:
+      <text>3</text> </view>
   </view>
 </view>
 <!--nav 一级  -->
@@ -94,59 +96,27 @@
 </view>
 <!--信息列表  -->
 <scroll-view class="info_ul" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLowe">
-  <view class="info_ul_item" wx:for="{{releaseList}}"  wx:key="item">
+  <view class="info_ul_item" wx:for="{{releaseList}}"  wx:for-index="idx" wx:for-item="item" wx:key>
     <view>
       <image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTK4PMObfI0CcqnJN1leicaJMCYarxs7V9x69s26cDsoqCytWbWuxiboJy9uOPibSkGiacL0kPmkB3mvCA/0"></image>
     </view>
     <view>
-      <text class='a3a3a3'>{{item.releaseLocalTitle}}</text>
-      <text>
-      {{item.releaseDescribe}}
-      </text>
-    </view>
-  </view>
-  <view class="info_ul_item">
-    <view>
-      <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/store/76563/8bc1c29f-06f7-469e-ad21-a9d0cde253f0.jpg?x-oss-process=image/resize,m_fixed,h_148,w_148"></image>
-    </view>
-    <view>
-      <text class='a3a3a3'>潮流服饰</text>
-      <text>
-      这家伙很懒，什么都没有留下！。
-      </text>
-    </view>
-  </view>
-  <view class="info_ul_item">
-    <view>
-      <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/user/76425/76f0d227-f19e-450b-9bf4-1574dc015b87.gif"></image>
-    </view>
-    <view>
-      <text class='a3a3a3'>雪国特产</text>
-      <text>
-      享受生活不需要寻找特殊的日子，因为每一天都是特殊的，享受生活就是享受今天。
-      </text>
-    </view>
-  </view>
-  <view class="info_ul_item">
-    <view>
-      <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/user/77959/d87de934-aed7-4757-a52d-29ac38b09ecd.jpg"></image>
-    </view>
-    <view>
-      <text class='a3a3a3'>夜空中最亮的星</text>
-      <text>
-      小米的营养价值很高，含蛋白质9、脂肪及维生素，除食用外，还可酿酒。
-      </text>
-    </view>
-  </view>
-  <view class="info_ul_item">
-    <view>
-      <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/store/76281/84fefc26-1b10-419c-b674-8d6c919e216f.jpg"></image>
-    </view>
-    <view>
-      <text class='a3a3a3'>夜空中最亮的星</text>
-      <text>
-      返璞归真，遇见自然，内心丰盈，福乐自来
-      </text>
+      <view class='a3a3a3'>
+        <span> {{item.releaseLocalTitle}}</span>
+        <span class="a3a3a3 fr" data-reply-phone="{{item.releasePersonMobile}}" catchtap="phoneCall">
+          <i class="ion-ios-icon-gxk-161"></i>
+          拨打电话
+        </span>
+
+      </view>
+      <view>
+        {{item.releaseDescribe}}
+      </view>
+      <view class="release_images_warp">
+        <view wx:for="{{item.releaseImages}}" wx:for-index="_idx" wx:for-item="_item" wx:key>
+          <image src="{{_item}}" data-index='{{idx}}'  catchtap='previewImg'></image>
+        </view>
+      </view>
     </view>
   </view>
 </scroll-view>
