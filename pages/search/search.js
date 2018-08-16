@@ -111,7 +111,7 @@ Page({
   //预览图片
   previewImg: function () {
     wx.previewImage({
-      urls: ['/img/server_1.jpeg'],
+      urls: ['https://riseupall.oss-cn-beijing.aliyuncs.com/static/1533874622727_tmp_9bc1c2ce20572804173fa2aa060db633.jpg', 'https://riseupall.oss-cn-beijing.aliyuncs.com/static/1533874622727_tmp_9bc1c2ce20572804173fa2aa060db633.jpg'],
     })
 
   },

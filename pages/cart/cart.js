@@ -1,24 +1,55 @@
 Page({
   data: {
-    items: [
-      { name: 'USA', value: '美国' },
-      { name: 'CHN', value: '中国', checked: 'true' },
-      { name: 'BRA', value: '巴西' },
-      { name: 'JPN', value: '日本' },
-      { name: 'ENG', value: '英国' },
-      { name: 'TUR', value: '法国' },
-    ]
+    cartdata: [],
+    selectedGoods: []
   },
   checkboxChange: function (e) {
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    console.log('checkbox发生change事件，携带value值为：', e.detail.value);
+    this.setData({
+      selectedGoods: e.detail.value
+    });
   },
   //加入购物车
-  addCart: function () {
-    console.log('加入购物车');
+  confirm: function () {
+    console.log(this.data.selectedGoods);
+    if (this.data.selectedGoods.length <= 0) {
+      wx.showToast({
+        title: '请选择商品',
+        icon:'none'
+      })
+      return;
+    }
 
     wx.navigateTo({
       url: '/pages/order_confirm/order_confirm',
     })
+  },
+
+  onLoad: function () {
+   
+  },
+  onShow:function(){
+    let self = this;
+    wx.getStorage({
+      key: 'cart',
+      success: function (res) {
+        self.setData({
+          cartdata: res.data
+        });
+        console.log(res.data);
+      }
+    })
+  },
+
+  //进入店铺列表
+  goToStoreType(e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/search/search?type=' + e.currentTarget.dataset.storetype,
+    })
   }
-  
+
+
+
+
 })

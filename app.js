@@ -1,6 +1,6 @@
 //app.js
 App({
-  ISDEBUGGER:true,
+  ISDEBUGGER: true,
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -21,9 +21,20 @@ App({
           wx.getUserInfo({
             success: res => {
               console.log(res);
-              
+              let slef = this;
+              wx.getStorage({
+                key: 'seltUser',
+                success: function (_res) {
+                  Object.assign(res.userInfo, _res.data);
+                  slef.globalData.userInfo = res.userInfo;
+                  console.log(slef.globalData.userInfo );
+                },
+                fail: function (res) {
+                  console.log(res);
+                }
+              })
+
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo;
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况

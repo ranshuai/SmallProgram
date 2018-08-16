@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/cart/cart",
     "pages/new_home/new_home",
+"pages/new_user/user_address/add_new_address/add_new_address",
+    "pages/new_user/user_address/user_address",
+    "pages/cart/cart",
     "pages/order_pay/order_pay",
     "pages/order_confirm/order_confirm",
     "pages/store_detail/store_detail",

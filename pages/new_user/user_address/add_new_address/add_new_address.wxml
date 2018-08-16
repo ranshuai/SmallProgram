@@ -1,0 +1,29 @@
+<view class="pr">
+  <form bindsubmit="submitForm">
+    <view class="release_detail_ul">
+      <view class="release_detail_ul_item">
+        <span class="l">姓名</span>
+        <input value="{{ form.consignee }}" name='consignee' placeholder='输入姓名' />
+      </view>
+      <view class="release_detail_ul_item">
+        <span class="l">手机号</span>
+        <input value="{{ form.mobile }}" name="mobile" placeholder='输入手机号' />
+      </view>
+
+      <view class="release_detail_ul_item">
+        <span class="l">详细地址</span>
+        <textarea auto-height placeholder="请输入详细地址" name="address" value='{{form.address}}' />
+      </view>
+    </view>
+    <view class='p_24 font_14 white margin_b_10'>
+      设置为默认地址
+      <checkbox-group name="isDefault" class="fr">
+        <checkbox value="true" checked='{{form.isDefault}}' />
+      </checkbox-group>
+    </view>
+    <view class='p_24 font_14 white c_509ad2' wx:if="{{type == 2}}" catchtap='deleteAddress'>
+      删除信息
+    </view>
+    <button class="_submit pa" disabled="{{false}}" formType="submit"> 保存 </button>
+  </form>
+</view>

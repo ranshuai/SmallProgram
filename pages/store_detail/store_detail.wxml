@@ -1,12 +1,14 @@
 <view class="store_detail">
   <!--店铺背景 S -->
   <view class="store_bg">
-    <image src="/img/hotshopbg.jpg"></image>
+    <!-- <image src="/img/hotshopbg.jpg"></image> -->
+    <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/user/76425/b27e5e47-0589-4ae5-bd56-393c759926a5.jpg"></image>
   </view>
   <!--店铺背景 E -->
   <!--店铺头像 S  -->
   <view class="store_info">
-    <image src='/img/shop-head-pic.png'></image>
+    <!-- <image src='/img/shop-head-pic.png'></image> -->
+    <image src='https://wx.qlogo.cn/mmopen/vi_32/Y9dmQenFSQGliaPu6Nr6Fc3e9PT8ql522ibsSo7dymibm8DgzkMnNnIh3UdyiafXsvnicQkz2Jac4oPsSEUYLtiaHx7g/132'></image>
     <span class="font_14 color_333">冉冉微生活超市</span>
     <span>这个家伙很懒，什么都没有留下！</span>
   </view>
@@ -29,17 +31,12 @@
     </view>
     <view class="store_item_warp">
       <view class="store_item pr">
-        <image src="/img/hotshopbg.jpg"></image>
-        <span class="font_14 color_333">男士卫衣加绒</span>
+        <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/goods/77856/f51d7675-07f7-4ebd-bf38-950be0b6ff90.jpg?x-oss-process=image/resize,m_fixed,h_336,w_336"></image>
+        <!-- <image src="/img/hotshopbg.jpg"></image> -->
+        <span class="font_14 color_333">内部测试商品请勿购买</span>
         <span>销量 1000</span>
         <span class="red">¥10000.00</span>
         <span class="pa cart_btn" catchtap="addCart"> +</span>
-      </view>
-      <view class="store_item">
-        <image src="/img/hotshopbg.jpg"></image>
-      </view>
-       <view class="store_item">
-        <image src="/img/hotshopbg.jpg"></image>
       </view>
     </view>
   </view>

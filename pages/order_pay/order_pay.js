@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    canClick: true,
   },
 
   /**
@@ -65,27 +65,62 @@ Page({
   // 支付
 
   goToPay: function () {
+    let slef = this;
 
-    wx.requestPayment(
-      {
-        'timeStamp': '1533725279',
-        'nonceStr': 'l710bsje2w',
-        'package': 'prepay_id=wx0818475981459296444966de2376722170',
-        'signType': 'MD5',
-        'paySign': 'E77543BD85FF35C892F6681CDF9CBBDD',
-        'success': function (res) { 
-          console.log('支付=success');
+    if (this.data.canClick) {
+      this.setData({
+        canClick:false
+      });
+      wx.request({
+        url: 'https://riseupall.cn/server/payUnifiedorder',
+        method: 'GET',
+        data: {
+          orderCode: 1111,
+          money: 0.01,
+          orderID: 2018101111,
+          openId: 'oeaQf5bdsqgrQ28wi9HPCpyZ9GOM'
         },
-        'fail': function (res) { 
-          console.log(res);
+        success: function (res) {
+          let data = res.data.result;
+          if (res.data.success) {
+            wx.requestPayment(
+              {
+                'timeStamp': data.timeStamp,
+                'nonceStr': data.nonceStr,
+                'package': 'prepay_id=' + data.prepayId,
+                'signType': 'MD5',
+                'paySign': data.sign,
+                'success': function (res) {
+                  console.log(res);
+                  wx.showToast({
+                    title: res.msg,
+                    icon: 'none'
+                  })
+                },
+                'fail': function (res) {
+                  console.log(res);
+                  wx.showToast({
+                    title: res.msg,
+                    icon: 'none'
+                  })
+                },
+                'complete': function (res) {
+                  console.log('支付=》complete');
+                  slef.setData({
+                    canClick: true
+                  });
+                }
+              })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
+          }
         },
-        'complete': function (res) {
-          console.log('支付=》complete');
-          
-         }
+        complete: function () {
+        }
       })
-
-
-
+    }
   }
 })

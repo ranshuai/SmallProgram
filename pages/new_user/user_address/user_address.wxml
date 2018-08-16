@@ -1,0 +1,24 @@
+<view class="address_warp pr">
+
+  <view class="address_ul">
+    <view data-addressInfo='{{item}}' catchtap='goToAddress' class="address_ul_li p_24 white margin_b_10" wx:for="{{addressData}}" wx:for-item="item" wx:key>
+      <view>
+        <view class="font_14 color_333">
+          <span class="m_right_20" >{{item.consignee}}</span>
+          <span>{{item.mobile}}</span>  
+        </view>
+        <view class="font_12 color_a3a3a3">
+          {{item.address}}
+        </view>
+      </view>
+      <view>
+        <i class="ion-ios-icon-gxk-51"></i>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="add_new_address pa font_14" catchtap='goToAddNewAddress'>
+    添加新地址
+  </view>
+</view>

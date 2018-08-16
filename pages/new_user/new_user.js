@@ -28,7 +28,7 @@ Page({
     })
   },
 
-  
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -42,28 +42,7 @@ Page({
           userInfo: res.userInfo,
         })
       }
-    } 
-    // 登录 
-    wx.login({
-      success:function(res){
-        //使用
-        wx.request({
-          method:'POST',
-          url: 'https://riseupall.cn/server/signup',
-          data:{
-            code: res.code,
-            userName: app.globalData.userInfo.nickName,
-            userMobile:'',
-          },
-          success:function(res){
-            if (res.data.success){
-              app.globalData.userInfo.userMobile = res.data.result.userMobile || '';
-              console.log(app.globalData.userInfo)
-            }
-          }
-        })
-      }
-    });
+    }
   },
   /**
    * 用户点击右上角分享
@@ -77,7 +56,47 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
     })
+
+    // 登录 
+    wx.login({
+      success: function (res) {
+        //使用
+        wx.request({
+          method: 'POST',
+          url: 'https://riseupall.cn/server/signup',
+          data: {
+            code: res.code,
+            userName: app.globalData.userInfo.nickName,
+            userMobile: '',
+          },
+          success: function (res) {
+            if (res.data.success) {
+              app.globalData.userInfo.userMobile = res.data.result.userMobile || '';
+              app.globalData.userInfo.userId = res.data.result.userId || '';
+              console.log(app.globalData.userInfo);
+
+              wx.setStorage({
+                key: 'seltUser',
+                data: {
+                  userMobile: res.data.result.userMobile || '',
+                  userId: res.data.result.userId || ''
+                },
+              })
+
+
+            }
+          }
+        })
+      }
+    });
+  },
+
+  goToUserAddress(){
+    wx.navigateTo({
+      url: '/pages/new_user/user_address/user_address',
+    })
   }
+  
 
 
 })

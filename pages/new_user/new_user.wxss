@@ -16,17 +16,23 @@ page {
   background: #fff;
   border-radius: 10rpx;
 }
-.user_login_warp .title{
+
+.user_login_warp .title {
   line-height: 160rpx;
   color: #509ad2;
   font-size: 22px;
 }
-.user_login_warp button{
+
+._btn_warp {
+  margin-top: 100rpx;
+}
+
+.user_login_warp ._btn_warp button {
   width: 70%;
   font: 14px;
   color: #fff;
   background: #509ad2;
-  margin-top: 100rpx;
+  display: inline-block;
 }
 
 .header {
@@ -71,44 +77,59 @@ page {
   padding: 20rpx 0;
 }
 
-.new_user_ul_warp{
+.new_user_ul_warp {
   padding: 0 24rpx;
   height: 60%;
   background: #e6e8ea;
   overflow: hidden;
 }
-.new_user_ul{
+
+.new_user_ul {
   background: #fff;
   border-radius: 10rpx;
   padding: 0 24rpx;
   margin-top: 40rpx;
-  
-}
-.new_user_ul .new_user_ul_item{
-  color:#333;
-  font-size: 14px;
-  padding: 24rpx 0;
-  border-bottom: 1px solid  #e6e8ea;
-}
-.new_user_ul .new_user_ul_item > i{
-  margin-right: 6rpx;
-}
-.new_user_ul .new_user_ul_item:last-child{
-  border:0;
 }
 
-.ion-ios-icon-gxk-34{
-  color:#509ad2
+.new_user_ul .new_user_ul_item {
+  color: #333;
+  font-size: 14px;
+  padding: 24rpx 0;
+  border-bottom: 1px solid #e6e8ea;
 }
-.ion-ios-icon-gxk-57{
-  color:rgb(241, 89, 8) 
+
+.new_user_ul .new_user_ul_item > i {
+  margin-right: 6rpx;
 }
-.ion-ios-icon-gxk-30{
-  color:#32db64
+
+.new_user_ul .new_user_ul_item:last-child {
+  border: 0;
 }
-.ion-ios-icon-gxk-42{
-  color:#05255f
+
+.ion-ios-icon-gxk-34 {
+  color: #509ad2;
 }
-.ion-ios-icon-gxk-87-outline{
-  color:#0facec;
+
+.ion-ios-icon-gxk-57 {
+  color: rgb(241, 89, 8);
+}
+
+.ion-ios-icon-gxk-30 {
+  color: #32db64;
+}
+
+.ion-ios-icon-gxk-42 {
+  color: #05255f;
+}
+
+.ion-ios-icon-gxk-87-outline {
+  color: #0facec;
+}
+
+.ion-ios-icon-gxk-51 {
+  display: inline-block;
+  transform: rotate(180deg) !important;
+  position: absolute;
+  right: 0rpx;
+  top:28rpx;
 }

@@ -47,14 +47,6 @@ button {
   position: absolute;
 }
 
-.margin_0_auto {
-  margin: 0 auto;
-}
-
-.margin_b_10 {
-  margin-bottom: 10rpx;
-}
-
 .cart_btn {
   width: 60rpx;
   height: 60rpx;
@@ -64,31 +56,67 @@ button {
 }
 
 /*位置  */
-.j_c_s_b{
+
+.j_c_s_b {
   display: flex;
   justify-content: space-between;
+}
+
+.margin_0_auto {
+  margin: 0 auto;
+}
+
+.margin_b_10 {
+  margin-bottom: 10rpx;
 }
 
 .m_left_20 {
   margin-left: 20rpx;
 }
 
+.m_right_20 {
+  margin-right: 20rpx;
+}
+
 .p_l_24 {
   padding-left: 24rpx;
 }
 
-.p_40_24{
+.p_40_24 {
   padding: 40rpx 24rpx;
 }
-.p_0_24{
+
+.p_0_24 {
   padding: 0 24rpx;
 }
-.p_t_b_40{
+
+.p_t_b_40 {
   padding: 40rpx 0;
 }
 
+.p_24 {
+  padding: 24rpx;
+}
+
+.display_inline_block {
+  display: inline-block;
+}
+
+/*服务  */
+
 .store_type1 {
   background: #e017ff;
+  font-size: 12px;
+  color: #fff;
+  padding: 4rpx;
+  border-radius: 6rpx;
+  margin-right: 8rpx;
+}
+
+/*超市  */
+
+.store_type2 {
+  background: #19ca58;
   font-size: 12px;
   color: #fff;
   padding: 4rpx;
@@ -120,6 +148,10 @@ button {
   color: #f2786b;
 }
 
+.c_509ad2 {
+  color: #509ad2;
+}
+
 .color_333 {
   color: #333 !important;
 }
@@ -147,8 +179,9 @@ button {
 }
 
 /*边框  */
-.border_b_1{
-  border-bottom: 1px solid #e5e5e5
+
+.border_b_1 {
+  border-bottom: 1px solid #e5e5e5;
 }
 
 /*购物车样式  */

@@ -32,6 +32,7 @@
   width: 136rpx;
   height: 136rpx;
   margin-bottom: 10rpx;
+  border-radius: 10rpx;
 }
 
 .store_collector {
