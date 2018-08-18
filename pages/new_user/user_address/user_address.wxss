@@ -21,10 +21,17 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 .ion-ios-icon-gxk-51 {
   display: inline-block;
   transform: rotate(180deg);
+}
+
+.is_default {
+  border: 1px solid #509ad2;
+  border-radius: 10px;
+  color: #509ad2;
+  padding: 2rpx 12rpx;
+  margin-left: 22rpx;
 }

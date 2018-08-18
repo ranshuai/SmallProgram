@@ -5,7 +5,8 @@
       <view>
         <view class="font_14 color_333">
           <span class="m_right_20" >{{item.consignee}}</span>
-          <span>{{item.mobile}}</span>  
+          <span>{{item.mobile}}</span> 
+           <span class="font_12 is_default" wx:if="{{item.isDefault}}">默认地址</span>  
         </view>
         <view class="font_12 color_a3a3a3">
           {{item.address}}
