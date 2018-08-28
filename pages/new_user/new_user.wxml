@@ -35,6 +35,11 @@
       我的收藏
       
     </view>
+     <view class="new_user_ul_item pr" catchtap='goToUserOrder'>
+      <i class="ion-ios-icon-gxk-103"></i>
+      订单管理
+      <i class="ion-ios-icon-gxk-51"></i>
+    </view>
     <view class="new_user_ul_item pr" catchtap='goToUserAddress'>
       <i class="ion-ios-icon-gxk-103"></i>
       地址管理

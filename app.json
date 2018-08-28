@@ -1,11 +1,13 @@
 {
   "pages": [
     "pages/new_home/new_home",
-"pages/new_user/user_address/add_new_address/add_new_address",
+    "pages/pay_success/pay_success",
+    "pages/new_user/user_order/user_order",
+    "pages/order_confirm/order_confirm",
+    "pages/new_user/user_address/add_new_address/add_new_address",
     "pages/new_user/user_address/user_address",
     "pages/cart/cart",
     "pages/order_pay/order_pay",
-    "pages/order_confirm/order_confirm",
     "pages/store_detail/store_detail",
     "pages/search/search",
     "pages/release_local_service/release_local_service",

@@ -1,3 +1,7 @@
+//获取应用实例
+const app = getApp()
+const utils = require('../../utils/util.js');
+
 Page({
 
   /**
@@ -5,13 +9,19 @@ Page({
    */
   data: {
     canClick: true,
+    orderInfo:null
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 生命周期函数--监听页面加载 
    */
   onLoad: function (options) {
-
+    let json = JSON.parse(options.orderInfo);
+    json.endTime = utils.dateFormat(json.endTime, 'Y-m-d H:i:s');
+    console.log(json);
+    this.setData({
+      orderInfo: json
+    });
   },
 
   /**
@@ -66,19 +76,18 @@ Page({
 
   goToPay: function () {
     let slef = this;
-
     if (this.data.canClick) {
       this.setData({
-        canClick:false
+        canClick: false
       });
       wx.request({
         url: 'https://riseupall.cn/server/payUnifiedorder',
         method: 'GET',
         data: {
-          orderCode: 1111,
+          orderCode: this.data.orderInfo.orderSn,
           money: 0.01,
-          orderID: 2018101111,
-          openId: 'oeaQf5bdsqgrQ28wi9HPCpyZ9GOM'
+          orderID: this.data.orderInfo.orderId,
+          openId: app.globalData.userInfo.userOpenId
         },
         success: function (res) {
           let data = res.data.result;
@@ -96,6 +105,10 @@ Page({
                     title: res.msg,
                     icon: 'none'
                   })
+
+                  wx.navigateTo({
+                    url: '/pages/pay_success/pay_success',
+                  })
                 },
                 'fail': function (res) {
                   console.log(res);
@@ -109,6 +122,8 @@ Page({
                   slef.setData({
                     canClick: true
                   });
+
+                  
                 }
               })
           } else {

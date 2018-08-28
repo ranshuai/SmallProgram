@@ -1,7 +1,16 @@
 Page({
+  data: {
+    goodsList: null
+  },
+  onLoad: function () {
+    this.getGoods();
+  },
 
   //加入购物车
-  addCart: function () {
+  addCart: function (ev) {
+    let goodsInfo = ev.currentTarget.dataset.goodsinfo;
+    console.log(goodsInfo);
+    
     let statusJson = {
       "0": "加入购物车成功",
       "1": "购物车已有相同商品",
@@ -14,10 +23,11 @@ Page({
       key: 'cart',
       success: function (res) {
         var data = {
-          goodsId: 10002,
-          goodsName: '内部测试请勿购买',
-          shopPrice: 100000,
-          goodsImg:'http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/goods/77856/f51d7675-07f7-4ebd-bf38-950be0b6ff90.jpg?x-oss-process=image/resize,m_fixed,h_336,w_336'
+          goodsId: goodsInfo.goodsId,
+          goodsName: goodsInfo.goodsName,
+          shopPrice: goodsInfo.shopPrice,
+          goodsImg: goodsInfo.originalImg,
+          goodsNum:1
         };
         //如果有相同的商品就不添加
 
@@ -35,7 +45,7 @@ Page({
 
         res.data.push(data);
 
-        if (status === 0){
+        if (status === 0) {
           wx.setStorage({
             key: "cart",
             data: res.data
@@ -47,10 +57,11 @@ Page({
         wx.setStorage({
           key: "cart",
           data: [{
-            goodsId: 10001,
-            goodsName: '内部测试请勿购买',
-            shopPrice: 100000,
-            goodsImg:'http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/goods/77856/f51d7675-07f7-4ebd-bf38-950be0b6ff90.jpg?x-oss-process=image/resize,m_fixed,h_336,w_336'
+            goodsId: goodsInfo.goodsId,
+            goodsName: goodsInfo.goodsName,
+            shopPrice: goodsInfo.shopPrice,
+            goodsImg: goodsInfo.originalImg,
+            goodsNum: 1
           }]
         });
       },
@@ -61,5 +72,25 @@ Page({
         })
       }
     });
+  },
+  //加载商品
+  getGoods: function () {
+    let self = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    wx.request({
+      url: 'https://riseupall.cn/server/goods',
+      method: 'GET',
+      success: function (res) {
+        self.setData({
+          goodsList: res.data.result.list
+        });
+      },
+      complete: function () {
+        wx.hideLoading();
+      }
+    })
   }
 })

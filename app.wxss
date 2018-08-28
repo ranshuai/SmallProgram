@@ -77,6 +77,9 @@ button {
 .m_right_20 {
   margin-right: 20rpx;
 }
+.m_right_10 {
+  margin-right: 10rpx;
+}
 
 .p_l_24 {
   padding-left: 24rpx;
@@ -150,6 +153,12 @@ button {
 
 .c_509ad2 {
   color: #509ad2;
+}
+.c_40b3e2{
+  color:#40b3e2;
+}
+.c_f2786b{
+  color:#f2786b;
 }
 
 .color_333 {

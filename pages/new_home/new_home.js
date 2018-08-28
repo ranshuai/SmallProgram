@@ -24,9 +24,11 @@ Page({
       })
       return
     }
+   
     wx.navigateTo({
       url: '/pages/search/search?key=' + this.data.inputValue,
     })
+
   },
   //二级导航店铺
   goToStoreType(e) {

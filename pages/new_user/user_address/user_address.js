@@ -5,14 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addressData: []
+    addressData: [],
+    type: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //如果type = 2 就是从确认订单页进入地址列表页goToAddress的，
+    this.setData({
+      type: options.type
+    });
 
 
   },
@@ -73,6 +77,11 @@ Page({
   },
   goToAddress(e) {
     let addressInfo = e.currentTarget.dataset.addressinfo;
+    if (this.data.type == 2) {
+      app.globalData.addressInfo = addressInfo
+      wx.navigateBack();
+      return
+    }
     wx.navigateTo({
       url: '/pages/new_user/user_address/add_new_address/add_new_address?type=2&addressData=' + JSON.stringify(addressInfo),
     })
@@ -81,7 +90,6 @@ Page({
   //查询地址
   getAddress() {
     let self = this;
-    console.log(app.globalData.userInfo);
     wx.showLoading({
       title: '加载中',
     })
@@ -91,10 +99,9 @@ Page({
       method: 'POST',
       header: {
         type: 3,
-        userId: 1000
+        userId: app.globalData.userInfo.userId
       },
       success: function (res) {
-        console.log(res.data.success);
         let data = res.data
         if (data.success) {
           self.setData({

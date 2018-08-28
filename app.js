@@ -39,6 +39,7 @@ App({
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
+               
                 this.userInfoReadyCallback(res)
               }
             }
@@ -48,6 +49,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null, //用户信息
+    addressInfo:null, //地址信息
+    orderConfirmInfo:null //确认订单页面展示的信息
   },
 })

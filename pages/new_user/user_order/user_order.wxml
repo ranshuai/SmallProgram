@@ -1,0 +1,156 @@
+<view class="one_level_nav">
+  <view class="ac" data-info="{{0}}" class="{{oneLevelNav == 0 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    全部
+  </view>
+  <view data-info="{{1}}" class="{{oneLevelNav == 1 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    待付款
+  </view>
+  <view data-info="{{2}}" class="{{oneLevelNav == 2 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    待发货
+  </view>
+  <view data-info="{{3}}" class="{{oneLevelNav == 3 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    待收货
+  </view>
+</view>
+
+<!--列表  -->
+<view class="order_ul" wx:if="{{oneLevelNav == 0}}">
+  <view class="order_li" wx:for="{{orderInfo[0]}}"wx:for-item="item">
+    <view class="clearfix title color_333">
+      <span class=" font_14">店铺:</span>
+      <span class=" font_14 m_right_20">冉冉微生活超市</span>
+      <span class=" font_12 c_40b3e2">
+        <i class="ion-ios-icon-gxk-48 m_right_10" style=" vertical-align: middle"></i>联系客服</span>
+      <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
+    </view>
+    <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
+      <image src="{{_item.originalImg}}"></image>
+      <view class="color_a3a3a3">
+        <view class="font_14 cont_title">
+          <span>{{_item.goodsName}}</span>
+          <span class="">x1</span>
+        </view>
+        <span class="font_12">
+          ¥{{_item.shopPrice}}
+        </span>
+      </view>
+    </view>
+    <view class="font_14 color_333 order_li_price">
+      共1件商品 合计：¥{{item.payAmount}}
+    </view>
+    <view class="font_14 color_333 order_li_btn clearfix">
+      <button class="font_14 fr" catchtap='cancelOrder'>
+        取消订单
+      </button>
+      <button class="font_14 fr">
+        去付款
+      </button>
+
+    </view>
+  </view>
+</view>
+<view class="order_ul" wx:if="{{oneLevelNav == 1}}">
+   <view class="order_li" wx:for="{{orderInfo[1]}}"wx:for-item="item">
+    <view class="clearfix title color_333">
+      <span class=" font_14">店铺:</span>
+      <span class=" font_14 m_right_20">冉冉微生活超市</span>
+      <span class=" font_12 c_40b3e2">
+        <i class="ion-ios-icon-gxk-48 m_right_10" style=" vertical-align: middle"></i>联系客服</span>
+      <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
+    </view>
+    <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
+      <image src="{{_item.originalImg}}"></image>
+      <view class="color_a3a3a3">
+        <view class="font_14 cont_title">
+          <span>{{_item.goodsName}}</span>
+          <span class="">x1</span>
+        </view>
+        <span class="font_12">
+          ¥{{_item.shopPrice}}
+        </span>
+      </view>
+    </view>
+    <view class="font_14 color_333 order_li_price">
+      共1件商品 合计：¥{{item.payAmount}}
+    </view>
+    <view class="font_14 color_333 order_li_btn clearfix">
+      <button class="font_14 fr" catchtap='cancelOrder'>
+        取消订单
+      </button>
+      <button class="font_14 fr">
+        去付款
+      </button>
+
+    </view>
+  </view>
+</view>
+<view class="order_ul" wx:if="{{oneLevelNav == 2}}">
+  <view class="order_li" wx:for="{{orderInfo[2]}}"wx:for-item="item">
+    <view class="clearfix title color_333">
+      <span class=" font_14">店铺:</span>
+      <span class=" font_14 m_right_20">冉冉微生活超市</span>
+      <span class=" font_12 c_40b3e2">
+        <i class="ion-ios-icon-gxk-48 m_right_10" style=" vertical-align: middle"></i>联系客服</span>
+      <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
+    </view>
+    <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
+      <image src="{{_item.originalImg}}"></image>
+      <view class="color_a3a3a3">
+        <view class="font_14 cont_title">
+          <span>{{_item.goodsName}}</span>
+          <span class="">x1</span>
+        </view>
+        <span class="font_12">
+          ¥{{_item.shopPrice}}
+        </span>
+      </view>
+    </view>
+    <view class="font_14 color_333 order_li_price">
+      共1件商品 合计：¥{{item.payAmount}}
+    </view>
+    <view class="font_14 color_333 order_li_btn clearfix">
+      <button class="font_14 fr" catchtap='cancelOrder'>
+        取消订单
+      </button>
+      <button class="font_14 fr">
+        去付款
+      </button>
+
+    </view>
+  </view>
+</view>
+<view class="order_ul" wx:if="{{oneLevelNav == 3}}">
+   <view class="order_li" wx:for="{{orderInfo[3]}}"wx:for-item="item">
+    <view class="clearfix title color_333">
+      <span class=" font_14">店铺:</span>
+      <span class=" font_14 m_right_20">冉冉微生活超市</span>
+      <span class=" font_12 c_40b3e2">
+        <i class="ion-ios-icon-gxk-48 m_right_10" style=" vertical-align: middle"></i>联系客服</span>
+      <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
+    </view>
+    <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
+      <image src="{{_item.originalImg}}"></image>
+      <view class="color_a3a3a3">
+        <view class="font_14 cont_title">
+          <span>{{_item.goodsName}}</span>
+          <span class="">x1</span>
+        </view>
+        <span class="font_12">
+          ¥{{_item.shopPrice}}
+        </span>
+      </view>
+    </view>
+    <view class="font_14 color_333 order_li_price">
+      共1件商品 合计：¥{{item.payAmount}}
+    </view>
+    <view class="font_14 color_333 order_li_btn clearfix">
+      <button class="font_14 fr" catchtap='cancelOrder'>
+        取消订单
+      </button>
+      <button class="font_14 fr">
+        去付款
+      </button>
+
+    </view>
+  </view>
+</view>

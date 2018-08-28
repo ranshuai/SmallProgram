@@ -1,3 +1,5 @@
+//获取应用实例
+const app = getApp()
 Page({
   data: {
     cartdata: [],
@@ -11,7 +13,13 @@ Page({
   },
   //加入购物车
   confirm: function () {
-    console.log(this.data.selectedGoods);
+    if (!app.globalData.userInfo){
+      wx.showToast({
+        title: '请去个人中心页面授权',
+        icon: 'none'
+      })
+      return 
+    }
     if (this.data.selectedGoods.length <= 0) {
       wx.showToast({
         title: '请选择商品',
@@ -19,7 +27,13 @@ Page({
       })
       return;
     }
+    let selectedGoodsArr = [];
 
+    for (let i = 0; i < this.data.selectedGoods.length; i++){
+      selectedGoodsArr.push(this.data.cartdata[this.data.selectedGoods[i]]);
+    }
+    app.globalData.orderConfirmInfo = selectedGoodsArr;
+    
     wx.navigateTo({
       url: '/pages/order_confirm/order_confirm',
     })
@@ -48,8 +62,4 @@ Page({
       url: '/pages/search/search?type=' + e.currentTarget.dataset.storetype,
     })
   }
-
-
-
-
 })

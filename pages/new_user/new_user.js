@@ -73,17 +73,17 @@ Page({
             if (res.data.success) {
               app.globalData.userInfo.userMobile = res.data.result.userMobile || '';
               app.globalData.userInfo.userId = res.data.result.userId || '';
+              app.globalData.userInfo.userOpenId = res.data.result.userOpenId || '';
               console.log(app.globalData.userInfo);
 
               wx.setStorage({
                 key: 'seltUser',
                 data: {
                   userMobile: res.data.result.userMobile || '',
-                  userId: res.data.result.userId || ''
+                  userId: res.data.result.userId || '',
+                  userOpenId: res.data.result.userOpenId||''
                 },
               })
-
-
             }
           }
         })
@@ -94,6 +94,11 @@ Page({
   goToUserAddress(){
     wx.navigateTo({
       url: '/pages/new_user/user_address/user_address',
+    })
+  },
+  goToUserOrder(){
+    wx.navigateTo({
+      url: '/pages/new_user/user_order/user_order',
     })
   }
   

@@ -7,8 +7,8 @@
           <!-- <checkbox value="1"/> 冉冉微生活超市 -->
           冉冉微生活超市
         </view>
-        <view class="cart_goods_c p_t_b_40 border_b_1" wx:for="{{cartdata}}" wx:for-item="goods" wx:key>
-          <checkbox value="{{goods.goodsId}}" />
+        <view class="cart_goods_c p_t_b_40 border_b_1" wx:for="{{cartdata}}" wx:for-item="goods" wx:for-index="_index" wx:key>
+          <checkbox value="{{_index}}" />
           <view class="cart_goods_c_r">
             <image src="{{goods.goodsImg}}"></image>
             <view class="m_left_20 cart_goods_c_r_c">

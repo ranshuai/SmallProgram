@@ -1,54 +1,63 @@
 <!--收获地址 S  -->
-<view class="user_address pr">
-  <span class="font_14 color_333">test 18210702905</span>
-  <span class="font_12 color_a3a3a3">北京海淀区西二旗</span>
+<!-- 没选中地址  -->
+<view wx:if="{{!addressInfo}}" class="user_address pr" catchtap='goToAddress'>
+  <span class="font_14 color_333">添加地址</span>
+  <span class="ion-ios-icon-gxk-51 pa "></span>
+</view>
+<view wx:if="{{addressInfo}}" class="user_address pr" catchtap='goToAddress'>
+  <!-- 选中的地址  -->
+  <span class="font_14 color_333">{{addressInfo.consignee}} {{addressInfo.mobile}}</span>
+  <span class="font_12 color_a3a3a3">{{addressInfo.address}}</span>
   <span class="ion-ios-icon-gxk-51 pa "></span>
 </view>
 <!--收获地址 E  -->
 <!--商品信息 S  -->
 <view class="goods_info">
-  <view class="store_name font_14 color_333">
-    店铺：男士潮流服饰
-  </view>
-  <view class="goods_info_cont">
-    <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/goods/76563/7e320a85-e5f4-4810-9d26-faf612426058..jpg"></image>
-    <view class="goods_info_cont_r">
-      <span class="font_14 color_333 goods_info_cont_r_title">
-        男士卫衣加绒
-        <span> x2</span>
-      </span>
-      <span class="font_12 color_a3a3a3">
-        商品属性：颜色：白色
-      </span>
-      <span class="font_12 color_a3a3a3">
-        ¥ 100.00
-      </span>
+  <view wx:for="{{orderConfirmInfo}}" wx:for-index="index">
+    <view class="store_name font_14 color_333">
+      店铺：冉冉微生活超市
+    </view>
+    <view class="goods_info_cont">
+      <image src="{{item.goodsImg}}"></image>
+      <view class="goods_info_cont_r">
+        <span class="font_14 color_333 goods_info_cont_r_title">
+          {{item.goodsName}}
+          <span> x{{item.goodsNum}}</span>
+        </span>
+        <span class="font_12 color_a3a3a3">
+          商品属性: 24/箱
+        </span>
+        <span class="font_12 color_a3a3a3">
+          ¥{{item.shopPrice}}
+        </span>
+      </view>
+    </view>
+    <view class="goods_info_remarks font_14 color_333">
+      买家备注：
+      <input bindinput="bindinput" data-remarkIndex='{{index}}' type='text' placeholder='(选填) 请填写对商家的留言信息'></input>
+    </view>
+
+    <view class="goods_info_remarks font_14 color_333">
+      配送方式：
+      <span> 送货上门</span>
     </view>
   </view>
-  <view class="goods_info_remarks font_14 color_333">
-    买家备注：
-    <input type='text' placeholder='(选填) 请填写对商家的留言信息'></input>
-  </view>
 
-  <view class="goods_info_remarks font_14 color_333">
-    配送方式：
-    <span> 送货上门</span>
-  </view>
-  <view class="goods_info_remarks font_14 color_333">
+  <!-- <view class="goods_info_remarks font_14 color_333">
     运费：
     <span> ¥1.00</span>
-  </view>
-  <view class="goods_info_remarks font_14 color_333">
+  </view> -->
+  <!-- <view class="goods_info_remarks font_14 color_333">
     商品合计：
-    <span> ¥100.00</span>
-  </view>
+    <span> ¥{{orderTotal}}</span>
+  </view> -->
 </view>
 <!--商品信息 E  -->
 <!-- 确认付款 S -->
 <view class="confirm_btn_warp">
   <view class="font_16 p_l_24">
     应付金额：
-    <span class="f2786b">¥200.00</span>
+    <span class="f2786b">¥{{orderTotal}}</span>
   </view>
   <button class="font_16" catchtap='goToOrderPay'>
     确认并付款

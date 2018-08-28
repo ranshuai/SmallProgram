@@ -1,0 +1,9 @@
+
+<view class="screen">
+  <i class="ion-ios-icon-gxk-67"></i>
+  <view class="title">支付成功</view>
+  <view class="tip">订单提交成功，我们将在第一时间给您发货</view>
+  <view class="tip">请您保持手机通畅，等待收货</view>
+</view>
+
+<button catchtap='goBack'>返回</button>

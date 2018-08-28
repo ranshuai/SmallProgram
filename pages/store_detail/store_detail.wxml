@@ -30,13 +30,13 @@
       </view>
     </view>
     <view class="store_item_warp">
-      <view class="store_item pr">
-        <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/goods/77856/f51d7675-07f7-4ebd-bf38-950be0b6ff90.jpg?x-oss-process=image/resize,m_fixed,h_336,w_336"></image>
+      <view class="store_item pr" wx:for="{{goodsList}}" >
+        <image src="{{item.originalImg}}"></image>
         <!-- <image src="/img/hotshopbg.jpg"></image> -->
-        <span class="font_14 color_333">内部测试商品请勿购买</span>
+        <span class="font_14 color_333">{{item.goodsName}}</span>
         <span>销量 1000</span>
-        <span class="red">¥10000.00</span>
-        <span class="pa cart_btn" catchtap="addCart"> +</span>
+        <span class="red">¥{{item.shopPrice}}</span>
+        <span data-goodsInfo="{{item}}" class="pa cart_btn" catchtap="addCart"> +</span>
       </view>
     </view>
   </view>

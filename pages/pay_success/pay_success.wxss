@@ -1,0 +1,37 @@
+.screen {
+  height: 712rpx;
+  margin-bottom: 90rpx;
+  background: #509ad2;
+  text-align: center;
+  color: #fff;
+}
+
+.screen i {
+  margin-top: 180rpx;
+  font-size: 72.5px;
+  display:inline-block;
+
+}
+.screen .title {
+    margin: 40rpx 0 60rpx;
+    font-size: 18px;
+    line-height: 1;
+}
+.screen .tip {
+    margin-bottom: 20rpx;
+    font-size: 14px;
+}
+
+button {
+  width: 600rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #509ad2;
+  color: #509ad2;
+  background: #fff;
+  direction: none;
+}
