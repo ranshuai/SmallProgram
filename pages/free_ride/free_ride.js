@@ -98,13 +98,13 @@ Page({
   },
   //点击一级导航
   oneLevelNavClick: function (ev) {
-    wx.showLoading({
-      title: '加载中',
-    })
     var _this = this;
     if (ev.currentTarget.dataset.info == this.data.oneLevelNav) {
       return;
     }
+    wx.showLoading({
+      title: '加载中',
+    })
     this.setData({
       oneLevelNav: ev.currentTarget.dataset.info
     })

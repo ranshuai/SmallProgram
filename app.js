@@ -53,4 +53,17 @@ App({
     addressInfo:null, //地址信息
     orderConfirmInfo:null //确认订单页面展示的信息
   },
+  selfShowAuthorization:function(){
+    return new Promise((resolve, reject)=>{
+      if (!this.globalData.userInfo) {
+        wx.showToast({
+          title: '请去个人中心页面授权',
+          icon: 'none'
+        })
+        resolve(false)
+      }else{
+        resolve(true)
+      } 
+    })
+  }
 })

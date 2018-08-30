@@ -24,7 +24,7 @@ Page({
       })
       return
     }
-   
+
     wx.navigateTo({
       url: '/pages/search/search?key=' + this.data.inputValue,
     })
@@ -70,15 +70,11 @@ Page({
   },
   //加载更多
   onScrollLowe: function (ev) {
-    wx.showNavigationBarLoading();
-    setTimeout(function () {
-      wx.stopPullDownRefresh();
-      wx.hideNavigationBarLoading();
-    }, 1000);
-
-
-
-
+    // wx.showNavigationBarLoading();
+    // setTimeout(function () {
+    //   wx.stopPullDownRefresh();
+    //   wx.hideNavigationBarLoading();
+    // }, 1000);
   },
   //顺风车
   goToFreeRide: function (e) {
@@ -87,6 +83,13 @@ Page({
     })
   },
   onLoad: function (options) {
+    this.getHomeData();
+  },
+  //获取首页数据
+  getHomeData: function () {
+    wx.showLoading({
+      title: '加载中...',
+    });
     var _this = this;
     wx.request({
       url: 'https://riseupall.cn/server/getreleaselocal',
@@ -102,9 +105,10 @@ Page({
             icon: 'none'
           })
         }
+      }, complete: function () {
+        wx.hideLoading();
       }
     })
-
   },
   // 拨打电话
   phoneCall: function (e) {
@@ -122,10 +126,8 @@ Page({
   },
   //预览图片
   previewImg: function (ev) {
-    console.log(ev.currentTarget.dataset.index);
     wx.previewImage({
       urls: this.data.releaseList[ev.currentTarget.dataset.index].releaseImages,
     })
-
   }
 })

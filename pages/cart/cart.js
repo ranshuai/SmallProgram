@@ -13,32 +13,29 @@ Page({
   },
   //加入购物车
   confirm: function () {
-    if (!app.globalData.userInfo){
-      wx.showToast({
-        title: '请去个人中心页面授权',
-        icon: 'none'
-      })
-      return 
-    }
-    if (this.data.selectedGoods.length <= 0) {
-      wx.showToast({
-        title: '请选择商品',
-        icon:'none'
-      })
-      return;
-    }
-    let selectedGoodsArr = [];
+    app.selfShowAuthorization().then(ev => {
+      console.log(ev);
+      if (ev) {
+        if (this.data.selectedGoods.length <= 0) {
+          wx.showToast({
+            title: '请选择商品',
+            icon: 'none'
+          })
+          return;
+        }
+        let selectedGoodsArr = [];
 
-    for (let i = 0; i < this.data.selectedGoods.length; i++){
-      selectedGoodsArr.push(this.data.cartdata[this.data.selectedGoods[i]]);
-    }
-    app.globalData.orderConfirmInfo = selectedGoodsArr;
-    
-    wx.navigateTo({
-      url: '/pages/order_confirm/order_confirm',
-    })
+        for (let i = 0; i < this.data.selectedGoods.length; i++) {
+          selectedGoodsArr.push(this.data.cartdata[this.data.selectedGoods[i]]);
+        }
+        app.globalData.orderConfirmInfo = selectedGoodsArr;
+
+        wx.navigateTo({
+          url: '/pages/order_confirm/order_confirm',
+        })
+      }
+    });
   },
-
   onLoad: function () {
    
   },

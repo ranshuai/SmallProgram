@@ -82,13 +82,13 @@
 </view>
 <!--广告位  -->
 <view class="banner">
-  <swiper indicator-color="#fff" autoplay='true' interval='2000' circular="true" vertical="true">
+  <swiper indicator-color="#fff" autoplay='true' interval='2000' circular="true" vertical="">
     <swiper-item>
-      <image src='http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/ad/76211/4afdbfef-d8aa-4fc6-af1c-84e222bd5aa7.jpg?x-oss-process=image/resize,m_fixed,h_420,w_750'>
+      <image src='http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/ad/76211/4afdbfef-d8aa-4fc6-af1c-84e222bd5aa7.jpg?x-oss-process=image/resize,m_fixed,h_200,w_750'>
       </image>
     </swiper-item>
     <swiper-item>
-      <image src='http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/ad/76211/4afdbfef-d8aa-4fc6-af1c-84e222bd5aa7.jpg?x-oss-process=image/resize,m_fixed,h_420,w_750'>
+      <image src='http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/ad/76211/4afdbfef-d8aa-4fc6-af1c-84e222bd5aa7.jpg?x-oss-process=image/resize,m_fixed,h_200,w_750'>
       </image>
     </swiper-item>
 
@@ -98,7 +98,7 @@
 <scroll-view class="info_ul" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLowe">
   <view class="info_ul_item" wx:for="{{releaseList}}"  wx:for-index="idx" wx:for-item="item" wx:key>
     <view>
-      <image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTK4PMObfI0CcqnJN1leicaJMCYarxs7V9x69s26cDsoqCytWbWuxiboJy9uOPibSkGiacL0kPmkB3mvCA/0"></image>
+      <image src="{{item.releaseUserInfo.userPicture+'?x-oss-process=image/resize,m_fixed,h_86,w_86'}}"></image>
     </view>
     <view>
       <view class='a3a3a3'>
@@ -114,7 +114,7 @@
       </view>
       <view class="release_images_warp">
         <view wx:for="{{item.releaseImages}}" wx:for-index="_idx" wx:for-item="_item" wx:key>
-          <image src="{{_item}}" data-index='{{idx}}'  catchtap='previewImg'></image>
+          <image src="{{_item+'?x-oss-process=image/resize,m_fixed,h_124,w_124'}}" data-index='{{idx}}'  catchtap='previewImg'></image>
         </view>
       </view>
     </view>

@@ -68,6 +68,7 @@ Page({
             code: res.code,
             userName: app.globalData.userInfo.nickName,
             userMobile: '',
+            userPicture: app.globalData.userInfo.avatarUrl
           },
           success: function (res) {
             if (res.data.success) {

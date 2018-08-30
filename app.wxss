@@ -77,6 +77,7 @@ button {
 .m_right_20 {
   margin-right: 20rpx;
 }
+
 .m_right_10 {
   margin-right: 10rpx;
 }
@@ -154,11 +155,13 @@ button {
 .c_509ad2 {
   color: #509ad2;
 }
-.c_40b3e2{
-  color:#40b3e2;
+
+.c_40b3e2 {
+  color: #40b3e2;
 }
-.c_f2786b{
-  color:#f2786b;
+
+.c_f2786b {
+  color: #f2786b;
 }
 
 .color_333 {
@@ -207,4 +210,11 @@ button {
   color: #fff;
   text-align: center;
   line-height: 60rpx;
+}
+
+.no-more-data {
+  color:#a3a3a3;
+  text-align: center;
+  line-height: 42px;
+  font-size: 14px;
 }

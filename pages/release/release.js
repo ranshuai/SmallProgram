@@ -1,3 +1,5 @@
+const app = getApp();
+
 Page({
 
   /**
@@ -11,7 +13,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -63,31 +64,27 @@ Page({
 
   },
   selectedReleaseType(e) {
-    console.log(e);
-    if (e.currentTarget.dataset.releasetype == "freeRide") {
-      wx.showActionSheet({
-        itemList: ['人找车', '车找人', '天天拼'],
-        itemColor: '#333',
-        success: function (e) {
-          console.log(e);
-          wx.navigateTo({
-            url: '/pages/release_detail/release_detail?tapIndex=' + e.tapIndex
+    app.selfShowAuthorization().then(ev => {
+      console.log(ev);
+      if (ev) {
+        if (e.currentTarget.dataset.releasetype == "freeRide") {
+          wx.showActionSheet({
+            itemList: ['人找车', '车找人', '天天拼'],
+            itemColor: '#333',
+            success: function (e) {
+              console.log(e);
+              wx.navigateTo({
+                url: '/pages/release_detail/release_detail?tapIndex=' + e.tapIndex
+              })
+            }
           })
         }
-      })
-    }
-    if (e.currentTarget.dataset.releasetype == "localService") {
-      wx.navigateTo({
-        url: '/pages/release_local_service/release_local_service'
-      })
-    }
-
-
-    // wx.showModal({
-    //   title: '请选择发布的栏目',
-    //   content: '',
-    // })
-
-
+        if (e.currentTarget.dataset.releasetype == "localService") {
+          wx.navigateTo({
+            url: '/pages/release_local_service/release_local_service'
+          })
+        }
+      }
+    });
   }
 })

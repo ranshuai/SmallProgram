@@ -184,6 +184,9 @@ Page({
       url: 'https://riseupall.cn/server/releaselocal',
       method: 'POST',
       data: data,
+      header:{
+        userId: app.globalData.userInfo.userId
+      },
       success: function (data) {
         wx.navigateBack()
       },
