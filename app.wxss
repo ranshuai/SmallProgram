@@ -218,3 +218,10 @@ button {
   line-height: 42px;
   font-size: 14px;
 }
+.ion-ios-icon-gxk-51 {
+  display: inline-block;
+  transform: rotate(180deg) !important;
+  position: absolute;
+  right: 0rpx;
+  top:28rpx;
+}

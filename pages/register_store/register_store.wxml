@@ -1,0 +1,33 @@
+<form bindsubmit="submitForm">
+  <view class="release_detail_ul">
+    <view class="release_detail_ul_item">
+      <span class="l">店铺名称</span>
+      <input value="{{ form.storeName }}" name='storeName' placeholder='输入店铺名称' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">店铺类别 </span>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">详细地址</span>
+      <input  value="{{ form.storeAddress }}" name="storeAddress" placeholder='输入详细地址' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">负责人</span>
+      <input  value="{{ form.directorName }}" name="directorName" placeholder='输入负责人姓名' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">手机号</span>
+      <input  value="{{ form.directorMobile }}" name="directorMobile"  placeholder='输入手机号' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">店铺简介</span>
+      <textarea auto-height placeholder="店铺简介" name="storeIntroduction" value='{{form.storeIntroduction}}' />
+    </view>
+  </view>
+  <button class="_submit" disabled="{{false}}" formType="submit"> 发布 </button>
+</form>

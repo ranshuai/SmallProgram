@@ -1,8 +1,13 @@
 Page({
   data: {
-    goodsList: null
+    goodsList: null,
+    storeInfo:{}
   },
-  onLoad: function () {
+  onLoad: function (option) {
+    this.setData({
+      storeInfo: JSON.parse(option.info)
+    });
+    console.log(this.data);
     this.getGoods();
   },
 

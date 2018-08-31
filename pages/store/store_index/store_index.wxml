@@ -10,33 +10,27 @@
     <!-- <image src='/img/shop-head-pic.png'></image> -->
     <image src="{{storeInfo.userInfo.userPicture+'?x-oss-process=image/resize,m_fixed,h_86,w_86'}}"></image>
     <span class="font_14 color_333">{{storeInfo.storeName}}</span>
-    <span>{{storeInfo.storeIntroduction || '这个家伙很懒，什么都没有留下！'}}</span>
+    <span>{{storeInfo.storeAddress || ''}}</span>
   </view>
   <!--店铺头像 E  -->
   <!--收藏 S -->
   <view class="store_collector">
-     <button>收藏者 0 </button>
-    <button>已收藏</button> 
+    <button>收藏者 0 </button>
+    <button>已收藏</button>
   </view>
   <!--收藏 E -->
   <!--店铺商品列表 S -->
-  <view class="store_ul">
-    <view class="store_ul_nav">
-      <view class="ac">
-        商品
+  <view class="new_user_ul_warp">
+    <view class="new_user_ul">
+      <view class="new_user_ul_item pr" catchtap='goToGoods'>
+        <i class="ion-ios-icon-gxk-85-outline"></i>
+        商品列表
+        <i class="ion-ios-icon-gxk-51"></i>
       </view>
-      <view>
-        促销商品
-      </view>
-    </view>
-    <view class="store_item_warp">
-      <view class="store_item pr" wx:for="{{goodsList}}" >
-        <image src="{{item.originalImg}}"></image>
-        <!-- <image src="/img/hotshopbg.jpg"></image> -->
-        <span class="font_14 color_333">{{item.goodsName}}</span>
-        <span>销量 1000</span>
-        <span class="red">¥{{item.shopPrice}}</span>
-        <span data-goodsInfo="{{item}}" class="pa cart_btn" catchtap="addCart"> +</span>
+      <view class="new_user_ul_item pr" catchtap='goToOrder'>
+        <i class="ion-ios-icon-gxk-99-outline"></i>
+        订单列表
+        <i class="ion-ios-icon-gxk-51"></i>
       </view>
     </view>
   </view>

@@ -101,6 +101,11 @@ Page({
     wx.navigateTo({
       url: '/pages/new_user/user_order/user_order',
     })
+  },
+  goToUserRelease(){
+    wx.navigateTo({
+      url: '/pages/new_user/user_release/user_release',
+    })
   }
   
 

@@ -1,5 +1,4 @@
-
-
+const app = getApp();
 Page({
   data: {
     oneLevelNav: 0,
@@ -81,6 +80,15 @@ Page({
     wx.navigateTo({
       url: '/pages/free_ride/free_ride',
     })
+  },
+  registerStore() {
+    app.selfShowAuthorization().then(ev => {
+      if (ev) {
+        wx.navigateTo({
+          url: '/pages/register_store/register_store',
+        })
+      }
+    });
   },
   onLoad: function (options) {
     this.getHomeData();

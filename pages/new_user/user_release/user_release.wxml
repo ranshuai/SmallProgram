@@ -1,0 +1,15 @@
+<view class="one_level_nav">
+  <view class="ac" data-info="{{0}}" class="{{oneLevelNav == 0 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    全部
+  </view>
+  <!-- <view data-info="{{1}}" class="{{oneLevelNav == 1 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    待付款
+  </view>
+  <view data-info="{{2}}" class="{{oneLevelNav == 2 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    待发货
+  </view>
+  <view data-info="{{3}}" class="{{oneLevelNav == 3 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    待收货
+  </view> -->
+</view>
+<view class="no-more-data">此功能正在开发</view>

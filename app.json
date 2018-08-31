@@ -1,6 +1,12 @@
 {
   "pages": [
     "pages/new_home/new_home",
+    "pages/store/store_index/store_index",
+    "pages/store/store_goods/store_goods",
+    "pages/store/store_order/store_order",
+
+    "pages/register_store/register_store",
+    "pages/new_user/user_release/user_release",
     "pages/pay_success/pay_success",
     "pages/new_user/user_order/user_order",
     "pages/order_confirm/order_confirm",

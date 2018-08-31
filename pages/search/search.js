@@ -1,3 +1,4 @@
+const app = getApp();
 Page({
 
   /**
@@ -5,7 +6,9 @@ Page({
    */
   data: {
     inputValue: '', //searchValue
-    selfType:'' //店铺类型
+    selfType:'', //店铺类型
+    storeType:null,
+    storesList:[]
   },
   // 拨打电话
   phoneCall:function(e){
@@ -29,10 +32,11 @@ Page({
     this.setData(
       {
         inputValue: options.key,
-        selfType: options.type
+        selfType: options.type,
+        storeType: options.type == "shop" ? 1: 0
       }
     )
-
+    this.getStoreDate();
     console.log(this.data)
   },
 
@@ -117,12 +121,39 @@ Page({
   },
   //进店
   goToStore(ev){
-    console.log(ev);
+    //如果当前用户的id和店铺信息里面的userId一样就跳店铺管理页面
+    let info = JSON.stringify(ev.currentTarget.dataset.info);
+    if (ev.currentTarget.dataset.info.userId == app.globalData.userInfo.userId){
+        wx.navigateTo({
+        url: "/pages/store/store_index/store_index?info=" + info,
+        })
+      return 
+    }
     wx.navigateTo({
-      url: "/pages/store_detail/store_detail",
-      // data: ev.currentTarget.dataset.info
+      url: "/pages/store_detail/store_detail?info=" + info,
     })
 
+  },
+  getStoreDate:function(){
+    let self = this;
+    wx.showLoading({
+      title: '加载中...',
+    })
+    wx.request({
+      url: 'https://riseupall.cn/server/getStore',
+      method:'GET',
+      data:{
+        storeType: this.data.storeType
+      },
+      success:function(res){
+        self.setData({
+          storesList: res.data.result.list
+        })
+      },
+      complete:function(){
+        wx.hideLoading();
+      }
+    })
   }
 
 

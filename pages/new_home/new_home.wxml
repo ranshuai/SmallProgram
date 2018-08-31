@@ -13,7 +13,7 @@
   </view>
 </view>
 <!--nav 一级  -->
- <!-- <view class="nav">
+<!-- <view class="nav">
   <view class="ul_1level">
     <view data-info="{{0}}" class="{{oneLevelNav == 0 ? 'ac':''}}" catchtap="oneLevelNavClick">
       家乡情
@@ -26,14 +26,14 @@
 <!--nav 二级  -->
 <view class="nav" wx:if="{{oneLevelNav == 0 }}">
   <view class="ul_2level">
-     <view class="ul_2level_item"data-storeType='shop' catchtap='goToStoreType'>
+    <view class="ul_2level_item" data-storeType='shop' catchtap='goToStoreType'>
       <view class="bg7">
         <i class="ion-ios-icon-gxk-182"></i>
       </view>
       <view>
         超市
       </view>
-    </view> 
+    </view>
     <view class="ul_2level_item" catchtap='goToFreeRide'>
       <view class="bg6">
         <i class="ion-ios-icon-gxk-164"></i>
@@ -42,14 +42,22 @@
         顺风车
       </view>
     </view>
-     <view class="ul_2level_item" data-storeType='service' catchtap='goToStoreType'>
+    <view class="ul_2level_item" data-storeType='service' catchtap='goToStoreType'>
       <view class="bg3">
         <i class="ion-ios-icon-gxk-87"></i>
       </view>
       <view>
         服务
       </view>
-    </view> 
+    </view>
+    <view class="ul_2level_item" catchtap='registerStore'>
+      <view class="bg4">
+        <i class="ion-ios-icon-gxk-9"></i>
+      </view>
+      <view>
+        申请入驻
+      </view>
+    </view>
   </view>
 </view>
 <view class="nav" wx:if="{{oneLevelNav == 1 }}">
@@ -96,7 +104,7 @@
 </view>
 <!--信息列表  -->
 <scroll-view class="info_ul" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLowe">
-  <view class="info_ul_item" wx:for="{{releaseList}}"  wx:for-index="idx" wx:for-item="item" wx:key>
+  <view class="info_ul_item" wx:for="{{releaseList}}" wx:for-index="idx" wx:for-item="item" wx:key>
     <view>
       <image src="{{item.releaseUserInfo.userPicture+'?x-oss-process=image/resize,m_fixed,h_86,w_86'}}"></image>
     </view>
@@ -114,7 +122,7 @@
       </view>
       <view class="release_images_warp">
         <view wx:for="{{item.releaseImages}}" wx:for-index="_idx" wx:for-item="_item" wx:key>
-          <image src="{{_item+'?x-oss-process=image/resize,m_fixed,h_124,w_124'}}" data-index='{{idx}}'  catchtap='previewImg'></image>
+          <image src="{{_item+'?x-oss-process=image/resize,m_fixed,h_124,w_124'}}" data-index='{{idx}}' catchtap='previewImg'></image>
         </view>
       </view>
     </view>

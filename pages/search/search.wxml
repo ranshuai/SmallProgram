@@ -8,63 +8,66 @@
 </view>
 <!--店铺列表  -->
 <scroll-view class="info_ul" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLowe">
-  <view class="info_ul_item" wx:if="{{selfType == 'service'}}">
-    <view>
-      <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/store/76281/84fefc26-1b10-419c-b674-8d6c919e216f.jpg"></image>
-    </view>
-    <view>
-      <view class="stor_type">
-        <text class="store_type1">服务</text>
-        <text class='a3a3a3'>三三清洁</text>
-        <span class="a3a3a3 fr" data-reply-phone="18210702905" catchtap="phoneCall">
-          <i class="ion-ios-icon-gxk-161"></i>
-          拨打电话
-        </span>
+  <view wx:if="{{selfType == 'service'}}">
+    <view class="info_ul_item">
+      <view>
+        <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/store/76281/84fefc26-1b10-419c-b674-8d6c919e216f.jpg"></image>
       </view>
       <view>
-        <span>
-          清洗空调，天气已经变热，你家的空调该清洗了吗？
-        </span>
-      </view>
-      <view>
-        <span class="a3a3a3">
-          全文
-        </span>
-      </view>
-      <view class="store_img_warp">
-        <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
-        <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
-        <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
-        <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
-      </view>
+        <view class="stor_type">
+          <text class="store_type1">服务</text>
+          <text class='a3a3a3'>三三清洁</text>
+          <span class="a3a3a3 fr" data-reply-phone="18210702905" catchtap="phoneCall">
+            <i class="ion-ios-icon-gxk-161"></i>
+            拨打电话
+          </span>
+        </view>
+        <view>
+          <span>
+            清洗空调，天气已经变热，你家的空调该清洗了吗？
+          </span>
+        </view>
+        <view>
+          <span class="a3a3a3">
+            全文
+          </span>
+        </view>
+        <view class="store_img_warp">
+          <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
+          <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
+          <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
+          <image src="/img/server_1.jpeg" catchtap='previewImg'></image>
+        </view>
 
+      </view>
     </view>
   </view>
-
-  <view class="info_ul_item" wx:if="{{selfType == 'shop'}}">
-    <view>
-      <image src="https://wx.qlogo.cn/mmopen/vi_32/Y9dmQenFSQGliaPu6Nr6Fc3e9PT8ql522ibsSo7dymibm8DgzkMnNnIh3UdyiafXsvnicQkz2Jac4oPsSEUYLtiaHx7g/132"></image>
-    </view>
-    <view>
-      <view class="stor_type">
-        <text class="store_type2">超市</text>
-        <text class='a3a3a3'>冉冉微生活超市</text>
-        <span class="a3a3a3 fr" data-reply-phone="18210702905" catchtap="phoneCall">
-          <i class="ion-ios-icon-gxk-161"></i>
-          拨打电话
-        </span>
+  <view wx:if="{{selfType == 'shop'}}">
+    <view class="info_ul_item" wx:for="{{storesList}}" wx:key >
+      <view>
+        <image src="{{item.userInfo.userPicture+'?x-oss-process=image/resize,m_fixed,h_86,w_86'}}"></image>
       </view>
-      <view class='store_con'>
-        <span>
-          销量 100 商品共1
-        </span>
-        <button catchtap="goToStore" data-info="{{2}}">
-          进店
-        </button>
+      <view>
+        <view class="stor_type">
+          <text class="store_type2">超市</text>
+          <text class='a3a3a3'>{{item.storeName}}</text>
+          <span class="a3a3a3 fr" data-reply-phone="{{item.directorMobile}}" catchtap="phoneCall">
+            <i class="ion-ios-icon-gxk-161"></i>
+            拨打电话
+          </span>
+        </view>
+        <view class='store_con'>
+          <span>
+           位置信息：{{item.storeAddress}}
+          </span>
+          <button catchtap="goToStore" data-info="{{item}}">
+            进店
+          </button>
+        </view>
+
+
+
       </view>
-
-
-
     </view>
   </view>
 
