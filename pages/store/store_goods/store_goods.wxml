@@ -1,0 +1,36 @@
+<view class="store_goods_top p_0_24 color_a3a3a3">
+  <span class="font_14 c_40b3e2" catchtap="goToAdd">添加商品</span>
+  <span class="font_14">排序</span>
+</view>
+<view class="header">
+  <view class="search">
+    <i class="ion-ios-icon-gxk-46"></i>
+    <input bindinput="bindKeyInput" placeholder='请输入店铺名称' value="{{inputValue}}" />
+    <text catchtap="search">搜索</text>
+  </view>
+</view>
+
+<view class="one_level_nav">
+  <view class="ac" data-info="{{1}}" class="{{oneLevelNav == 1 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    出售中
+  </view>
+  <view data-info="{{2}}" class="{{oneLevelNav == 2 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    已售磬
+  </view>
+  <view data-info="{{3}}" class="{{oneLevelNav == 3 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    已下架
+  </view>
+</view>
+
+<view class="store_goods_ul">
+  <view class="no-more-data" wx:if="{{storeGoodsList.length <= 0}}">暂时还没有相关商品</view>
+  <view class='store_goods_li' wx:for="{{storeGoodsList}}" wx:key>
+    <image src="{{item.images[0]}}">
+    </image>
+    <view class="m_left_20">
+      <view class="font_14 color_aaa">{{item.goodsName}}</view>
+      <view class="font_12 color_a3a3a3">售价：¥{{item.shopPrice}}</view>
+      <view class="font_12 color_a3a3a3">销量：10</view>
+    </view>
+  </view>
+</view>

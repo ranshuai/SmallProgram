@@ -1,0 +1,51 @@
+form {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.release_detail_ul_item {
+  display: flex;
+  color: #a3a3a3;
+  font-size: 14px;
+  padding: 24rpx;
+  border-bottom: 1px solid #a3a3a3;
+  line-height: 28px;
+}
+
+.release_detail_ul_item picker {
+  width: 80%;
+}
+
+.release_detail_ul_item textarea {
+  width: 100%;
+  height: 200rpx !important;
+  background: #d9d9d9;
+  padding: 20rpx;
+  box-sizing: border-box;
+  line-height: 14px;
+}
+
+.release_detail_ul_item .l {
+  color: #333;
+  margin-right: 20rpx;
+}
+
+.release_detail_ul_item > input {
+  width: 80%;
+  padding-top: 8rpx;
+}
+
+._submit {
+  background: #509ad2;
+  color: #fff;
+  bottom:0;
+ height:88rpx;
+background:#509ad2;
+width:100%;
+line-height:88rpx;
+text-align:center; 
+
+}
+
+

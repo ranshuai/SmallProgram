@@ -51,7 +51,8 @@ App({
   globalData: {
     userInfo: null, //用户信息
     addressInfo:null, //地址信息
-    orderConfirmInfo:null //确认订单页面展示的信息
+    orderConfirmInfo:null, //确认订单页面展示的信息
+    canClick:true
   },
   selfShowAuthorization:function(){
     return new Promise((resolve, reject)=>{

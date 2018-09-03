@@ -1,0 +1,33 @@
+<form bindsubmit="submitForm" class="pr">
+  <view class="release_detail_ul">
+    <view class="release_detail_ul_item">
+      <span class="l">商品分类</span>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArrayNew}}">
+        <view class="picker">
+          {{multiOneArrayNew[multiIndex[0]]}} {{multiTwoArrayNew[multiIndex[1]]}} {{multiThreeArrayNew[multiIndex[2]]}}
+        </view>
+      </picker>
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">规格</span>
+      <input value="{{ form.specs }}" name='specs' placeholder='输入规格' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">商品名称 </span>
+      <input value="{{ form.name }}" name='name' placeholder='输入商品名称' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">售价(元)</span>
+      <input value="{{ form.price }}" name="price" placeholder='输入商品售价' />
+    </view>
+    <view class="release_detail_ul_item">
+      <span class="l">库存</span>
+      <input value="{{ form.storeCount }}" name="storeCount" placeholder='输入库存' />
+    </view>
+    <!-- <view class="release_detail_ul_item">
+      <span class="l">其他需求</span>
+      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="需要补充的说明" />
+    </view> -->
+  </view>
+  <button class="_submit pa" disabled="{{false}}" formType="submit">下一步 </button>
+</form>

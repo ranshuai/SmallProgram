@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/new_home/new_home",
-    "pages/store/store_index/store_index",
+    "pages/store/store_goods/store_goods_add/store_goods_add2/store_goods_add2",
+    "pages/store/store_goods/store_goods_add/store_goods_add",
     "pages/store/store_goods/store_goods",
+    "pages/store/store_index/store_index",
     "pages/store/store_order/store_order",
 
     "pages/register_store/register_store",

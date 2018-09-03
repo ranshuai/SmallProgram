@@ -10,13 +10,16 @@ Page({
     console.log(this.data);
   },
   goToGoods(){
+    let info = JSON.stringify(this.data.storeInfo);
     wx.navigateTo({
-      url: '/pages/store/store_goods/store_goods',
+      url: '/pages/store/store_goods/store_goods?info=' + info,
     })
   },
   goToOrder(){
+    let info = JSON.stringify(this.data.storeInfo);
+    
     wx.navigateTo({
-      url: '/pages/store/store_order/store_order',
+      url: '/pages/store/store_order/store_order?info=' + info,
     })
   }
 })

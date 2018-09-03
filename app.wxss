@@ -7,6 +7,10 @@ button {
   margin: 0;
 }
 
+page {
+  height: 100%;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -97,6 +101,9 @@ button {
 .p_t_b_40 {
   padding: 40rpx 0;
 }
+.p_b_40 {
+  padding-bottom: 40rpx;
+}
 
 .p_24 {
   padding: 24rpx;
@@ -148,20 +155,26 @@ button {
   color: #ff5050;
 }
 
+/*浅红  */
+
 .f2786b {
   color: #f2786b;
 }
+
+.c_f2786b {
+  color: #f2786b;
+}
+
+/*浅蓝  */
 
 .c_509ad2 {
   color: #509ad2;
 }
 
+/*浅蓝  */
+
 .c_40b3e2 {
   color: #40b3e2;
-}
-
-.c_f2786b {
-  color: #f2786b;
 }
 
 .color_333 {
@@ -213,15 +226,16 @@ button {
 }
 
 .no-more-data {
-  color:#a3a3a3;
+  color: #a3a3a3;
   text-align: center;
   line-height: 42px;
   font-size: 14px;
 }
+
 .ion-ios-icon-gxk-51 {
   display: inline-block;
   transform: rotate(180deg) !important;
   position: absolute;
   right: 0rpx;
-  top:28rpx;
+  top: 28rpx;
 }
