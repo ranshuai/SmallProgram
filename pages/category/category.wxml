@@ -1,0 +1,29 @@
+<view class="header">
+  <view class="search">
+    <i class="ion-ios-icon-gxk-46"></i>
+    <input bindinput="bindKeyInput" placeholder='请输入店铺名称' />
+    <text catchtap="goToStores">搜索</text>
+  </view>
+</view>
+
+<!-- 分类列表 -->
+<view class="category_warp">
+  <view class="category_warp_nav font_14 color_333">
+    <view data-info="{{index}}" class="{{oneLevelNav == index ? 'ac':''}}" wx:for="{{categoryWarpNav}}" wx:key catchtap='oneLevelNavClick'>
+      {{item}}
+    </view>
+  </view>
+  <view class="category_warp_two_three_category font_12 color_a3a3a3">
+    <view wx:for="{{multiTwoAndThreeArray[oneLevelNav].list}}" wx:key >
+      <view class="title ">
+        {{item.oneSpecName}}
+      </view>
+      <view class="ul">
+        <view class="li" wx:for="{{item.list[0].list}}" data-cateId='{{item.oneSpecId}}' catchtap='goToGoodsList'>
+          <image src="{{'https://riseupall.oss-cn-beijing.aliyuncs.com/category/'+item.oneSpecId+'.png?x-oss-process=image/resize,m_fixed,h_150,w_150'}}"></image>
+          <span>{{item.oneSpecName}}</span>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

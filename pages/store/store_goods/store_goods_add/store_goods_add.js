@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    storeInfo:{},
+    storeInfo: {},
     array: [],
 
     index: 0,
@@ -191,6 +191,18 @@ Page({
           {
             oneSpecId: '1-1-5',
             oneSpecName: '烤肠'
+          },
+          {
+            oneSpecId: '1-1-6',
+            oneSpecName: '腌制菜'
+          },
+          {
+            oneSpecId: '1-1-7',
+            oneSpecName: '烧烤串类'
+          },
+          {
+            oneSpecId: '1-1-8',
+            oneSpecName: '其他'
           }
         ]
       },
@@ -199,35 +211,131 @@ Page({
         list: [
           {
             oneSpecId: '1-2-1',
-            oneSpecName: '酱菜'
+            oneSpecName: '醋'
           },
           {
             oneSpecId: '1-2-2',
-            oneSpecName: '调味料'
+            oneSpecName: '料酒'
           },
           {
             oneSpecId: '1-2-3',
-            oneSpecName: '调味酱'
-          },
-          {
-            oneSpecId: '1-2-4',
-            oneSpecName: '酱油'
-          },
-          {
-            oneSpecId: '1-2-5',
-            oneSpecName: '花椒/八角'
-          },
-          {
-            oneSpecId: '1-2-6',
             oneSpecName: '其他'
           },
           {
+            oneSpecId: '1-2-4',
+            oneSpecName: '火锅／香锅'
+          },
+          {
+            oneSpecId: '1-2-5',
+            oneSpecName: '糖'
+          },
+          {
+            oneSpecId: '1-2-6',
+            oneSpecName: '酱菜'
+          },
+          {
             oneSpecId: '1-2-7',
-            oneSpecName: '火锅/香锅底料'
+            oneSpecName: '调味料'
           },
           {
             oneSpecId: '1-2-8',
-            oneSpecName: '糖'
+            oneSpecName: '调味酱'
+          },
+          {
+            oneSpecId: '1-2-9',
+            oneSpecName: '酱油'
+          },
+          {
+            oneSpecId: '1-2-10',
+            oneSpecName: '花椒／八角'
+          },
+          {
+            oneSpecId: '1-2-11',
+            oneSpecName: '蚝油'
+          },
+          {
+            oneSpecId: '1-2-12',
+            oneSpecName: '鱼露'
+          },
+          {
+            oneSpecId: '1-2-13',
+            oneSpecName: '花椒油'
+          },
+          {
+            oneSpecId: '1-2-14',
+            oneSpecName: '浓汤宝'
+          },
+          {
+            oneSpecId: '1-2-15',
+            oneSpecName: '盐'
+          },
+          {
+            oneSpecId: '1-2-16',
+            oneSpecName: '鸡精／味精'
+          },
+          {
+            oneSpecId: '1-2-17',
+            oneSpecName: '火锅蘸料'
+          },
+          {
+            oneSpecId: '1-2-18',
+            oneSpecName: '大酱'
+          },
+          {
+            oneSpecId: '1-2-19',
+            oneSpecName: '辣椒酱'
+          },
+          {
+            oneSpecId: '1-2-20',
+            oneSpecName: '香菇酱'
+          },
+          {
+            oneSpecId: '1-2-21',
+            oneSpecName: '花生酱'
+          },
+          {
+            oneSpecId: '1-2-22',
+            oneSpecName: '果酱'
+          },
+          {
+            oneSpecId: '1-2-23',
+            oneSpecName: '海鲜酱'
+          },
+          {
+            oneSpecId: '1-2-24',
+            oneSpecName: '沙拉／千岛酱'
+          },
+          {
+            oneSpecId: '1-2-25',
+            oneSpecName: '豆瓣酱'
+          },
+          {
+            oneSpecId: '1-2-26',
+            oneSpecName: '意面酱'
+          },
+          {
+            oneSpecId: '1-2-27',
+            oneSpecName: '咖喱'
+          },
+          {
+            oneSpecId: '1-2-28',
+            oneSpecName: '黄油'
+          },
+          {
+            oneSpecId: '1-2-29',
+            oneSpecName: '奶油'
+          },
+          {
+            oneSpecId: '1-2-30',
+            oneSpecName: '火腿肠'
+          },
+          {
+            oneSpecId: '1-2-31',
+            oneSpecName: '罐头'
+          },
+          {
+            oneSpecId: '1-2-32',
+            oneSpecName: '腊味制品'
           }
         ]
       },
@@ -236,35 +344,55 @@ Page({
         list: [
           {
             oneSpecId: '1-3-1',
-            oneSpecName: '猪肉'
-          },
-          {
-            oneSpecId: '1-3-2',
-            oneSpecName: '家禽类'
-          },
-          {
-            oneSpecId: '1-3-3',
-            oneSpecName: '汤圆／元宵'
-          },
-          {
-            oneSpecId: '1-3-4',
-            oneSpecName: '冰棍雪糕'
-          },
-          {
-            oneSpecId: '1-3-5',
-            oneSpecName: '熟食腊肠'
-          },
-          {
-            oneSpecId: '1-3-6',
             oneSpecName: '其他'
           },
           {
+            oneSpecId: '1-3-2',
+            oneSpecName: '冷冻食品'
+          },
+          {
+            oneSpecId: '1-3-3',
+            oneSpecName: '牛羊肉'
+          },
+          {
+            oneSpecId: '1-3-4',
+            oneSpecName: '乳品'
+          },
+          {
+            oneSpecId: '1-3-5',
+            oneSpecName: '猪肉'
+          },
+          {
+            oneSpecId: '1-3-6',
+            oneSpecName: '票券'
+          },
+          {
             oneSpecId: '1-3-7',
-            oneSpecName: '水饺／混沌'
+            oneSpecName: '家禽类'
           },
           {
             oneSpecId: '1-3-8',
-            oneSpecName: '牛羊肉'
+            oneSpecName: '奶酪黄油'
+          },
+          {
+            oneSpecId: '1-3-9',
+            oneSpecName: '冰淇淋'
+          },
+          {
+            oneSpecId: '1-3-10',
+            oneSpecName: '熟食腊肠'
+          },
+          {
+            oneSpecId: '1-3-11',
+            oneSpecName: '冰棍雪糕'
+          },
+          {
+            oneSpecId: '1-3-12',
+            oneSpecName: '水饺/馄饨'
+          },
+          {
+            oneSpecId: '1-3-13',
+            oneSpecName: '汤圆/元宵'
           }
         ]
       },
@@ -273,19 +401,55 @@ Page({
         list: [
           {
             oneSpecId: '1-4-1',
-            oneSpecName: '叶菜类'
+            oneSpecName: '葱姜蒜椒'
           },
           {
             oneSpecId: '1-4-2',
-            oneSpecName: '豆品'
+            oneSpecName: '鲜菌菇'
           },
           {
             oneSpecId: '1-4-3',
-            oneSpecName: '根茎类'
+            oneSpecName: '茄果瓜类'
           },
           {
             oneSpecId: '1-4-4',
+            oneSpecName: '鹌鹑蛋'
+          },
+          {
+            oneSpecId: '1-4-5',
+            oneSpecName: '松花蛋'
+          },
+          {
+            oneSpecId: '1-4-6',
+            oneSpecName: '咸蛋'
+          },
+          {
+            oneSpecId: '1-4-7',
+            oneSpecName: '喜蛋'
+          },
+          {
+            oneSpecId: '1-4-8',
+            oneSpecName: '其他'
+          },
+          {
+            oneSpecId: '1-4-9',
+            oneSpecName: '叶菜类'
+          },
+          {
+            oneSpecId: '1-4-10',
+            oneSpecName: '根茎类'
+          },
+          {
+            oneSpecId: '1-4-11',
+            oneSpecName: '豆品'
+          },
+          {
+            oneSpecId: '1-4-12',
             oneSpecName: '鸡蛋'
+          },
+          {
+            oneSpecId: '1-4-13',
+            oneSpecName: '鸭蛋'
           }
         ]
       },
@@ -294,72 +458,134 @@ Page({
         list: [
           {
             oneSpecId: '1-5-1',
-            oneSpecName: '桃'
+            oneSpecName: '橙子'
           },
           {
             oneSpecId: '1-5-2',
-            oneSpecName: '柠檬'
+            oneSpecName: '石榴'
           },
           {
             oneSpecId: '1-5-3',
-            oneSpecName: '香蕉'
+            oneSpecName: '百香果'
           },
           {
             oneSpecId: '1-5-4',
-            oneSpecName: '橘子'
+            oneSpecName: '牛油果'
           },
           {
             oneSpecId: '1-5-5',
-            oneSpecName: '圣女果'
+            oneSpecName: '山竹'
           }, {
             oneSpecId: '1-5-6',
-            oneSpecName: '菠萝／凤梨'
+            oneSpecName: '西瓜'
           },
           {
             oneSpecId: '1-5-7',
-            oneSpecName: '火龙果'
+            oneSpecName: '草莓'
           },
           {
             oneSpecId: '1-5-8',
-            oneSpecName: '芒果'
+            oneSpecName: '哈密瓜'
           },
           {
             oneSpecId: '1-5-9',
-            oneSpecName: '李子'
+            oneSpecName: '龙眼'
           },
           {
             oneSpecId: '1-5-10',
-            oneSpecName: '荔枝'
+            oneSpecName: '葡萄/提子'
           }, {
             oneSpecId: '1-5-11',
-            oneSpecName: '苹果'
+            oneSpecName: '枣'
           },
           {
             oneSpecId: '1-5-12',
-            oneSpecName: '梨'
+            oneSpecName: '椰子'
           },
           {
             oneSpecId: '1-5-13',
-            oneSpecName: '车厘子／樱桃'
+            oneSpecName: '毛丹/毛荔枝'
           },
           {
             oneSpecId: '1-5-14',
-            oneSpecName: '榴莲'
+            oneSpecName: '蓝莓'
           },
           {
             oneSpecId: '1-5-15',
-            oneSpecName: '柚子'
+            oneSpecName: '进口水果'
           },
           {
             oneSpecId: '1-5-16',
-            oneSpecName: '猕猴桃'
+            oneSpecName: '其他'
           },
           {
             oneSpecId: '1-5-17',
-            oneSpecName: '莲雾'
+            oneSpecName: '苹果'
           },
           {
             oneSpecId: '1-5-18',
+            oneSpecName: '香蕉'
+          },
+          {
+            oneSpecId: '1-5-19',
+            oneSpecName: '梨'
+          },
+          {
+            oneSpecId: '1-5-20',
+            oneSpecName: '桔子'
+          },
+          {
+            oneSpecId: '1-5-21',
+            oneSpecName: '柚子'
+          },
+          {
+            oneSpecId: '1-5-22',
+            oneSpecName: '圣女果'
+          },
+          {
+            oneSpecId: '1-5-23',
+            oneSpecName: '猕猴桃'
+          }, {
+            oneSpecId: '1-5-24',
+            oneSpecName: '菠萝/凤梨'
+          },
+          {
+            oneSpecId: '1-5-25',
+            oneSpecName: '车厘子/樱桃'
+          },
+          {
+            oneSpecId: '1-5-26',
+            oneSpecName: '火龙果'
+          },
+          {
+            oneSpecId: '1-5-27',
+            oneSpecName: '榴莲'
+          },
+          {
+            oneSpecId: '1-5-28',
+            oneSpecName: '芒果'
+          }, {
+            oneSpecId: '1-5-29',
+            oneSpecName: '莲雾'
+          },
+          {
+            oneSpecId: '1-5-30',
+            oneSpecName: '桃'
+          },
+          {
+            oneSpecId: '1-5-31',
+            oneSpecName: '李子'
+          },
+          {
+            oneSpecId: '1-5-32',
+            oneSpecName: '柠檬'
+          },
+          {
+            oneSpecId: '1-5-33',
+            oneSpecName: '荔枝'
+          },
+          {
+            oneSpecId: '1-5-34',
             oneSpecName: '杏'
           }
         ]
@@ -369,7 +595,7 @@ Page({
         list: [
           {
             oneSpecId: '1-6-1',
-            oneSpecName: '面粉'
+            oneSpecName: '有机食品'
           },
           {
             oneSpecId: '1-6-2',
@@ -377,21 +603,46 @@ Page({
           },
           {
             oneSpecId: '1-6-3',
-            oneSpecName: '方便食品'
-          },
-          {
-            oneSpecId: '1-6-4',
             oneSpecName: '大米'
           },
           {
+            oneSpecId: '1-6-4',
+            oneSpecName: '面粉'
+          },
+          {
             oneSpecId: '1-6-5',
-            oneSpecName: '有机食品'
-          }, {
-            oneSpecId: '1-6-6',
             oneSpecName: '食用油'
           },
           {
+            oneSpecId: '1-6-6',
+            oneSpecName: '花生油'
+          },
+          {
             oneSpecId: '1-6-7',
+            oneSpecName: '橄榄油'
+          },
+          {
+            oneSpecId: '1-6-8',
+            oneSpecName: '泰国香米'
+          },
+          {
+            oneSpecId: '1-6-9',
+            oneSpecName: '"粉丝'
+          },
+          {
+            oneSpecId: '1-6-10',
+            oneSpecName: '葵花籽油'
+          },
+          {
+            oneSpecId: '1-6-11',
+            oneSpecName: '其他'
+          },
+          {
+            oneSpecId: '1-6-12',
+            oneSpecName: '方便食品'
+          },
+          {
+            oneSpecId: '1-6-13',
             oneSpecName: '挂面'
           }
         ]
@@ -401,23 +652,47 @@ Page({
         list: [
           {
             oneSpecId: '1-7-1',
-            oneSpecName: '其他'
+            oneSpecName: '膨化食品'
           },
           {
             oneSpecId: '1-7-2',
-            oneSpecName: '坚果炒货'
+            oneSpecName: '糖果/巧克力'
           },
           {
             oneSpecId: '1-7-3',
-            oneSpecName: '红枣'
+            oneSpecName: '布丁果冻'
           },
           {
             oneSpecId: '1-7-4',
-            oneSpecName: '肉干肉铺'
+            oneSpecName: '口香糖'
           },
           {
             oneSpecId: '1-7-5',
+            oneSpecName: '龟苓膏'
+          },
+          {
+            oneSpecId: '1-7-6',
+            oneSpecName: '豆制品'
+          },
+          {
+            oneSpecId: '1-7-7',
+            oneSpecName: '其他'
+          },
+          {
+            oneSpecId: '1-7-8',
+            oneSpecName: '坚果炒货'
+          },
+          {
+            oneSpecId: '1-7-9',
             oneSpecName: '果干蜜饯'
+          },
+          {
+            oneSpecId: '1-7-10',
+            oneSpecName: '肉干肉脯'
+          },
+          {
+            oneSpecId: '1-7-11',
+            oneSpecName: '红枣'
           }
         ]
       },
@@ -438,15 +713,15 @@ Page({
           },
           {
             oneSpecId: '1-8-4',
-            oneSpecName: '海参'
-          },
-          {
-            oneSpecId: '1-8-5',
             oneSpecName: '贝类'
           },
           {
-            oneSpecId: '1-8-6',
+            oneSpecId: '1-8-5',
             oneSpecName: '鱼类'
+          },
+          {
+            oneSpecId: '1-8-6',
+            oneSpecName: '海参'
           },
           {
             oneSpecId: '1-8-7',
@@ -573,10 +848,6 @@ Page({
           {
             oneSpecId: '1-10-11',
             oneSpecName: '其他'
-          },
-          {
-            oneSpecId: '1-9-12',
-            oneSpecName: '东北特产'
           }
         ]
       },
@@ -590,11 +861,11 @@ Page({
           },
           {
             oneSpecId: '2-1-2',
-            oneSpecName: '其他'
+            oneSpecName: '刀具剪刀'
           },
           {
             oneSpecId: '2-1-3',
-            oneSpecName: '刀具剪刀'
+            oneSpecName: '其他'
           }
         ]
       },
@@ -603,7 +874,7 @@ Page({
         list: [
           {
             oneSpecId: '2-2-1',
-            oneSpecName: '茶具'
+            oneSpecName: '餐具套装'
           },
           {
             oneSpecId: '2-2-2',
@@ -611,7 +882,7 @@ Page({
           },
           {
             oneSpecId: '2-2-3',
-            oneSpecName: '餐具套装'
+            oneSpecName: '茶具'
           }
         ]
       },
@@ -687,10 +958,6 @@ Page({
           {
             oneSpecId: '3-3-1',
             oneSpecName: '牛奶'
-          },
-          {
-            oneSpecId: '2-3-2',
-            oneSpecName: '窗帘／纱'
           }
         ]
       },
@@ -745,20 +1012,24 @@ Page({
             oneSpecId: '4-1-6',
             oneSpecName: '节能灯'
           },
-          {
+           {
             oneSpecId: '4-1-7',
             oneSpecName: '手电筒'
           },
           {
             oneSpecId: '4-1-8',
-            oneSpecName: '室外庭院灯'
+            oneSpecName: '氛围照明'
           },
           {
             oneSpecId: '4-1-9',
-            oneSpecName: '落地灯'
+            oneSpecName: '室外/庭院灯'
           },
           {
             oneSpecId: '4-1-10',
+            oneSpecName: '落地灯'
+          },
+          {
+            oneSpecId: '4-1-11',
             oneSpecName: '其他'
           }
         ]
@@ -881,9 +1152,6 @@ Page({
           }
         ]
       },
-
-
-
       {
         parentId: '4-4',
         list: [
@@ -1352,16 +1620,16 @@ Page({
   submitForm(e) {
     const params = e.detail.value;
 
-    let categoryKeyArr = this.data.multiIndex.map(item=>{
+    let categoryKeyArr = this.data.multiIndex.map(item => {
       return item + 1;
     });
 
     let categoryThreeKey = categoryKeyArr.join('-');
-    let categoryTwoKeyArr = categoryKeyArr.splice(2,1);
+    let categoryTwoKeyArr = categoryKeyArr.splice(2, 1);
     let categoryTwoneKey = categoryKeyArr.join('-');
     let categoryOneKeyArr = categoryKeyArr.splice(1, 1);
     let categoryOneKey = categoryKeyArr.join('-');
-    Object.assign(params, { categoryThreeKey: categoryThreeKey, categoryTwoneKey: categoryTwoneKey, categoryOneKey: categoryOneKey},this.data.storeInfo)
+    Object.assign(params, { categoryThreeKey: categoryThreeKey, categoryTwoneKey: categoryTwoneKey, categoryOneKey: categoryOneKey }, this.data.storeInfo)
     // 传入表单数据，调用验证方法
     if (!this.WxValidate.checkForm(e)) {
       const error = this.WxValidate.errorList[0]
@@ -1380,11 +1648,11 @@ Page({
     //   icon: 'none'
     // })
   },
-  saveData(params){
+  saveData(params) {
     console.log(params)
 
     wx.navigateTo({
-      url: '/pages/store/store_goods/store_goods_add/store_goods_add2/store_goods_add2?info=' + JSON.stringify(params) ,
+      url: '/pages/store/store_goods/store_goods_add/store_goods_add2/store_goods_add2?info=' + JSON.stringify(params),
     })
   }
 })

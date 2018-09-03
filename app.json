@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/category/category",
     "pages/new_home/new_home",
     "pages/store/store_goods/store_goods_add/store_goods_add2/store_goods_add2",
     "pages/store/store_goods/store_goods_add/store_goods_add",
@@ -38,6 +39,12 @@
         "text": "主页",
         "iconPath": "img/home.png",
         "selectedIconPath": "img/home_s.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "img/category.png",
+        "selectedIconPath": "img/category_s.png"
       },
       {
         "pagePath": "pages/release/release",
