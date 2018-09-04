@@ -1,6 +1,6 @@
 page {
-  /* height: 110%; */
   background: #509ad2;
+  height: auto;
 }
 
 .user_login_warp {
@@ -82,6 +82,7 @@ page {
   height: 60%;
   background: #e6e8ea;
   overflow: hidden;
+  padding-bottom: 40rpx;
 }
 
 .new_user_ul {
