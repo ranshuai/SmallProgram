@@ -5,63 +5,76 @@ Page({
    */
   data: {
     goodsList: null,
+    num: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      console.log(options);
-      this.getGoods(JSON.parse(options.json));
-  },  
+    let self = this;
+    console.log(options);
+    this.getGoods(JSON.parse(options.json));
+    wx.getStorage({
+      key: 'cart',
+      complete: function (res) {
+        console.log(res);
+        if (res.data) {
+          self.setData({
+            num: res.data.length
+          });
+        }
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   },
   //加载商品
   getGoods: function (json) {
@@ -86,6 +99,7 @@ Page({
   },
   //加入购物车
   addCart: function (ev) {
+    let self = this;
     let goodsInfo = ev.currentTarget.dataset.goodsinfo;
     console.log(goodsInfo);
 
@@ -146,11 +160,26 @@ Page({
         });
       },
       complete: function (res) {
+        wx.getStorage({
+          key: 'cart',
+          success: function (res) {
+            console.log(res);
+            self.setData({
+              num: res.data.length
+            });
+
+          }
+        })
         wx.showToast({
           title: statusJson[status],
           icon: 'none'
         })
       }
+    });
+  },
+  goToCart() {
+    wx.switchTab({
+      url: "/pages/cart/cart",
     });
   },
 })

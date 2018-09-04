@@ -1,21 +1,32 @@
 Page({
   data: {
     goodsList: null,
-    storeInfo: {}
+    storeInfo: {},
+    num: 0
   },
   onLoad: function (option) {
+    let self = this;
     this.setData({
       storeInfo: JSON.parse(option.info)
     });
-    console.log(this.data);
     this.getGoods();
+    wx.getStorage({
+      key: 'cart',
+      complete: function (res) {
+        console.log(res);
+        if (res.data){
+          self.setData({
+            num: res.data.length
+          });
+        }
+      }
+    })
   },
 
   //加入购物车
   addCart: function (ev) {
+    let self = this;
     let goodsInfo = ev.currentTarget.dataset.goodsinfo;
-    console.log(goodsInfo);
-
     let statusJson = {
       "0": "加入购物车成功",
       "1": "购物车已有相同商品",
@@ -23,7 +34,6 @@ Page({
     },
       status = 0;
 
-    console.log('加入购物车');
     wx.getStorage({
       key: 'cart',
       success: function (res) {
@@ -48,16 +58,13 @@ Page({
             break;
           }
         }
-
         res.data.push(data);
-
         if (status === 0) {
           wx.setStorage({
             key: "cart",
             data: res.data
           });
         }
-
       },
       fail: function (res) {
         wx.setStorage({
@@ -71,8 +78,21 @@ Page({
             goodsNum: 1
           }]
         });
+        self.setData({
+          num: 1
+        });
       },
       complete: function (res) {
+        wx.getStorage({
+          key: 'cart',
+          success: function (res) {
+            console.log(res);
+            self.setData({
+              num: res.data.length
+            });
+
+          }
+        })
         wx.showToast({
           title: statusJson[status],
           icon: 'none'
@@ -102,5 +122,10 @@ Page({
         wx.hideLoading();
       }
     })
-  }
+  },
+  goToCart() {
+    wx.switchTab({
+      url: "/pages/cart/cart",
+    });
+  },
 })

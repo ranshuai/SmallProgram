@@ -1,0 +1,6 @@
+<template name="cart" >
+  <view class="cart_template" catchtap='goToCart'>
+      <i class="ion-ios-icon-gxk-56"></i>
+      <span>{{num}}</span>
+  </view>
+</template>

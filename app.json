@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/new_home/new_home",
+    "pages/templates",
     "pages/goods_list/goods_list",
     "pages/category/category",
     "pages/store/store_goods/store_goods_add/store_goods_add2/store_goods_add2",

@@ -85,7 +85,7 @@ Page({
         method: 'GET',
         data: {
           orderCode: this.data.orderInfo.orderSn,
-          money: 0.01,
+          money: this.data.orderInfo.payAmount ,
           orderID: this.data.orderInfo.orderId,
           openId: app.globalData.userInfo.userOpenId
         },

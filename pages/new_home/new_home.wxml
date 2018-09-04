@@ -92,7 +92,7 @@
 <view class="banner">
   <swiper indicator-color="#fff" autoplay='true' interval='2000' circular="true" vertical="">
     <swiper-item>
-      <image src='http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/ad/76211/4afdbfef-d8aa-4fc6-af1c-84e222bd5aa7.jpg?x-oss-process=image/resize,m_fixed,h_200,w_750'>
+      <image src='https://riseupall.oss-cn-beijing.aliyuncs.com/banner/timg.jpeg?x-oss-process=image/resize,m_fixed,h_200,w_750'>
       </image>
     </swiper-item>
     <swiper-item>
@@ -103,7 +103,8 @@
   </swiper>
 </view>
 <!--信息列表  -->
-<scroll-view class="info_ul" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLowe">
+<!-- <scroll-view class="info_ul" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLowe"> -->
+<view class="info_ul">
   <view class="info_ul_item" wx:for="{{releaseList}}" wx:for-index="idx" wx:for-item="item" wx:key>
     <view>
       <image src="{{item.releaseUserInfo.userPicture+'?x-oss-process=image/resize,m_fixed,h_86,w_86'}}"></image>
@@ -127,4 +128,5 @@
       </view>
     </view>
   </view>
-</scroll-view>
+</view>
+<!-- </scroll-view> -->

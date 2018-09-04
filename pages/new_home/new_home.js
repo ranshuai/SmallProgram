@@ -139,6 +139,13 @@ Page({
     })
   },
   searchGoods() {
+    if (!this.data.inputValue){
+      wx.showToast({
+        title: '请输入商品名称',
+        icon:'none'
+      })
+      return 
+    }
     let json = {
       keywords: this.data.inputValue
     }

@@ -1,8 +1,10 @@
+<import src="../templates/templates.wxml" />
+<template is="cart" data="{{num}}" />
 <view class="store_detail">
   <!--店铺背景 S -->
   <view class="store_bg">
     <!-- <image src="/img/hotshopbg.jpg"></image> -->
-    <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/user/76425/b27e5e47-0589-4ae5-bd56-393c759926a5.jpg"></image>
+    <image src="http://snsall.oss-cn-qingdao.aliyuncs.com/DF4D69929FD7F405/user/76425/b27e5e47-0589-4ae5-bd56-393c759926a5.jpg?x-oss-process=image/resize,m_fixed,h_400,w_750"></image>
   </view>
   <!--店铺背景 E -->
   <!--店铺头像 S  -->
@@ -15,8 +17,8 @@
   <!--店铺头像 E  -->
   <!--收藏 S -->
   <view class="store_collector">
-     <button>收藏者 0 </button>
-    <button>已收藏</button> 
+    <button>收藏者 0 </button>
+    <button>已收藏</button>
   </view>
   <!--收藏 E -->
   <!--店铺商品列表 S -->
@@ -30,13 +32,16 @@
       </view>
     </view>
     <view class="store_item_warp">
-      <view class="store_item pr" wx:for="{{goodsList}}" >
+      <view class="store_item pr" wx:for="{{goodsList}}">
         <image src="{{item.images[0]}}"></image>
         <!-- <image src="/img/hotshopbg.jpg"></image> -->
         <span class="font_14 color_333">{{item.goodsName}}</span>
         <span>销量 1000</span>
         <span class="red">¥{{item.shopPrice}}</span>
-        <span data-goodsInfo="{{item}}" class="pa cart_btn" catchtap="addCart"> <i class="ion-ios-icon-gxk-56"></i></span>
+        <span data-goodsInfo="{{item}}" class="pa cart_btn" catchtap="addCart">
+          <!-- <i class="ion-ios-icon-gxk-56"></i> -->
+          +
+        </span>
       </view>
     </view>
   </view>
