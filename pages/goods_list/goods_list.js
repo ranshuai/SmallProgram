@@ -1,16 +1,89 @@
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
     goodsList: null,
-    storeInfo: {}
-  },
-  onLoad: function (option) {
-    this.setData({
-      storeInfo: JSON.parse(option.info)
-    });
-    console.log(this.data);
-    this.getGoods();
   },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+      console.log(options);
+      this.getGoods(JSON.parse(options.json));
+  },  
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    
+  },
+  //加载商品
+  getGoods: function (json) {
+    let self = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    wx.request({
+      url: 'https://riseupall.cn/server/getGoods',
+      method: 'GET',
+      data: json,
+      success: function (res) {
+        self.setData({
+          goodsList: res.data.result.list
+        });
+      },
+      complete: function () {
+        wx.hideLoading();
+      }
+    })
+  },
   //加入购物车
   addCart: function (ev) {
     let goodsInfo = ev.currentTarget.dataset.goodsinfo;
@@ -80,27 +153,4 @@ Page({
       }
     });
   },
-  //加载商品
-  getGoods: function () {
-    let self = this;
-    wx.showLoading({
-      title: '加载中',
-    })
-
-    wx.request({
-      url: 'https://riseupall.cn/server/getGoods',
-      method: 'GET',
-      data: {
-        storeId: this.data.storeInfo.storeId
-      },
-      success: function (res) {
-        self.setData({
-          goodsList: res.data.result.list
-        });
-      },
-      complete: function () {
-        wx.hideLoading();
-      }
-    })
-  }
 })

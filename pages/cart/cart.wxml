@@ -17,7 +17,7 @@
                 <span>x1</span>
               </span>
               <span class="font_12 color_a3a3a3">
-                商品规格：500g／箱
+                商品规格：{{goods.goodsSpecs}}
               </span>
               <span class="font_12 color_a3a3a3 j_c_s_b">
                 ¥{{goods.shopPrice}}

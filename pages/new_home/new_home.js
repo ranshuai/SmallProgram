@@ -137,5 +137,13 @@ Page({
     wx.previewImage({
       urls: this.data.releaseList[ev.currentTarget.dataset.index].releaseImages,
     })
+  },
+  searchGoods() {
+    let json = {
+      keywords: this.data.inputValue
+    }
+    wx.navigateTo({
+      url: '/pages/goods_list/goods_list?json=' + JSON.stringify(json)
+    })
   }
 })

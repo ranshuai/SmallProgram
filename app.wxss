@@ -101,6 +101,7 @@ page {
 .p_t_b_40 {
   padding: 40rpx 0;
 }
+
 .p_b_40 {
   padding-bottom: 40rpx;
 }
@@ -213,8 +214,8 @@ page {
 
 .cart_btn {
   font-size: 30px;
-  bottom: 0;
-  right: 0;
+  bottom: 10rpx;
+  right: 10rpx;
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
@@ -223,6 +224,10 @@ page {
   color: #fff;
   text-align: center;
   line-height: 60rpx;
+}
+
+.cart_btn .ion-ios-icon-gxk-56 {
+  font-size: 20px;
 }
 
 .no-more-data {

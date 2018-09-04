@@ -31,12 +31,12 @@
     </view>
     <view class="store_item_warp">
       <view class="store_item pr" wx:for="{{goodsList}}" >
-        <image src="{{item.originalImg}}"></image>
+        <image src="{{item.images[0]}}"></image>
         <!-- <image src="/img/hotshopbg.jpg"></image> -->
         <span class="font_14 color_333">{{item.goodsName}}</span>
         <span>销量 1000</span>
         <span class="red">¥{{item.shopPrice}}</span>
-        <span data-goodsInfo="{{item}}" class="pa cart_btn" catchtap="addCart"> +</span>
+        <span data-goodsInfo="{{item}}" class="pa cart_btn" catchtap="addCart"> <i class="ion-ios-icon-gxk-56"></i></span>
       </view>
     </view>
   </view>

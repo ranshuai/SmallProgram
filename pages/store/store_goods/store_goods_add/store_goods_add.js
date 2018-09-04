@@ -1626,10 +1626,10 @@ Page({
 
     let categoryThreeKey = categoryKeyArr.join('-');
     let categoryTwoKeyArr = categoryKeyArr.splice(2, 1);
-    let categoryTwoneKey = categoryKeyArr.join('-');
+    let categoryTwoKey = categoryKeyArr.join('-');
     let categoryOneKeyArr = categoryKeyArr.splice(1, 1);
     let categoryOneKey = categoryKeyArr.join('-');
-    Object.assign(params, { categoryThreeKey: categoryThreeKey, categoryTwoneKey: categoryTwoneKey, categoryOneKey: categoryOneKey }, this.data.storeInfo)
+    Object.assign(params, { categoryThreeKey: categoryThreeKey, categoryTwoKey: categoryTwoKey, categoryOneKey: categoryOneKey }, this.data.storeInfo)
     // 传入表单数据，调用验证方法
     if (!this.WxValidate.checkForm(e)) {
       const error = this.WxValidate.errorList[0]

@@ -6,7 +6,8 @@ Page({
   data: {
     oneLevelNav: 1, //点击的类型 
     storeInfo: null,
-    storeGoodsList: []
+    storeGoodsList: [],
+    inputValue:''
   },
 
   /**
@@ -28,8 +29,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function (options) {
-    this.getStoreList({ type: 1 });
+  onShow: function () {
+    this.getStoreList({ type: 1, storeId: JSON.parse(this.data.storeInfo).storeId, keywords: this.data.inputValue});
 
   },
 
@@ -75,7 +76,7 @@ Page({
     this.setData({
       oneLevelNav: ev.currentTarget.dataset.info
     });
-    this.getStoreList({ type: this.data.oneLevelNav});
+    this.getStoreList({ type: this.data.oneLevelNav, storeId: JSON.parse(this.data.storeInfo).storeId, keywords: this.data.inputValue});
   },
   goToAdd() {
     wx.navigateTo({
@@ -87,14 +88,10 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    console.log(JSON.parse(this.data.storeInfo))
     wx.request({
       url: 'https://riseupall.cn/server/getGoods',
       method: 'Get',
-      data: {
-        storeId: JSON.parse(this.data.storeInfo).storeId,
-        type: json.type
-      },
+      data: json,
       success: function (res) {
         self.setData({
           storeGoodsList: res.data.result.list
@@ -108,5 +105,15 @@ Page({
 
       }
     })
+  },
+  //监听input事件
+  bindKeyInput: function (e) {
+    console.log(e);
+    this.setData({
+      inputValue: e.detail.value
+    })
+  },
+  search(){
+    this.getStoreList({ type: this.data.oneLevelNav, storeId: JSON.parse(this.data.storeInfo).storeId, keywords: this.data.inputValue })
   }
 })

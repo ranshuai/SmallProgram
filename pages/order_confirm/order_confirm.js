@@ -39,11 +39,13 @@ Page({
 
     let totalPrice = 0;
     for (let i = 0; i < this.data.orderConfirmInfo.length; i++) {
-      totalPrice = totalPrice + parseInt(this.data.orderConfirmInfo[i].shopPrice) * parseInt(this.data.orderConfirmInfo[i].goodsNum)
+      totalPrice = totalPrice + Number(this.data.orderConfirmInfo[i].shopPrice) * Number(this.data.orderConfirmInfo[i].goodsNum)
     }
+
     this.setData({
       orderTotal: totalPrice
     })
+    console.log(this.data.orderTotal);
   },
 
   /**

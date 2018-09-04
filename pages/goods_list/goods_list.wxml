@@ -1,0 +1,14 @@
+<view class="no-more-data" wx:if="{{goodsList.length <= 0}}">暂时还没有相关商品</view>
+
+<view class="store_item_warp p_0_24 ">
+  <view class="store_item pr" wx:for="{{goodsList}}">
+    <image src="{{item.images[0]}}"></image>
+    <!-- <image src="/img/hotshopbg.jpg"></image> -->
+    <span class="font_14 color_333">{{item.goodsName}}</span>
+    <span>销量 1000</span>
+    <span class="red">¥{{item.shopPrice}}</span>
+    <span data-goodsInfo="{{item}}" class="pa cart_btn" catchtap="addCart">
+      <i class="ion-ios-icon-gxk-56"></i>
+    </span>
+  </view>
+</view>

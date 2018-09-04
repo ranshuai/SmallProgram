@@ -1,12 +1,12 @@
 <view class="store_goods_top p_0_24 color_a3a3a3">
   <span class="font_14 c_40b3e2" catchtap="goToAdd">添加商品</span>
-  <span class="font_14">排序</span>
+  <!-- <span class="font_14">排序</span> -->
 </view>
 <view class="header">
   <view class="search">
     <i class="ion-ios-icon-gxk-46"></i>
     <input bindinput="bindKeyInput" placeholder='请输入店铺名称' value="{{inputValue}}" />
-    <text catchtap="search">搜索</text>
+    <text catchtap="search" >搜索</text>
   </view>
 </view>
 

@@ -853,7 +853,7 @@ Page({
           {
             oneSpecId: '3-1',
             oneSpecName: '酒',
-            list:[
+            list: [
               {
                 parentId: '3-1',
                 list: [
@@ -884,7 +884,7 @@ Page({
           {
             oneSpecId: '3-2',
             oneSpecName: '茶',
-            list:[
+            list: [
               {
                 parentId: '3-2',
                 list: [
@@ -899,7 +899,7 @@ Page({
           {
             oneSpecId: '3-3',
             oneSpecName: '牛奶制品',
-            list:[
+            list: [
               {
                 parentId: '3-3',
                 list: [
@@ -914,7 +914,7 @@ Page({
           {
             oneSpecId: '3-4',
             oneSpecName: '饮料饮品',
-            list:[
+            list: [
               {
                 parentId: '3-4',
                 list: [
@@ -929,7 +929,7 @@ Page({
           {
             oneSpecId: '3-5',
             oneSpecName: '冲饮调冲',
-            list:[
+            list: [
               {
                 parentId: '3-5',
                 list: [
@@ -953,7 +953,7 @@ Page({
           {
             oneSpecId: '4-1',
             oneSpecName: '灯饰照明',
-            list:[
+            list: [
               {
                 parentId: '4-1',
                 list: [
@@ -1008,7 +1008,7 @@ Page({
           {
             oneSpecId: '4-2',
             oneSpecName: '厨房卫浴',
-            list:[
+            list: [
               {
                 parentId: '4-2',
                 list: [
@@ -1079,7 +1079,7 @@ Page({
           {
             oneSpecId: '4-3',
             oneSpecName: '五金工具',
-            list:[
+            list: [
               {
                 parentId: '4-3',
                 list: [
@@ -1138,7 +1138,7 @@ Page({
           {
             oneSpecId: '4-4',
             oneSpecName: '电工电料',
-            list:[
+            list: [
               {
                 parentId: '4-4',
                 list: [
@@ -1173,7 +1173,7 @@ Page({
           {
             oneSpecId: '4-5',
             oneSpecName: '墙地面材料',
-            list:[
+            list: [
               {
                 parentId: '4-5',
                 list: [
@@ -1216,7 +1216,7 @@ Page({
           {
             oneSpecId: '4-6',
             oneSpecName: '装饰材料',
-            list:[
+            list: [
               {
                 parentId: '4-6',
                 list: [
@@ -1267,7 +1267,7 @@ Page({
           {
             oneSpecId: '4-7',
             oneSpecName: '装修服务',
-            list:[
+            list: [
               {
                 parentId: '4-7',
                 list: [
@@ -1302,7 +1302,7 @@ Page({
           {
             oneSpecId: '4-8',
             oneSpecName: '卧室家具',
-            list:[
+            list: [
               {
                 parentId: '4-8',
                 list: [
@@ -1361,7 +1361,7 @@ Page({
           {
             oneSpecId: '4-9',
             oneSpecName: '客厅家具',
-            list:[
+            list: [
               {
                 parentId: '4-9',
                 list: [
@@ -1420,7 +1420,7 @@ Page({
           {
             oneSpecId: '4-10',
             oneSpecName: '儿童家具',
-            list:[
+            list: [
               {
                 parentId: '4-10',
                 list: [
@@ -1462,7 +1462,8 @@ Page({
           }
         ]
       }
-    ]
+    ],
+    inputValue: '',
   },
 
   /**
@@ -1526,6 +1527,25 @@ Page({
     });
   },
   goToGoodsList(ev) {
-    console.log(ev);
+    let json = {
+      categoryThreeKey: ev.currentTarget.dataset.categoryid
+    }
+    wx.navigateTo({
+      url: '/pages/goods_list/goods_list?json=' + JSON.stringify(json)
+    })
+
+  },
+  searchGoods() {
+    let json = {
+      keywords:this.data.inputValue
+    }
+    wx.navigateTo({
+      url: '/pages/goods_list/goods_list?json=' + JSON.stringify(json)
+    })
+  },
+  bindKeyInput(e){
+    this.setData({
+      inputValue: e.detail.value
+    })
   }
 })

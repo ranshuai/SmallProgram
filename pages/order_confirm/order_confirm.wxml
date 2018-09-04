@@ -25,7 +25,7 @@
           <span> x{{item.goodsNum}}</span>
         </span>
         <span class="font_12 color_a3a3a3">
-          商品属性: 24/箱
+          商品属性:{{item.goodsSpecs}}
         </span>
         <span class="font_12 color_a3a3a3">
           ¥{{item.shopPrice}}

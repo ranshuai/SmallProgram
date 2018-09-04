@@ -2,8 +2,8 @@
 <view class="header">
   <view class="search">
     <i class="ion-ios-icon-gxk-46"></i>
-    <input bindinput="bindKeyInput" placeholder='请输入店铺名称' />
-    <text catchtap="goToStores">搜索</text>
+    <input bindinput="bindKeyInput" placeholder='请输入商品名称' />
+    <text catchtap="searchGoods">搜索</text>
   </view>
   <view>
     <view>本站浏览:
