@@ -103,79 +103,103 @@ Page({
     let goodsInfo = ev.currentTarget.dataset.goodsinfo;
     console.log(goodsInfo);
 
-    let statusJson = {
-      "0": "加入购物车成功",
-      "1": "购物车已有相同商品",
-      "2": "购物车最多暂存10件商品"
-    },
-      status = 0;
+    wx.showLoading({
+      title: '加载中',
+    })
 
-    console.log('加入购物车');
-    wx.getStorage({
-      key: 'cart',
-      success: function (res) {
-        var data = {
-          goodsId: goodsInfo.goodsId,
-          goodsName: goodsInfo.goodsName,
-          shopPrice: goodsInfo.shopPrice,
-          goodsImg: goodsInfo.images[0],
-          goodsSpecs: goodsInfo.goodsSpecs,
-          goodsNum: 1
-        };
-        //如果有相同的商品就不添加
-
-        if (res.data.length >= 10) {
-          status = 2;
-          return;
-        }
-
-        for (let i = 0; i < res.data.length; i++) {
-          if (res.data[i].goodsId == data.goodsId) {
-            status = 1;
-            break;
-          }
-        }
-
-        res.data.push(data);
-
-        if (status === 0) {
-          wx.setStorage({
-            key: "cart",
-            data: res.data
-          });
-        }
-
+    wx.request({
+      url: 'https://riseupall.cn/server/getStore',
+      method: 'GET',
+      data: {
+        storeId: goodsInfo.storeId
       },
-      fail: function (res) {
-        wx.setStorage({
-          key: "cart",
-          data: [{
-            goodsId: goodsInfo.goodsId,
-            goodsName: goodsInfo.goodsName,
-            shopPrice: goodsInfo.shopPrice,
-            goodsImg: goodsInfo.images[0],
-            goodsSpecs: goodsInfo.goodsSpecs,
-            goodsNum: 1
-          }]
-        });
-      },
-      complete: function (res) {
+      success: function (_res) {
+        console.log(_res.data.result.list[0].storeName);
+        let statusJson = {
+          "0": "加入购物车成功",
+          "1": "购物车已有相同商品",
+          "2": "购物车最多暂存10件商品"
+        },
+          status = 0;
+
+        console.log('加入购物车');
         wx.getStorage({
           key: 'cart',
           success: function (res) {
-            console.log(res);
-            self.setData({
-              num: res.data.length
-            });
+            var data = {
+              goodsId: goodsInfo.goodsId,
+              goodsName: goodsInfo.goodsName,
+              shopPrice: goodsInfo.shopPrice,
+              goodsImg: goodsInfo.images[0],
+              goodsSpecs: goodsInfo.goodsSpecs,
+              goodsNum: 1,
+              storeId: goodsInfo.storeId,
+              storeName: _res.data.result.list[0].storeName
+            };
+            //如果有相同的商品就不添加
 
+            if (res.data.length >= 10) {
+              status = 2;
+              return;
+            }
+
+            for (let i = 0; i < res.data.length; i++) {
+              if (res.data[i].goodsId == data.goodsId) {
+                status = 1;
+                break;
+              }
+            }
+
+            res.data.push(data);
+
+            if (status === 0) {
+              wx.setStorage({
+                key: "cart",
+                data: res.data
+              });
+            }
+
+          },
+          fail: function (res) {
+            wx.setStorage({
+              key: "cart",
+              data: [{
+                goodsId: goodsInfo.goodsId,
+                goodsName: goodsInfo.goodsName,
+                shopPrice: goodsInfo.shopPrice,
+                goodsImg: goodsInfo.images[0],
+                goodsSpecs: goodsInfo.goodsSpecs,
+                goodsNum: 1,
+                storeId: goodsInfo.storeId,
+                storeName: _res.data.result.list[0].storeName
+              }]
+            });
+          },
+          complete: function (res) {
+            wx.getStorage({
+              key: 'cart',
+              success: function (res) {
+                console.log(res);
+                self.setData({
+                  num: res.data.length
+                });
+
+              }
+            })
+            wx.showToast({
+              title: statusJson[status],
+              icon: 'none'
+            })
           }
-        })
-        wx.showToast({
-          title: statusJson[status],
-          icon: 'none'
-        })
+        });
+      },
+      complete: function () {
+
       }
-    });
+    })
+
+
+  
   },
   goToCart() {
     wx.switchTab({

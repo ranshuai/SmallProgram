@@ -43,6 +43,8 @@
     </view>
   </view>
   <view wx:if="{{selfType == 'shop'}}">
+    <view class="no-more-data" wx:if="{{storesList.length <= 0}}">暂时还没有相关店铺</view>
+
     <view class="info_ul_item" wx:for="{{storesList}}" wx:key >
       <view>
         <image src="{{item.userInfo.userPicture+'?x-oss-process=image/resize,m_fixed,h_86,w_86'}}"></image>

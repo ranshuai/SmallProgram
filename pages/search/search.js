@@ -97,20 +97,7 @@ Page({
   },
   //搜索
   search: function () {
-    if (!this.data.inputValue){
-      wx.showToast({
-        title: '请输入需要查询的店铺名称',
-        icon: 'none'
-      })
-      return 
-    }
-    wx.showLoading({
-      title: '加载中',
-    });
-
-    setTimeout(function(){
-      wx.hideLoading();
-    },1000)
+    this.getStoreDate(this.data.inputValue);
   },
   //预览图片
   previewImg: function () {
@@ -135,7 +122,7 @@ Page({
     })
 
   },
-  getStoreDate:function(){
+  getStoreDate: function (keywords){
     let self = this;
     wx.showLoading({
       title: '加载中...',
@@ -144,7 +131,8 @@ Page({
       url: 'https://riseupall.cn/server/getStore',
       method:'GET',
       data:{
-        storeType: this.data.storeType
+        storeType: this.data.storeType,
+        keywords: keywords || ''
       },
       success:function(res){
         self.setData({

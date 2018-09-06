@@ -13,11 +13,11 @@
 <!--收获地址 E  -->
 <!--商品信息 S  -->
 <view class="goods_info">
-  <view wx:for="{{orderConfirmInfo}}" wx:for-index="index">
+  <view wx:for="{{orderConfirmInfo}}" wx:key wx:for-index="index">
     <view class="store_name font_14 color_333">
-      店铺：冉冉微生活超市
+      店铺：{{item[1][0].storeName}}
     </view>
-    <view class="goods_info_cont">
+    <view class="goods_info_cont" wx:for="{{item[1]}}">
       <image src="{{item.goodsImg}}"></image>
       <view class="goods_info_cont_r">
         <span class="font_14 color_333 goods_info_cont_r_title">

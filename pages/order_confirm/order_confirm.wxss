@@ -1,6 +1,7 @@
 page {
   background: #e6e8ea;
   height: 100%;
+  padding-bottom: 100rpx;
 }
 
 .user_address {
@@ -63,7 +64,8 @@ page {
 }
 
 .confirm_btn_warp {
-  position: absolute;
+  position: fixed;
+  z-index: 10;
   left: 0;
   bottom: 0;
   width: 100%;

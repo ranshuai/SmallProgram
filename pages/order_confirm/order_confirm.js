@@ -37,11 +37,13 @@ Page({
       orderConfirmInfo: app.globalData.orderConfirmInfo,
     });
 
+    console.log(this.data.orderConfirmInfo);
     let totalPrice = 0;
     for (let i = 0; i < this.data.orderConfirmInfo.length; i++) {
-      totalPrice = totalPrice + Number(this.data.orderConfirmInfo[i].shopPrice) * Number(this.data.orderConfirmInfo[i].goodsNum)
+      for (let j = 0; j < this.data.orderConfirmInfo[i][1].length; j++) {
+        totalPrice = totalPrice + Number(this.data.orderConfirmInfo[i][1][j].shopPrice) * Number(this.data.orderConfirmInfo[i][1][j].goodsNum)
+      }
     }
-
     this.setData({
       orderTotal: totalPrice
     })
@@ -87,6 +89,7 @@ Page({
 
   //订单支付
   goToOrderPay: function (ev) {
+    console.log(this.data.orderConfirmInfo);
     let self = this;
     wx.showLoading({
       title: '加载中',
@@ -106,15 +109,16 @@ Page({
       },
       success: function (res) {
         self.data.orderInfo = res.data;
+
         //清除购物车
         wx.getStorage({
           key: 'cart',
           success: function (res) {
             let newArr = [];
-            for(let i = 0; i<res.data.length; i++){
-              if (!utils.findArr(res.data, self.data.orderInfo.result.goodsInfoArr[i])) {
+            for (let i = 0; i < res.data.length; i++) {
+              if (!utils.findArr(res.data, self.data.orderInfo.result.buyGoodsInfoArr[i])) {
                 newArr.push(res.data[i]);
-              } 
+              }
             }
             wx.setStorage({
               key: 'cart',

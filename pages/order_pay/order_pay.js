@@ -9,7 +9,7 @@ Page({
    */
   data: {
     canClick: true,
-    orderInfo:null
+    orderInfo: null
   },
 
   /**
@@ -85,7 +85,7 @@ Page({
         method: 'GET',
         data: {
           orderCode: this.data.orderInfo.orderSn,
-          money: this.data.orderInfo.payAmount ,
+          money: this.data.orderInfo.payAmount,
           orderID: this.data.orderInfo.orderId,
           openId: app.globalData.userInfo.userOpenId
         },
@@ -105,9 +105,19 @@ Page({
                     title: res.msg,
                     icon: 'none'
                   })
-
-                  wx.navigateTo({
-                    url: '/pages/pay_success/pay_success',
+                  //改变订单的状态
+                  wx.request({
+                    url: 'https://riseupall.cn/server/setOrderStatus',
+                    method: 'POST',
+                    data: {
+                      payStatus: 1,
+                      orderSnArr: slef.data.orderInfo.orderSnArr
+                    },
+                    success: function () {
+                      wx.navigateTo({
+                        url: '/pages/pay_success/pay_success',
+                      })
+                    }
                   })
                 },
                 'fail': function (res) {
@@ -123,7 +133,7 @@ Page({
                     canClick: true
                   });
 
-                  
+
                 }
               })
           } else {

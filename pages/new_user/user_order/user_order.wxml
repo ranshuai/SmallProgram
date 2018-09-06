@@ -24,7 +24,7 @@
       <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
     </view>
     <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
-      <image src="{{_item.originalImg}}"></image>
+      <image src="{{_item.images[0]}}"></image>
       <view class="color_a3a3a3">
         <view class="font_14 cont_title">
           <span>{{_item.goodsName}}</span>
@@ -59,7 +59,7 @@
       <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
     </view>
     <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
-      <image src="{{_item.originalImg}}"></image>
+      <image src="{{_item.images[0]}}"></image>
       <view class="color_a3a3a3">
         <view class="font_14 cont_title">
           <span>{{_item.goodsName}}</span>
@@ -94,7 +94,7 @@
       <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
     </view>
     <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
-      <image src="{{_item.originalImg}}"></image>
+      <image src="{{_item.images[0]}}"></image>
       <view class="color_a3a3a3">
         <view class="font_14 cont_title">
           <span>{{_item.goodsName}}</span>
@@ -129,7 +129,7 @@
       <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
     </view>
     <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
-      <image src="{{_item.originalImg}}"></image>
+      <image src="{{_item.images[0]}}"></image>
       <view class="color_a3a3a3">
         <view class="font_14 cont_title">
           <span>{{_item.goodsName}}</span>

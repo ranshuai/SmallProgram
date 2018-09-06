@@ -3,6 +3,8 @@ const app = getApp()
 Page({
   data: {
     cartdata: [],
+    cartDataMap: null,
+    cartDataMapArr: [],
     selectedGoods: []
   },
   checkboxChange: function (e) {
@@ -15,6 +17,15 @@ Page({
   confirm: function () {
     app.selfShowAuthorization().then(ev => {
       console.log(ev);
+      let self_arr = []
+      this.data.cartDataMapArr.forEach(item => {
+        item[1].forEach(_item => {
+          if (_item.selected) {
+            _item.selected = false;
+          }
+        })
+      });
+
       if (ev) {
         if (this.data.selectedGoods.length <= 0) {
           wx.showToast({
@@ -23,13 +34,24 @@ Page({
           })
           return;
         }
-        let selectedGoodsArr = [];
-
         for (let i = 0; i < this.data.selectedGoods.length; i++) {
-          selectedGoodsArr.push(this.data.cartdata[this.data.selectedGoods[i]]);
+          let arr = this.data.selectedGoods[i].split('-');
+          this.data.cartDataMapArr[arr[0]][1][arr[1]].selected = true;
         }
-        app.globalData.orderConfirmInfo = selectedGoodsArr;
-
+        for (let i = 0 ; i<this.data.cartDataMapArr.length; i++ ){
+          let newArr = []
+          newArr[0] = this.data.cartDataMapArr[i][0];
+          newArr[1] = [];
+          for (let j = 0; j < this.data.cartDataMapArr[i][1].length; j++) {
+            if (this.data.cartDataMapArr[i][1][j].selected) {
+              newArr[1].push(this.data.cartDataMapArr[i][1][j]);
+            }
+          }
+          if (newArr[1].length > 0) {
+            self_arr.push(newArr)
+          }
+        }
+        app.globalData.orderConfirmInfo = self_arr
         wx.navigateTo({
           url: '/pages/order_confirm/order_confirm',
         })
@@ -37,9 +59,9 @@ Page({
     });
   },
   onLoad: function () {
-   
+
   },
-  onShow:function(){
+  onShow: function () {
     let self = this;
     wx.getStorage({
       key: 'cart',
@@ -48,6 +70,21 @@ Page({
           cartdata: res.data
         });
         console.log(res.data);
+        const m = new Map();
+        res.data.forEach((value) => {
+          if (m.has(value.storeId)) {
+            const arr = m.get(value.storeId);
+            arr.push(value)
+            m.set(value.storeId, arr);
+          } else {
+            m.set(value.storeId, [value]);
+          }
+        })
+        self.setData({
+          cartDataMapArr: [...m],
+          cartDataMap: m
+        });
+        console.log(self.data);
       }
     })
   },

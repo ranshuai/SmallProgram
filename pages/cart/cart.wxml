@@ -1,14 +1,14 @@
 <!--购物车S  -->
 <scroll-view wx:if="{{cartdata.length > 0}}">
   <checkbox-group bindchange="checkboxChange">
-    <view class="cart_goods_ul">
-      <view class="cart_goods_item p_0_24">
+    <view class="cart_goods_ul"> 
+      <view class="cart_goods_item p_0_24" wx:key wx:for="{{cartDataMapArr}}" wx:for-index="index">
         <view class="cart_goods_store_name p_t_b_40 font_14 color_333  border_b_1">
           <!-- <checkbox value="1"/> 冉冉微生活超市 -->
-          冉冉微生活超市
+          {{item[1][0].storeName}}
         </view>
-        <view class="cart_goods_c p_t_b_40 border_b_1" wx:for="{{cartdata}}" wx:for-item="goods" wx:for-index="_index" wx:key>
-          <checkbox value="{{_index}}" />
+        <view class="cart_goods_c p_t_b_40 border_b_1" wx:for="{{item[1]}}" wx:for-item="goods" wx:for-index="_index" wx:key>
+          <checkbox value="{{index +'-'+ _index}}" />
           <view class="cart_goods_c_r">
             <image src="{{goods.goodsImg}}"></image>
             <view class="m_left_20 cart_goods_c_r_c">
@@ -28,7 +28,6 @@
         </view>
 
       </view>
-
     </view>
     <!-- 确认付款 S -->
     <view class="confirm_btn_warp">
