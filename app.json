@@ -1,6 +1,8 @@
 {
   "pages": [
+    
     "pages/new_home/new_home",
+    "pages/cart/cart",
     "pages/goods_list/goods_list",
     "pages/category/category",
     "pages/store/store_goods/store_goods_add/store_goods_add2/store_goods_add2",
@@ -16,7 +18,6 @@
     "pages/order_confirm/order_confirm",
     "pages/new_user/user_address/add_new_address/add_new_address",
     "pages/new_user/user_address/user_address",
-    "pages/cart/cart",
     "pages/order_pay/order_pay",
     "pages/store_detail/store_detail",
     "pages/search/search",

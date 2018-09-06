@@ -8,7 +8,6 @@ Page({
     selectedGoods: []
   },
   checkboxChange: function (e) {
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value);
     this.setData({
       selectedGoods: e.detail.value
     });
@@ -16,7 +15,6 @@ Page({
   //加入购物车
   confirm: function () {
     app.selfShowAuthorization().then(ev => {
-      console.log(ev);
       let self_arr = []
       this.data.cartDataMapArr.forEach(item => {
         item[1].forEach(_item => {
@@ -69,7 +67,6 @@ Page({
         self.setData({
           cartdata: res.data
         });
-        console.log(res.data);
         const m = new Map();
         res.data.forEach((value) => {
           if (m.has(value.storeId)) {
@@ -84,16 +81,27 @@ Page({
           cartDataMapArr: [...m],
           cartDataMap: m
         });
-        console.log(self.data);
       }
     })
   },
 
   //进入店铺列表
   goToStoreType(e) {
-    console.log(e)
     wx.navigateTo({
       url: '/pages/search/search?type=' + e.currentTarget.dataset.storetype,
     })
+  },
+
+  showModal:function(){
+    console.log('点击编辑');
+    
+  },
+  closeModal:function(){
+    console.log('关闭modal');
+    //cart_edit_modal
+    var query = wx.createSelectorQuery();
+    query.select('#cart_edit_modal');
+    console.log(query.select('#cart_edit_modal').boundingClientRect());
+
   }
 })

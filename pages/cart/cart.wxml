@@ -1,4 +1,7 @@
 <!--购物车S  -->
+
+<import src="../templates/templates.wxml"/>
+<template is="cart_edit" data="{{num}}"/>
 <scroll-view wx:if="{{cartdata.length > 0}}">
   <checkbox-group bindchange="checkboxChange">
     <view class="cart_goods_ul"> 
@@ -21,7 +24,7 @@
               </span>
               <span class="font_12 color_a3a3a3 j_c_s_b">
                 ¥{{goods.shopPrice}}
-                <span>编辑</span>
+                <span catchtap="showModal">编辑</span>
               </span>
             </view>
           </view>
@@ -30,7 +33,7 @@
       </view>
     </view>
     <!-- 确认付款 S -->
-    <view class="confirm_btn_warp">
+    <view  class="confirm_btn_warp">
       <view class="font_16 p_l_24">
         <!-- <checkbox value="0"/> 全选 -->
       </view>

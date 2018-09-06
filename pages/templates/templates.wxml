@@ -4,3 +4,9 @@
       <span>{{num}}</span>
   </view>
 </template>
+
+<template name="cart_edit" >
+  <view id='cart_edit_modal' class="cart_edit_modal" catchtap="closeModal">
+      1111
+  </view>
+</template>

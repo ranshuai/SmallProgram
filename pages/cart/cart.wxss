@@ -1,3 +1,5 @@
+@import "../templates/templates.wxss";
+
 page {
   background: #e6e8ea;
   height: 100%;
@@ -8,6 +10,7 @@ page {
 }
 
 .cart_goods_item {
+  
 }
 
 .cart_goods_item image {
