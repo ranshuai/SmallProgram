@@ -8,8 +8,8 @@
   <view>
     <view>本站浏览:
       <text>100</text> </view>
-    <view class="m_left_20">入住店铺:
-      <text>3</text> </view>
+    <!-- <view class="m_left_20">入住店铺:
+      <text>3</text> </view> -->
   </view>
 </view>
 <!--nav 一级  -->
@@ -55,7 +55,7 @@
         <i class="ion-ios-icon-gxk-9"></i>
       </view>
       <view>
-        申请入驻
+        加入
       </view>
     </view>
   </view>
