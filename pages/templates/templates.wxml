@@ -1,12 +1,55 @@
-<template name="cart" >
+<template name="cart">
   <view class="cart_template" catchtap='goToCart'>
-      <i class="ion-ios-icon-gxk-56"></i>
-      <span>{{num}}</span>
+    <i class="ion-ios-icon-gxk-56"></i>
+    <span>{{num}}</span>
   </view>
 </template>
 
-<template name="cart_edit" >
-  <view id='cart_edit_modal' class="cart_edit_modal" catchtap="closeModal">
-      1111
+<template name="cart_edit">
+  <view id='cart-edit-modal' class="cart_edit_modal" catchtap="closeModal">
+    <view class="specs-wrap" catchtap='aa'>
+      <view class="colse-btn" catchtap="closeModal">
+        <i class="ion-ios-icon-gxk-59"></i>
+      </view>
+      <view class="info">
+        <image src="{{specsModalData.goodsImg}}"></image>
+        <view class="goods-title">
+          <span class="title">{{specsModalData.goodsName}}</span>
+          <span class="price">¥{{specsModalData.shopPrice}} </span>
+        </view>
+      </view>
+
+      <view class="specification_wrap">
+        <view class="specs-list">
+          <view class="item">
+            <view class="title">
+              商品规格
+            </view>
+            <view class="btn-wrap">
+              <span>{{specsModalData.goodsSpecs}}</span>
+            </view>
+          </view>
+        </view>
+
+        <view class="quantity">
+          <view class="title">
+            <span>购买数量</span>
+          </view>
+
+          <view class="num-wrap">
+            <i class="ion-ios-icon-gxk-69" catchtap="delNum"></i>
+            <span>{{specsModalData.goodsNum}}</span>
+            <i class="ion-ios-icon-gxk-70" catchtap="addNum"></i>
+          </view>
+
+        </view>
+      </view>
+
+     
+
+    </view>
+     <view class="footer" catchtap="saveCart">
+        确定
+      </view>
   </view>
 </template>

@@ -1,0 +1,72 @@
+<view class="confirm-box p_30_24 font_14 color_333 margin_t_20">
+  <view>
+    <span>{{orderInfo.deliveryAddress.consignee}}</span>
+    <span class="p_l_24">{{orderInfo.deliveryAddress.mobile}}</span>
+  </view>
+  <view class="font_12 color_a3a3a3 margin_t_20">
+    <span>{{orderInfo.deliveryAddress.address}}</span>
+  </view>
+</view>
+
+<view class=" white p_30_24 font_14 color_333 margin_t_20">
+  <span>
+    店铺：
+  </span>
+  <span>
+    {{orderInfo.storeName}}
+  </span>
+</view>
+
+<view class="confirm-content  white p_30_24 font_14 color_333" wx:for="{{orderInfo.goodsInfoArr}}" wx:key>
+  <image src="{{item.images[0]}}"></image>
+  <view class="p_l_24">
+    <view>
+      <span>{{item.goodsName}}</span>
+      <span>x</span>
+    </view>
+    <view>
+      <span>规格：</span>
+      <span>{{item.goodsSpecs}}</span>
+    </view>
+    <view>
+      <span>¥ {{item.shopPrice}}</span>
+    </view>
+  </view>
+</view>
+<view class="p_30_24 font_14 color_333 white">
+  备注：
+</view>
+<view class="p_30_24 font_14 color_333 white margin_t_20">
+  配送运费：¥0.00
+</view>
+<view class="p_30_24 font_14 color_333 white ">
+  商品合计：¥ {{orderInfo.payAmount}}
+</view>
+<view class="p_30_24 font_14 color_333 white ">
+  订单金额：¥{{orderInfo.payAmount}}
+</view>
+
+<view class="p_30_24 font_14 color_a3a3a3">
+  请选择支付方式
+</view>
+
+<view class="font_14 p_30_24 white payment_type_item border_b_1">
+  <view>
+    <image src="/img/wx.png"></image>
+    <span class="m_left_20">
+      微信支付
+    </span>
+  </view>
+  <!-- <image src="/img/pay-check.png"></image> -->
+  <image src="/img/pay-checked.png"></image>
+</view>
+
+<view class="white confirm_payment font_14 margin_t_20">
+  <view class="p_l_24">
+    应付金额： <span class="c_f2786b">¥{{orderInfo.payAmount}}</span>
+  </view>
+  <view catchtap='goToPay'>
+    确认并付款
+  </view>
+</view>
+

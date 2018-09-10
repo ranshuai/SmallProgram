@@ -1,0 +1,315 @@
+<view class="one_level_nav">
+  <view class="ac" data-info="{{0}}" class="{{oneLevelNav == 0 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    待发货
+  </view>
+  <view data-info="{{1}}" class="{{oneLevelNav == 1 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    配送中
+  </view>
+  <view data-info="{{2}}" class="{{oneLevelNav == 2 ? 'ac':''}}" catchtap="oneLevelNavClick">
+    已完成
+  </view>
+</view>
+<scroll-view class="info_ul" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLowe">
+  <view class="order_ul" wx:if="{{oneLevelNav == 0}}">
+    <view class="no-more-data" wx:if="{{orderInfo[0].length <= 0}}">暂时还没有相关订单</view>
+    <view class="store_order_ul">
+      <view class="store_order_ul_li" wx:for="{{orderInfo[0]}}" wx:key>
+        <view class="li_con">
+          <view class="line">
+            <i class="ion-ios-icon-gxk-94"></i>
+            <span>
+              订单编号：{{item.orderSn}}
+            </span>
+          </view>
+          <view class="line order-goods">
+            <view class="goods_item" wx:for="{{item.goodsInfoArr}}" wx:key>
+              <view class="goods_item_cont">
+                <view class="">
+                  商品名称：{{item.goodsName}}
+                </view>
+                <view class="">
+                  属性：{{item.goodsSpecs}}
+                </view>
+                <view class="goods_item_cont_num_price">
+                  <span>数量：
+                    <span class="c_f2786b">{{}}</span>
+                  </span>
+                  <span>价格：
+                    <span class="c_f2786b">¥{{item.shopPrice}}</span>
+                  </span>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-92"></i>
+            <span>
+              下单时间：
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-95"></i>
+            <span>
+              支付方式：微信支付
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-97"></i>
+            <span>
+              配送方式：送货上门
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-83"></i>
+            <span>
+              收货人：{{item.deliveryAddress.consignee}}
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-161"></i>
+            <span>
+              电话：{{item.deliveryAddress.mobile}}
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-82"></i>
+            <span>
+              收货地址：{{item.deliveryAddress.address}}
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-80"></i>
+            <span>
+              顾客留言：
+            </span>
+          </view>
+
+          <view class="line cost_total">
+            <i class="ion-ios-icon-gxk-96"></i>
+            <span>
+              费用总计：
+            </span>
+            <view>
+              <view>
+                运费:¥0.00
+              </view>
+              <view>
+                积分:¥0.00
+              </view>
+              <view>
+                实付金额:
+                <span class="c_f2786b">¥{{item.payAmount}}</span>
+              </view>
+
+            </view>
+          </view>
+
+          <view class="li_con_btns">
+            <button wx:if="{{item.orderStatus == 0}}" data-orderInfo='{{item}}' class="" catchtap='orderTaking'>接单</button>
+            <button wx:if="{{item.orderStatus == 1 && item.shippingStatus == 0}}" data-orderInfo='{{item}}' class="" catchtap='goToDelivery'>去发货</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="order_ul" wx:if="{{oneLevelNav == 1}}">
+    <view class="no-more-data" wx:if="{{orderInfo[1].length <= 0}}">暂时还没有相关订单</view>
+    <view class="store_order_ul">
+      <view class="store_order_ul_li" wx:for="{{orderInfo[1]}}" wx:key>
+        <view class="li_con">
+          <view class="line">
+            <i class="ion-ios-icon-gxk-94"></i>
+            <span>
+              订单编号：{{item.orderSn}}
+            </span>
+          </view>
+          <view class="line order-goods">
+            <view class="goods_item" wx:for="{{item.goodsInfoArr}}" wx:key>
+              <view class="goods_item_cont">
+                <view class="">
+                  商品名称：{{item.goodsName}}
+                </view>
+                <view class="">
+                  属性：{{item.goodsSpecs}}
+                </view>
+                <view class="goods_item_cont_num_price">
+                  <span>数量：
+                    <span class="c_f2786b">{{}}</span>
+                  </span>
+                  <span>价格：
+                    <span class="c_f2786b">¥{{item.shopPrice}}</span>
+                  </span>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-92"></i>
+            <span>
+              下单时间：
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-95"></i>
+            <span>
+              支付方式：微信支付
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-97"></i>
+            <span>
+              配送方式：送货上门
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-83"></i>
+            <span>
+              收货人：{{item.deliveryAddress.consignee}}
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-161"></i>
+            <span>
+              电话：{{item.deliveryAddress.mobile}}
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-82"></i>
+            <span>
+              收货地址：{{item.deliveryAddress.address}}
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-80"></i>
+            <span>
+              顾客留言：
+            </span>
+          </view>
+
+          <view class="line cost_total">
+            <i class="ion-ios-icon-gxk-96"></i>
+            <span>
+              费用总计：
+            </span>
+            <view>
+              <view>
+                运费:¥0.00
+              </view>
+              <view>
+                积分:¥0.00
+              </view>
+              <view>
+                实付金额:
+                <span class="c_f2786b">¥{{item.payAmount}}</span>
+              </view>
+
+            </view>
+          </view>
+
+          <view class="li_con_btns">
+            <button wx:if="{{item.orderStatus == 1 && item.shippingStatus == 1 }}" data-orderInfo='{{item}}' class="" catchtap='orderConfirm'>确认签收</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="order_ul" wx:if="{{oneLevelNav == 2}}">
+    <view class="no-more-data" wx:if="{{orderInfo[2].length <= 0}}">暂时还没有相关订单</view>
+    <view class="store_order_ul">
+      <view class="store_order_ul_li" wx:for="{{orderInfo[2]}}" wx:key>
+        <view class="li_con">
+          <view class="line">
+            <i class="ion-ios-icon-gxk-94"></i>
+            <span>
+              订单编号：{{item.orderSn}}
+            </span>
+          </view>
+          <view class="line order-goods">
+            <view class="goods_item" wx:for="{{item.goodsInfoArr}}" wx:key>
+              <view class="goods_item_cont">
+                <view class="">
+                  商品名称：{{item.goodsName}}
+                </view>
+                <view class="">
+                  属性：{{item.goodsSpecs}}
+                </view>
+                <view class="goods_item_cont_num_price">
+                  <span>数量：
+                    <span class="c_f2786b">{{}}</span>
+                  </span>
+                  <span>价格：
+                    <span class="c_f2786b">¥{{item.shopPrice}}</span>
+                  </span>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-92"></i>
+            <span>
+              下单时间：
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-95"></i>
+            <span>
+              支付方式：微信支付
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-97"></i>
+            <span>
+              配送方式：送货上门
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-83"></i>
+            <span>
+              收货人：{{item.deliveryAddress.consignee}}
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-161"></i>
+            <span>
+              电话：{{item.deliveryAddress.mobile}}
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-82"></i>
+            <span>
+              收货地址：{{item.deliveryAddress.address}}
+            </span>
+          </view>
+          <view class="line">
+            <i class="ion-ios-icon-gxk-80"></i>
+            <span>
+              顾客留言：
+            </span>
+          </view>
+
+          <view class="line cost_total">
+            <i class="ion-ios-icon-gxk-96"></i>
+            <span>
+              费用总计：
+            </span>
+            <view>
+              <view>
+                运费:¥0.00
+              </view>
+              <view>
+                积分:¥0.00
+              </view>
+              <view>
+                实付金额:
+                <span class="c_f2786b">¥{{item.payAmount}}</span>
+              </view>
+
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

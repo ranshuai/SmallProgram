@@ -35,13 +35,122 @@
 
 /* 购物车编辑 */
 
-.cart_edit_modal{
+.cart_edit_modal {
   position: fixed;
-  background-color: #000;
-  opacity: .4;
+  background: rgba(0, 0, 0, 0.4);
   width: 100%;
   height: 100%;
   z-index: 10;
 }
 
+.cart_edit_modal .specs-wrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-left: 24rpx;
+  padding-bottom: 110rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
 
+.cart_edit_modal .colse-btn {
+  float: right;
+  margin-top: 12rpx;
+  margin-right: 24rpx;
+}
+
+.cart_edit_modal .colse-btn i {
+  font-size: 14px;
+}
+
+.cart_edit_modal .info {
+  overflow: hidden;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cart_edit_modal .info image {
+  float: left;
+  width: 130rpx;
+  height: 130rpx;
+  margin-top: 20rpx;
+  border-radius: 5px;
+  margin-bottom: 20rpx;
+}
+
+.cart_edit_modal .goods-title {
+  margin-left: 130rpx;
+  padding-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.cart_edit_modal .goods-title .title {
+  margin-top: 44rpx;
+  font-size: 14px;
+}
+
+.cart_edit_modal .goods-title .price {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #f2786b;
+}
+
+.cart_edit_modal .specs-wrap .specification_wrap {
+  height: 400rpx;
+  overflow-y: scroll;
+}
+
+.cart_edit_modal .specification_wrap .specs-list {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cart_edit_modal .specification_wrap .specs-list .title {
+  font-size: 14px;
+  line-height: 130rpx;
+}
+
+.cart_edit_modal .btn-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart_edit_modal .btn-wrap span {
+  background: #f2786b;
+  color: #fff;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 12px;
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+.cart_edit_modal .quantity .title {
+  padding: 40rpx 0;
+  font-size: 14px;
+}
+
+.cart_edit_modal .num-wrap i {
+  font-size: 24px;
+  color: #f2786b;
+  vertical-align: middle;
+}
+
+.cart_edit_modal .num-wrap span {
+  color: #f2786b;
+  padding: 0 20rpx;
+  vertical-align: middle;
+}
+
+.cart_edit_modal .footer {
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  background: #f2786b;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+}

@@ -1,0 +1,51 @@
+page {
+  background: #f5f5f5;
+}
+
+.confirm-box {
+  background: #fff;
+}
+
+.confirm-content {
+  display: flex;
+}
+
+.confirm-content > view {
+  width: 80%;
+}
+.confirm-content > view >view{
+  display: flex;
+ 
+}
+.confirm-content > view >view:first-child {
+ justify-content: space-between;
+}
+
+.confirm-content image {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.payment_type_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment_type_item >view:nth-child(1) {
+  display: flex;
+}
+
+.payment_type_item image {
+  width: 38rpx;
+  height: 38rpx;
+}
+.confirm_payment{
+  display: flex;
+  justify-content: space-between;
+  line-height: 90rpx;
+}
+.confirm_payment >view:last-child{
+  background: #f2786b;
+  color: #fff;
+  padding: 0 24rpx;
+}

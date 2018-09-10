@@ -5,7 +5,8 @@ Page({
    */
   data: {
     oneLevelNav: 0,
-    categoryWarpNav: ['食品生鲜', '家居家纺', '酒水饮料', '家具家装'], //导航
+    // categoryWarpNav: ['食品生鲜', '家居家纺', '酒水饮料', '家具家装'], //导航
+    categoryWarpNav: ['生鲜', '家居家纺', '饮料', '家具家装'], //导航
     multiTwoAndThreeArray: [
       {
         parentId: 1,

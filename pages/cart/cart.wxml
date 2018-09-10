@@ -1,7 +1,7 @@
 <!--购物车S  -->
 
 <import src="../templates/templates.wxml"/>
-<template is="cart_edit" data="{{num}}"/>
+<template wx:if='{{specsModal}}' is="cart_edit" data="{{specsModalData}}"/>
 <scroll-view wx:if="{{cartdata.length > 0}}">
   <checkbox-group bindchange="checkboxChange">
     <view class="cart_goods_ul"> 
@@ -17,14 +17,14 @@
             <view class="m_left_20 cart_goods_c_r_c">
               <span class="font_14 color_333 j_c_s_b">
                 {{goods.goodsName}}
-                <span>x1</span>
+                <span>x{{goods.goodsNum}}</span>
               </span>
               <span class="font_12 color_a3a3a3">
                 商品规格：{{goods.goodsSpecs}}
               </span>
               <span class="font_12 color_a3a3a3 j_c_s_b">
                 ¥{{goods.shopPrice}}
-                <span catchtap="showModal">编辑</span>
+                <span catchtap="showModal" data-goodsInfo="{{goods}}" data-goodsIndex="{{[index,_index]}}" >编辑</span>
               </span>
             </view>
           </view>

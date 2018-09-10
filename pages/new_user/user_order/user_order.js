@@ -115,7 +115,9 @@ Page({
       success:function(res){
         if (type === 0){
           self.setData({
-            'orderInfo.0': res.data.result.list
+            orderInfo:{
+              0: res.data.result.list
+            }
           });
         }
         if (type === 1){
@@ -139,5 +141,11 @@ Page({
         wx.hideLoading();
       }
     })
+  },
+  goToOrderDetail(ev){
+      wx.navigateTo({
+        url: '/pages/new_user/user_order/order_detail/order_detail?orderInfo=' + JSON.stringify(ev.currentTarget.dataset.orderinfo),
+      })
+
   }
 })

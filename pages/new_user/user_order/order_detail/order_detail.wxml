@@ -1,0 +1,97 @@
+<view class="orderState">
+  <span class=" font_12 " wx:if="{{orderInfo.payStatus == 0}}">等待买家付款</span>
+  <span class=" font_12 " wx:if="{{orderInfo.payStatus == 1 && item.orderStatus == 0}}">等待商家确定订单</span>
+  <span class=" font_12 " wx:if="{{orderInfo.payStatus == 1 && shippingStatus == 0 }}">等待商家发货</span>
+
+  <span class=" font_12 " wx:if="{{orderInfo.orderStatus != 6 && item.shippingStatus == 1}}"> 商家已发货 </span>
+  <span class=" font_12 " wx:if="{{orderInfo.orderStatus == 6}}"> 交易完成 </span>
+</view>
+
+<view class="confirm-boxs">
+  <view class="order_user_name font_14 color_333 margin_b_10">
+    <view class="">
+      <i class="ion-ios-icon-gxk-162 color_a3a3a3"></i>
+      收货人：{{orderInfo.deliveryAddress.consignee}}
+    </view>
+    <view>
+      {{orderInfo.deliveryAddress.mobile}}
+    </view>
+  </view>
+  <view class="order_user_address font_12 color_a3a3a3 m_left_40">
+    收货地址：{{orderInfo.deliveryAddress.address}}
+  </view>
+</view>
+<view class="order_shop_box p_0_24 font_14 color_333 margin_t_20 pr">
+  <i class="ion-ios-icon-gxk-85 color_a3a3a3"></i>
+  店铺名称 : {{orderInfo.storeName}}
+  <i class="ion-ios-icon-gxk-51 color_a3a3a3"></i>
+</view>
+<view class="count_detal_box">
+  <view class="confirm-content" wx:for="{{orderInfo.goodsInfoArr}}" wx:key>
+    <image src="{{item.images[0]}}"></image>
+    <view class="confirm-goods_content">
+      <view class="color_333 font_14 ">
+        <span>{{item.goodsName}}</span>
+        <span>¥{{item.shopPrice}}</span>
+      </view>
+      <view class="color_a3a3a3 font_14 ">
+        <span></span>
+        <span>x{{}}</span>
+      </view>
+      <view class="color_a3a3a3 font_12 ">
+        <span>规格：</span>
+        <span>{{item.goodsSpecs}}</span>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class="order_number_box margin_t_20 font_14 ">
+  <view class="">
+    <view> 订单编号：</view>
+    <view> {{orderInfo.orderSn}}</view>
+  </view>
+  <view class="color_a3a3a3 margin_t_20 font_14">
+    <view> 下单时间：</view>
+    <view> {{orderTime}}</view>
+  </view>
+</view>
+
+<view class="pay_type font_14 color_333 margin_t_20">
+  <view>支付方式：</view>
+  <view>微信支付</view>
+</view>
+<view class="pay_type font_14 color_333 margin_t_20">
+  <view>配送方式：</view>
+  <view>送货上门</view>
+</view>
+
+<view class="pay_detail  font_14 color_a3a3a3 margin_t_20">
+  <view>
+    <span>商品总价：</span>
+    <span>¥ {{orderInfo.payAmount}}</span>
+  </view>
+  <view class="margin_t_20">
+    <span>运费金额：</span>
+    <span>¥ 0.00</span>
+  </view>
+  <view class="margin_t_20">
+    <span>订单总金额：</span>
+    <span>¥ {{orderInfo.payAmount}}</span>
+  </view>
+</view>
+
+<view class="real_pay font_14 color_333">
+  <view></view>
+  <view>
+    <span>实付金额：</span>
+    <span class="c_f2786b">¥ {{orderInfo.payAmount}}</span>
+  </view>
+
+</view>
+
+<view class="order_btns font_14">
+  <button catchtap='goToConfirmPayment' data-orderInfo='{{orderInfo}}'>去付款</button>
+  <button>取消订单</button>
+
+</view>

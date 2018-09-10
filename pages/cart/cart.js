@@ -2,10 +2,13 @@
 const app = getApp()
 Page({
   data: {
+    specsModal: false,
+    specsModalData: null,
+    specsModalIndexArr:[],
     cartdata: [],
     cartDataMap: null,
     cartDataMapArr: [],
-    selectedGoods: []
+    selectedGoods: [],
   },
   checkboxChange: function (e) {
     this.setData({
@@ -36,7 +39,7 @@ Page({
           let arr = this.data.selectedGoods[i].split('-');
           this.data.cartDataMapArr[arr[0]][1][arr[1]].selected = true;
         }
-        for (let i = 0 ; i<this.data.cartDataMapArr.length; i++ ){
+        for (let i = 0; i < this.data.cartDataMapArr.length; i++) {
           let newArr = []
           newArr[0] = this.data.cartDataMapArr[i][0];
           newArr[1] = [];
@@ -81,6 +84,8 @@ Page({
           cartDataMapArr: [...m],
           cartDataMap: m
         });
+
+        console.log(self.data);
       }
     })
   },
@@ -92,16 +97,68 @@ Page({
     })
   },
 
-  showModal:function(){
-    console.log('点击编辑');
-    
+  showModal: function (ev) {
+    console.log(ev.currentTarget.dataset);
+    this.data.specsModalIndexArr = ev.currentTarget.dataset.goodsindex;
+    this.setData({
+      specsModal: true,
+      specsModalData: ev.currentTarget.dataset.goodsinfo
+    });
+
   },
-  closeModal:function(){
+  closeModal: function () {
     console.log('关闭modal');
-    //cart_edit_modal
-    var query = wx.createSelectorQuery();
-    query.select('#cart_edit_modal');
-    console.log(query.select('#cart_edit_modal').boundingClientRect());
+    this.setData({
+      specsModal: false
+    });
+  },
+  aa: function () {
+    console.log('11');
+  },
+  delNum: function () {
+
+    if (this.data.specsModalData.goodsNum == 1){
+      return 
+    }
+
+    this.data.specsModalData.goodsNum = this.data.specsModalData.goodsNum - 1;
+    this.setData({
+      specsModalData: this.data.specsModalData
+    });
+
+  },
+  addNum: function () {
+
+    this.data.specsModalData.goodsNum = this.data.specsModalData.goodsNum + 1;
+  this.setData({
+    specsModalData: this.data.specsModalData
+  });
+  },
+  saveCart(){
+    let self = this;
+    wx.getStorage({
+      key: 'cart',
+      success: function (res) {
+        console.log(res.data);
+        for (let i = 0; i < res.data.length; i++){
+          if (res.data[i].goodsId == self.data.specsModalData.goodsId){
+            res.data[i].goodsNum = self.data.specsModalData.goodsNum
+          }
+        }
+        wx.setStorage({
+          key: "cart",
+          data: res.data,
+          success:function(){
+            self.data.cartDataMapArr[self.data.specsModalIndexArr[0]][1][self.data.specsModalIndexArr[0]].goodsNum = self.data.specsModalData.goodsNum;
+            self.setData({
+              cartDataMapArr: self.data.cartDataMapArr
+            });
+          }
+        });
+      }
+    })
+    this.closeModal();
+
 
   }
 })

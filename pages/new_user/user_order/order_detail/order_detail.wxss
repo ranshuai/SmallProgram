@@ -1,0 +1,105 @@
+/* pages/new_user/user_order/order_detail/order_detail.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.orderState {
+  background: red;
+  line-height: 160rpx;
+  color: #fff;
+  font-size: 16px;
+  padding: 0 24rpx;
+}
+
+.confirm-boxs {
+  background: #fff;
+  padding: 30rpx 24rpx;
+  margin-top: 20rpx;
+}
+
+.order_user_name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order_shop_box {
+  background-color: #fff;
+  line-height: 100rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.ion-ios-icon-gxk-51 {
+  right: 24rpx;
+  top: 32rpx;
+}
+
+.confirm-content {
+  display: flex;
+  padding: 30rpx 24rpx;
+  background-color: #fff;
+}
+
+.confirm-content image {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.confirm-goods_content {
+  width: 80%;
+}
+
+.confirm-goods_content >view {
+  padding-left: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm-goods_content >view:last-child {
+  justify-content: flex-start;
+}
+
+.order_number_box {
+  background-color: #fff;
+  padding: 15px 12px;
+}
+
+.order_number_box >view {
+  display: flex;
+}
+
+.pay_type {
+  padding: 30rpx 24rpx;
+  background-color: #fff;
+  display: flex;
+}
+
+.pay_detail >view {
+  display: flex;
+}
+
+.pay_detail {
+  background-color: #fff;
+  padding: 30rpx 24rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.real_pay {
+  display: flex;
+  padding: 30rpx 24rpx;
+  background-color: #fff;
+  justify-content: space-between;
+}
+
+.order_btns {
+  display: flex;
+  flex-direction: row-reverse;
+  background: #fff;
+}
+
+.order_btns>button {
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-right: 6px;
+  font-size: 14px;
+}

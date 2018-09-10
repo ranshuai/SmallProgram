@@ -73,9 +73,15 @@ page {
 .margin_b_10 {
   margin-bottom: 10rpx;
 }
+.margin_t_20 {
+  margin-top: 20rpx;
+}
 
 .m_left_20 {
   margin-left: 20rpx;
+}
+.m_left_40 {
+  margin-left: 40rpx;
 }
 
 .m_right_20 {
@@ -92,6 +98,9 @@ page {
 
 .p_40_24 {
   padding: 40rpx 24rpx;
+}
+.p_30_24 {
+  padding: 30rpx 24rpx;
 }
 
 .p_0_24 {

@@ -15,15 +15,21 @@
 
 <!--列表  -->
 <view class="order_ul" wx:if="{{oneLevelNav == 0}}">
-  <view class="order_li" wx:for="{{orderInfo[0]}}"wx:for-item="item">
+  <view class="no-more-data" wx:if="{{orderInfo[0].length <= 0}}">暂时还没有相关订单</view>
+  <view class="order_li" wx:key wx:for="{{orderInfo[0]}}" wx:for-item="item">
     <view class="clearfix title color_333">
       <span class=" font_14">店铺:</span>
-      <span class=" font_14 m_right_20">冉冉微生活超市</span>
+      <span class=" font_14 m_right_20">{{item.storeName}}</span>
       <span class=" font_12 c_40b3e2">
         <i class="ion-ios-icon-gxk-48 m_right_10" style=" vertical-align: middle"></i>联系客服</span>
-      <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
+      <span class="fr font_12 c_f2786b" wx:if="{{item.payStatus == 0}}">等待买家付款</span>
+      <span class="fr font_12 c_f2786b" wx:if="{{item.payStatus == 1 && item.orderStatus == 0}}">等待商家确定订单</span>
+      <span class="fr font_12 c_f2786b" wx:if="{{item.payStatus == 1 && shippingStatus == 0 }}">等待商家发货</span>
+
+      <span class="fr font_12 c_f2786b" wx:if="{{item.orderStatus != 6 && item.shippingStatus == 1}}" > 商家已发货 </span>
+      <span class="fr font_12 c_f2786b" wx:if="{{item.orderStatus == 6}}" > 交易完成 </span>
     </view>
-    <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
+    <view data-orderInfo='{{item}}' catchtap='goToOrderDetail' class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item" wx:key>
       <image src="{{_item.images[0]}}"></image>
       <view class="color_a3a3a3">
         <view class="font_14 cont_title">
@@ -39,10 +45,10 @@
       共1件商品 合计：¥{{item.payAmount}}
     </view>
     <view class="font_14 color_333 order_li_btn clearfix">
-      <button class="font_14 fr" catchtap='cancelOrder'>
+      <button wx:if="{{item.orderStatus == 0}}" class="font_14 fr" catchtap='cancelOrder'>
         取消订单
       </button>
-      <button class="font_14 fr">
+      <button wx:if="{{item.payStatus == 0}}" class="font_14 fr">
         去付款
       </button>
 
@@ -50,15 +56,16 @@
   </view>
 </view>
 <view class="order_ul" wx:if="{{oneLevelNav == 1}}">
-   <view class="order_li" wx:for="{{orderInfo[1]}}"wx:for-item="item">
+  <view class="no-more-data" wx:if="{{orderInfo[1].length <= 0}}">暂时还没有相关订单</view>
+  <view class="order_li" wx:key wx:for="{{orderInfo[1]}}" wx:for-item="item">
     <view class="clearfix title color_333">
       <span class=" font_14">店铺:</span>
-      <span class=" font_14 m_right_20">冉冉微生活超市</span>
+      <span class=" font_14 m_right_20">{{item.storeName}}</span>
       <span class=" font_12 c_40b3e2">
         <i class="ion-ios-icon-gxk-48 m_right_10" style=" vertical-align: middle"></i>联系客服</span>
       <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
     </view>
-    <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
+    <view class="cont" wx:key wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
       <image src="{{_item.images[0]}}"></image>
       <view class="color_a3a3a3">
         <view class="font_14 cont_title">
@@ -85,15 +92,16 @@
   </view>
 </view>
 <view class="order_ul" wx:if="{{oneLevelNav == 2}}">
-  <view class="order_li" wx:for="{{orderInfo[2]}}"wx:for-item="item">
+  <view class="no-more-data" wx:if="{{orderInfo[2].length <= 0}}">暂时还没有相关订单</view>
+  <view class="order_li" wx:key wx:for="{{orderInfo[2]}}" wx:for-item="item">
     <view class="clearfix title color_333">
       <span class=" font_14">店铺:</span>
-      <span class=" font_14 m_right_20">冉冉微生活超市</span>
+      <span class=" font_14 m_right_20">{{item.storeName}}</span>
       <span class=" font_12 c_40b3e2">
         <i class="ion-ios-icon-gxk-48 m_right_10" style=" vertical-align: middle"></i>联系客服</span>
-      <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
+      <span class="fr font_12 c_f2786b">{{item.payStatus == 1 && (item.orderStatus ==0? '等待商家确定订单' :'等待商家发货' ) }}</span>
     </view>
-    <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
+    <view class="cont" wx:key wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
       <image src="{{_item.images[0]}}"></image>
       <view class="color_a3a3a3">
         <view class="font_14 cont_title">
@@ -120,15 +128,16 @@
   </view>
 </view>
 <view class="order_ul" wx:if="{{oneLevelNav == 3}}">
-   <view class="order_li" wx:for="{{orderInfo[3]}}"wx:for-item="item">
+  <view class="no-more-data" wx:if="{{orderInfo[3].length <= 0}}">暂时还没有相关订单</view>
+  <view class="order_li" wx:key wx:for="{{orderInfo[3]}}" wx:for-item="item">
     <view class="clearfix title color_333">
       <span class=" font_14">店铺:</span>
-      <span class=" font_14 m_right_20">冉冉微生活超市</span>
+      <span class=" font_14 m_right_20">{{item.storeName}}</span>
       <span class=" font_12 c_40b3e2">
         <i class="ion-ios-icon-gxk-48 m_right_10" style=" vertical-align: middle"></i>联系客服</span>
-      <span class="fr font_12 c_f2786b">{{item.payStatus == 0 && '等待买家付款'}}</span>
+      <span class="fr font_12 c_f2786b">{{"等待买家收货"}}</span>
     </view>
-    <view class="cont" wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
+    <view class="cont" wx:key wx:for="{{item.goodsInfoArr}}" wx:for-item="_item">
       <image src="{{_item.images[0]}}"></image>
       <view class="color_a3a3a3">
         <view class="font_14 cont_title">
