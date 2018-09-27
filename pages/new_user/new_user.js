@@ -13,23 +13,23 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function() {
     this.setData({
       userInfo: app.globalData.userInfo,
     })
     console.log(app.globalData.userInfo)
     wx.getSetting({
-      success: function (e) {
+      success: function(e) {
         console.log(e)
       },
-      complete: function (e) {
+      complete: function(e) {
         console.log(e);
       }
     })
   },
 
 
-  onLoad: function () {
+  onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -47,10 +47,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -59,7 +59,7 @@ Page({
 
     // 登录 
     wx.login({
-      success: function (res) {
+      success: function(res) {
         //使用
         wx.request({
           method: 'POST',
@@ -70,7 +70,7 @@ Page({
             userMobile: '',
             userPicture: app.globalData.userInfo.avatarUrl
           },
-          success: function (res) {
+          success: function(res) {
             if (res.data.success) {
               app.globalData.userInfo.userMobile = res.data.result.userMobile || '';
               app.globalData.userInfo.userId = res.data.result.userId || '';
@@ -82,7 +82,7 @@ Page({
                 data: {
                   userMobile: res.data.result.userMobile || '',
                   userId: res.data.result.userId || '',
-                  userOpenId: res.data.result.userOpenId||''
+                  userOpenId: res.data.result.userOpenId || ''
                 },
               })
             }
@@ -92,22 +92,51 @@ Page({
     });
   },
 
-  goToUserAddress(){
+  goToUserAddress() {
     wx.navigateTo({
       url: '/pages/new_user/user_address/user_address',
     })
   },
-  goToUserOrder(){
+  goToUserOrder() {
     wx.navigateTo({
       url: '/pages/new_user/user_order/user_order',
     })
   },
-  goToUserRelease(){
+  goToUserRelease() {
     wx.navigateTo({
       url: '/pages/new_user/user_release/user_release',
     })
+  },
+  viewClick01: function(ev) {
+    //添加联系人
+    wx.addPhoneContact({
+      firstName: '关关',
+      mobilePhoneNumber: "1881881989",
+      success: function (res_addphone) {
+        console.log("电话添加联系人返回：", res_addphone)
+      }
+    })
+    // var that = this
+    // wx.showActionSheet({
+    //   itemList: ['呼叫', '添加联系人'],
+    //   success: function(res) {
+    //     console.log("点击电话 res：", res)
+    //     if (res.tapIndex == 0) {
+    //       //直接呼叫          
+    //       wx.makePhoneCall({
+    //         phoneNumber: "1881881989",
+    //         success: function(res_makephone) {
+    //           console.log("呼叫电话返回：", res_makephone)
+    //         }
+    //       })
+    //     } else
+    //     if (res.tapIndex == 1) {
+         
+    //     }
+    //   }
+    // })
   }
-  
+
 
 
 })

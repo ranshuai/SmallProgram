@@ -61,5 +61,9 @@
       <text>关于我们</text>
       <!-- <i class="ion-ios-icon-gxk-51"></i> -->
     </view>
+    <button bindtap="viewClick01">
+    
+    获取通讯录
+    </button>
   </view>
 </view>
