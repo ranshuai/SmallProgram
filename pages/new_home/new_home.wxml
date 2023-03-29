@@ -2,12 +2,12 @@
 <view class="header">
   <view class="search">
     <i class="ion-ios-icon-gxk-46"></i>
-    <input bindinput="bindKeyInput" placeholder='请输入商品名称' />
+    <input bindinput="bindKeyInput" placeholder='请输入关键字查询' />
     <text catchtap="searchGoods">搜索</text>
   </view>
   <view>
     <view>本站浏览:
-      <text>100</text> </view>
+      <text>1000</text> </view>
     <!-- <view class="m_left_20">入住店铺:
       <text>3</text> </view> -->
   </view>
@@ -26,14 +26,15 @@
 <!--nav 二级  -->
 <view class="nav" wx:if="{{oneLevelNav == 0 }}">
   <view class="ul_2level">
-    <view class="ul_2level_item" data-storeType='shop' catchtap='goToStoreType'>
+    <!-- <view class="ul_2level_item" data-storeType='shop' catchtap='goToStoreType'>
       <view class="bg7">
         <i class="ion-ios-icon-gxk-182"></i>
       </view>
       <view>
         超市
       </view>
-    </view>
+    </view> -->
+
     <view class="ul_2level_item" catchtap='goToFreeRide'>
       <view class="bg6">
         <i class="ion-ios-icon-gxk-164"></i>
@@ -42,22 +43,22 @@
         顺风车
       </view>
     </view>
-    <view class="ul_2level_item" data-storeType='service' catchtap='goToStoreType'>
+     <!-- <view class="ul_2level_item" data-storeType='service' catchtap='goToStoreType'>
       <view class="bg3">
         <i class="ion-ios-icon-gxk-87"></i>
       </view>
       <view>
         服务
       </view>
-    </view>
-    <view class="ul_2level_item" catchtap='registerStore'>
+   </view> -->
+   <!-- <view class="ul_2level_item" catchtap='registerStore'>
       <view class="bg4">
         <i class="ion-ios-icon-gxk-9"></i>
       </view>
       <view>
         加入
       </view>
-    </view>
+    </view> -->
   </view>
 </view>
 <view class="nav" wx:if="{{oneLevelNav == 1 }}">
@@ -126,6 +127,9 @@
           <image src="{{_item+'?x-oss-process=image/resize,m_fixed,h_124,w_124'}}" data-index='{{idx}}' catchtap='previewImg'></image>
         </view>
       </view>
+      <view class='a3a3a3'>
+      1111
+      </view>  
     </view>
   </view>
 </view>

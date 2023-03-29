@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/new_home/new_home",
+    "pages/new_user/new_user",
+    "pages/new_user/user_release/user_release",
     "pages/new_user/user_order/order_detail/user_info_order_confirm/user_info_order_confirm",
     "pages/new_user/user_order/order_detail/order_detail",
     "pages/store/store_order/store_order",
@@ -13,7 +15,6 @@
     "pages/store/store_goods/store_goods",
     "pages/store/store_index/store_index",
     "pages/register_store/register_store",
-    "pages/new_user/user_release/user_release",
     "pages/pay_success/pay_success",
     "pages/order_confirm/order_confirm",
     "pages/new_user/user_address/add_new_address/add_new_address",
@@ -24,7 +25,6 @@
     "pages/release_local_service/release_local_service",
     "pages/release/release",
     "pages/release_detail/release_detail",
-    "pages/new_user/new_user",
     "pages/free_ride/free_ride"
   ],
   "window": {
@@ -42,24 +42,14 @@
         "iconPath": "img/home.png",
         "selectedIconPath": "img/home_s.png"
       },
-      {
-        "pagePath": "pages/category/category",
-        "text": "分类",
-        "iconPath": "img/category.png",
-        "selectedIconPath": "img/category_s.png"
-      },
+     
       {
         "pagePath": "pages/release/release",
         "text": "发布",
         "iconPath": "img/add.png",
         "selectedIconPath": "img/add_s.png"
       },
-      {
-        "pagePath": "pages/cart/cart",
-        "text": "购物车",
-        "iconPath": "img/cart.png",
-        "selectedIconPath": "img/cart_s.png"
-      },
+     
       {
         "pagePath": "pages/new_user/new_user",
         "text": "个人",
@@ -67,5 +57,6 @@
         "selectedIconPath": "img/user_s.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

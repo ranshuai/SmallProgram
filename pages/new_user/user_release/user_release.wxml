@@ -12,4 +12,33 @@
     待收货
   </view> -->
 </view>
-<view class="no-more-data">此功能正在开发</view>
+ <!-- <view class="no-more-data">此功能正在开发</view>-->
+<view class="info_ul">
+ <view class="info_ul_item" wx:for="{{releaseList}}" wx:for-index="idx" wx:for-item="item" wx:key>
+  <view>
+    <image src="{{item.releaseUserInfo.userPicture+'?x-oss-process=image/resize,m_fixed,h_86,w_86'}}"></image>
+  </view>
+
+  <view>
+      <view class='a3a3a3'>
+        <span class="a3a3a3 fr" data-item="{{item}}" catchtap="handleDelete">
+          <i class="ion-ios-icon-gxk-161"></i>
+          删除
+        </span>
+
+      </view>
+      <view>
+        {{item.releaseDescribe}}
+      </view>
+      <view class="release_images_warp">
+        <view wx:for="{{item.releaseImages}}" wx:for-index="_idx" wx:for-item="_item" wx:key>
+          <image src="{{_item+'?x-oss-process=image/resize,m_fixed,h_124,w_124'}}" data-index='{{idx}}' catchtap='previewImg'></image>
+        </view>
+      </view>
+      <view class='a3a3a3'>
+      1111
+      </view>  
+    </view>
+ </view>
+</view>
+

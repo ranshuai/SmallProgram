@@ -1,3 +1,4 @@
+const app = getApp();
 Page({
 
   /**
@@ -10,14 +11,15 @@ Page({
       1: [],
       2: [],
       3: []
-    }
+    },
+    releaseList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getReleaseList();
   },
 
   /**
@@ -52,7 +54,32 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+    wx.showNavigationBarLoading();
+    var _this = this;
+    wx.request({
+      url: 'https://riseupall.cn/server/getreleaselocal',
+      header: {
+        userId:  app.globalData.userInfo.userId
+      },
+      success: function (data) {
+        data = data.data;
+        if (data.success) {
+          _this.setData({
+            releaseList: data.result.list
+          })
+        } else {
+          wx.showToast({
+            title: data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      complete: function () {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
+      }
+    })
+
   },
 
   /**
@@ -80,5 +107,59 @@ Page({
 
     // this.getOrderInfo(this.data.oneLevelNav);
 
-  }
+  },
+  getReleaseList(){
+    wx.showLoading({
+      title: '加载中...',
+    });
+    var _this = this;
+    wx.request({
+      url: 'https://riseupall.cn/server/getreleaselocal',
+      header: {
+        userId:  app.globalData.userInfo.userId
+      },
+      success: function (data) {
+        data = data.data;
+        if (data.success) {
+          _this.setData({
+            releaseList: data.result.list
+          })
+        } else {
+          wx.showToast({
+            title: data.msg,
+            icon: 'none'
+          })
+        }
+      }, complete: function () {
+        wx.hideLoading();
+      }
+    })
+  },
+  handleDelete(item){
+    wx.showLoading({
+      title: '加载中...',
+    });
+    var _this = this;
+    wx.request({
+      method: 'POST',
+      url: 'https://riseupall.cn/server/deletereleaselocal',
+      header: {
+        userId:  app.globalData.userInfo.userId
+      },
+      data: item.target.dataset.item,
+      success: function (data) {
+        data = data.data;
+        if (data.success) {
+          _this.getReleaseList()
+        }else{
+          wx.showToast({
+            title: data.msg,
+            icon: 'none'
+          })
+        }
+      }, complete: function () {
+        wx.hideLoading();
+      }
+    })
+  },
 })
